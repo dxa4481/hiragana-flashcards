@@ -1,0 +1,39 @@
+:root {
+  --accent: #f05a28;
+  --bg:     #fdfdfc;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+html,body { height: 100%; font-family: system-ui, sans-serif; background: var(--bg); }
+
+#stage {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 2rem;
+}
+
+#kana   { font-size: clamp(4rem, 22vw, 18rem); line-height: 1; }
+#romaji { font-size: clamp(2rem, 8vw, 5rem); color: var(--accent); margin-top: .4em; }
+.hidden { opacity: 0; }
+
+#next-btn {
+  margin-top: 2rem;
+  padding: .6em 1.4em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: .4em;
+  cursor: pointer;
+  transition: transform .06s;
+}
+#next-btn:active { transform: scale(.96); }
+
