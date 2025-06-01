@@ -15,7 +15,16 @@
   <main id="stage" tabindex="0">
     <div id="kana">あ</div>
     <div id="romaji" class="hidden">a</div>
-    <button id="next-btn">Next ➡</button>
+
+    <!-- grading buttons (hidden until a card is revealed) -->
+    <div id="answer-buttons" class="hidden">
+      <button id="right-btn"  class="ans-btn correct">✔&nbsp;I&nbsp;was&nbsp;right</button>
+      <button id="wrong-btn"  class="ans-btn wrong">✖&nbsp;I&nbsp;was&nbsp;wrong</button>
+    </div>
+
+    <!-- optional skip -->
+    <button id="next-btn">Next&nbsp;➡</button>
+
     <audio id="player" preload="auto"></audio>
   </main>
 

@@ -1,6 +1,8 @@
 :root {
   --accent: #f05a28;
   --bg:     #fdfdfc;
+  --good:   #2ecc71;
+  --bad:    #e74c3c;
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -43,6 +45,26 @@ html,body { height: 100%; font-family: system-ui, sans-serif; background: var(--
 #kana   { font-size: clamp(4rem, 22vw, 18rem); line-height: 1; }
 #romaji { font-size: clamp(2rem, 8vw, 5rem); color: var(--accent); margin-top: .4em; }
 .hidden { opacity: 0; }
+
+#answer-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  transition: opacity .2s;
+}
+.ans-btn {
+  padding: .5em 1.2em;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: .4em;
+  cursor: pointer;
+  color: #fff;
+  transition: transform .06s;
+}
+.ans-btn.correct { background: var(--good); }
+.ans-btn.wrong   { background: var(--bad);   }
+.ans-btn:active  { transform: scale(.96); }
 
 #next-btn {
   margin-top: 2rem;

@@ -1,4 +1,4 @@
-/* Hiragana flash-card logic with selectable rows & aligned legend */
+/* Hiragana flash-card logic with selectable rows, legend, and SM-2 scheduling */
 (() => {
   "use strict";
 
@@ -53,6 +53,18 @@
     }
   ];
 
+  /* Attach SM-2 scheduling fields to every card */
+  SECTIONS.forEach(sec =>
+    sec.rows.forEach(row =>
+      row.forEach(card => {
+        card.reps = 0;          // repetition count
+        card.interval = 0;      // interval in *reviews*
+        card.ef = 2.5;          // ease factor
+        card.due = 0;           // next review count (0 = now)
+      })
+    )
+  );
+
   /* map last vowel to table column (a-i-u-e-o) */
   const VOWEL_COL = { a:0, i:1, u:2, e:3, o:4 };
 
@@ -105,17 +117,65 @@
   });
 
   /* ---------- Flash-card DOM refs ---------- */
-  const kana   = document.getElementById("kana");
-  const romaji = document.getElementById("romaji");
-  const player = document.getElementById("player");
-  const next   = document.getElementById("next-btn");
-  const stage  = document.getElementById("stage");
+  const kana    = document.getElementById("kana");
+  const romaji  = document.getElementById("romaji");
+  const player  = document.getElementById("player");
+  const nextBtn = document.getElementById("next-btn");
+  const stage   = document.getElementById("stage");
+
+  const ansWrap = document.getElementById("answer-buttons");
+  const rightBtn= document.getElementById("right-btn");
+  const wrongBtn= document.getElementById("wrong-btn");
 
   /* ---------- State ---------- */
-  let pool     = [];    // flattened active cards
-  let revealed = false;
-  let timerId  = null;
-  let current  = null;
+  let pool        = [];    // flattened active cards
+  let revealed    = false;
+  let timerId     = null;
+  let currentCard = null;
+  let reviewCount = 0;     // increments every time a card is graded
+
+  /* ---------------- SM-2 helpers ---------------- */
+  /** Update card scheduling based on whether the user was correct */
+  function gradeCard(card, correct) {
+    const quality = correct ? 5 : 2; // SM-2: >=3 = success
+
+    if (quality >= 3) {
+      if (card.reps === 0) {
+        card.interval = 1;
+      } else if (card.reps === 1) {
+        card.interval = 6;
+      } else {
+        card.interval = Math.round(card.interval * card.ef);
+      }
+      card.reps += 1;
+    } else {
+      card.reps = 0;
+      card.interval = 1;
+    }
+
+    // ease-factor adjustment
+    card.ef = card.ef + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
+    if (card.ef < 1.3) card.ef = 1.3;
+
+    card.due = reviewCount + card.interval;
+  }
+
+  /** Get a due card (if any) or the one with the earliest due */
+  function getNextCard() {
+    if (!pool.length) return null;
+
+    const dueCards = pool.filter(c => c.due <= reviewCount);
+    if (dueCards.length) {
+      return dueCards[Math.floor(Math.random() * dueCards.length)];
+    }
+
+    // nothing due yet: take the soonest-due card (still random if tie)
+    let soonest = pool[0];
+    pool.forEach(c => {
+      if (c.due < soonest.due) soonest = c;
+    });
+    return soonest;
+  }
 
   /* rebuild pool from checked rows */
   const rebuildPool = () => {
@@ -136,26 +196,29 @@
       kana.textContent   = "☚ select rows";
       romaji.textContent = "";
       romaji.classList.add("hidden");
-      current = null;
+      ansWrap.classList.add("hidden");
+      currentCard = null;
     }
   };
 
-  const randomCard = () => pool[Math.floor(Math.random() * pool.length)];
-
-  function display(card) {
+  /* ---------- Display helpers ---------- */
+  function showCard(card) {
     if (!card) return;              // nothing selected
     if (timerId) { clearTimeout(timerId); timerId = null; }
 
-    revealed = false;
-    current  = card;
+    revealed    = false;
+    currentCard = card;
+
     kana.textContent   = card.k;
     romaji.textContent = card.r;
     romaji.classList.add("hidden");
+    ansWrap.classList.add("hidden");      // hide grading buttons
+
     player.src = `audio/${card.r}.mp3`;
   }
 
-  function reveal() {
-    if (revealed || !current) return;
+  function revealCard() {
+    if (revealed || !currentCard) return;
     revealed = true;
 
     player.currentTime = 0;
@@ -163,6 +226,7 @@
 
     timerId = setTimeout(() => {
       romaji.classList.remove("hidden");
+      ansWrap.classList.remove("hidden"); // show grading buttons
       timerId = null;
     }, 1000);
   }
@@ -172,22 +236,46 @@
     cb.addEventListener("change", () => {
       const wasEmpty = !pool.length;
       rebuildPool();
-      if (wasEmpty || !pool.includes(current)) display(randomCard());
+      if (wasEmpty || !pool.includes(currentCard)) showCard(getNextCard());
     });
   });
 
-  next.addEventListener("click", e => {
+  nextBtn.addEventListener("click", e => {
     e.stopPropagation();
-    if (pool.length) display(randomCard());
+    if (pool.length) showCard(getNextCard());
   });
 
-  stage.addEventListener("click", reveal);
+  stage.addEventListener("click", revealCard);
+
+  rightBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    if (!currentCard) return;
+    gradeCard(currentCard, true);
+    reviewCount++;
+    showCard(getNextCard());
+  });
+
+  wrongBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    if (!currentCard) return;
+    gradeCard(currentCard, false);
+    reviewCount++;
+    showCard(getNextCard());
+  });
+
   window.addEventListener("keydown", e => {
-    if (e.code === "Space") { e.preventDefault(); reveal(); }
+    if (e.code === "Space") {                // space = reveal
+      e.preventDefault();
+      revealCard();
+    } else if (e.code === "ArrowRight") {    // right = correct
+      if (revealed && !ansWrap.classList.contains("hidden")) rightBtn.click();
+    } else if (e.code === "ArrowLeft") {     // left = wrong
+      if (revealed && !ansWrap.classList.contains("hidden")) wrongBtn.click();
+    }
   });
 
   /* ------------- Init ------------- */
   rebuildPool();
-  display(randomCard());
+  showCard(getNextCard());
 })();
 
