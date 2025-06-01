@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div id="container">
+  <!-- ============ Flash-card stage ============ -->
   <main id="stage" tabindex="0">
     <div id="kana">あ</div>
     <div id="romaji" class="hidden">a</div>
@@ -13,7 +16,27 @@
     <audio id="player" preload="auto"></audio>
   </main>
 
-  <script src="app.js"></script>
+  <!-- ============== Legend pane =============== -->
+  <aside id="legend">
+    <h2>Legend</h2>
+    <p class="hint">✓ rows are used for random cards</p>
+
+    <table id="legend-table">
+      <colgroup>
+        <col style="width:26px">       <!-- checkbox -->
+        <col span="5" style="width:18%"> <!-- a-i-u-e-o -->
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th>
+        </tr>
+      </thead>
+      <tbody id="legend-body"></tbody>
+    </table>
+  </aside>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
 
