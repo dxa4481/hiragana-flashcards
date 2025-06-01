@@ -1,8 +1,16 @@
-/* Hiragana flash-card logic with selectable rows, legend, and SM-2 scheduling */
+/* Hiragana flash-cards with row selection, legend and SM-2 scheduling
+   ─────────────────────────────────────────────────────────────────────────
+   • Adds anti-determinism: each new due-date gets a ±1-cycle “jitter”.
+   • Shuffle is applied whenever ≥2 cards are simultaneously due.
+   • SM-2 intervals (1 → 6 → ≈interval×EF) remain exact.
+*/
 (() => {
   "use strict";
 
-  /* -------- Data grouped by sections & rows -------- */
+  /* ────────── CONFIG ────────── */
+  const JITTER_RANGE = 1;          // ±1 review-cycle noise
+
+  /* ────────── DATA ────────── */
   const SECTIONS = [
     {
       label: "Basic",
@@ -53,229 +61,159 @@
     }
   ];
 
-  /* Attach SM-2 scheduling fields to every card */
-  SECTIONS.forEach(sec =>
-    sec.rows.forEach(row =>
-      row.forEach(card => {
-        card.reps = 0;          // repetition count
-        card.interval = 0;      // interval in *reviews*
-        card.ef = 2.5;          // ease factor
-        card.due = 0;           // next review count (0 = now)
-      })
-    )
-  );
+  /* attach SM-2 fields */
+  SECTIONS.flatMap(sec => sec.rows.flat())
+          .forEach(c => Object.assign(c,{reps:0,interval:0,ef:2.5,due:0}));
 
-  /* map last vowel to table column (a-i-u-e-o) */
-  const VOWEL_COL = { a:0, i:1, u:2, e:3, o:4 };
+  /* vowel → column */
+  const VOWEL_COL = {a:0,i:1,u:2,e:3,o:4};
 
-  /* ------- Build legend table -------- */
+  /* ─── legend build ─── */
   const legendBody = document.getElementById("legend-body");
-  let rowIndex = 0;                  // global row index for check-box IDs
+  let globalIdx = 0;
 
-  SECTIONS.forEach(section => {
-    /* section label row */
-    const secTr = document.createElement("tr");
-    secTr.className = "section";
-    secTr.innerHTML = `<td colspan="6">${section.label}</td>`;
-    legendBody.appendChild(secTr);
+  SECTIONS.forEach(sec=>{
+    legendBody.insertAdjacentHTML("beforeend",
+      `<tr class="section"><td colspan="6">${sec.label}</td></tr>`);
 
-    /* data rows */
-    section.rows.forEach(row => {
-      const tr = document.createElement("tr");
-
-      /* checkbox cell */
-      const tdChk = document.createElement("td");
-      const cb    = document.createElement("input");
-      cb.type = "checkbox";
-      cb.className = "row-toggle";
-      cb.dataset.index = rowIndex;
-      if (rowIndex === 0) cb.checked = true;      // only vowels default on
-      tdChk.appendChild(cb);
-      tr.appendChild(tdChk);
-
-      /* prepare five placeholders */
-      const cols = new Array(5).fill(null);
-      row.forEach(item => {
-        const col = VOWEL_COL[item.r.slice(-1)] ?? 0;   // ん -> col 0 fallback
-        cols[col] = item;
+    sec.rows.forEach(row=>{
+      const rowId = globalIdx++;
+      const chk = `<td><input type="checkbox" class="row-toggle" data-index="${rowId}"${rowId===0?" checked":""}></td>`;
+      const cells = new Array(5).fill("");
+      row.forEach(item=>{
+        const col = VOWEL_COL[item.r.slice(-1)] ?? 0;
+        cells[col] = `<span class="kana">${item.k}</span><span class="roma">${item.r}</span>`;
       });
-
-      /* render cells */
-      cols.forEach(cell => {
-        const td = document.createElement("td");
-        if (cell) {
-          td.innerHTML =
-            `<span class="kana">${cell.k}</span>` +
-            `<span class="roma">${cell.r}</span>`;
-        }
-        tr.appendChild(td);
-      });
-
-      legendBody.appendChild(tr);
-      rowIndex++;
+      legendBody.insertAdjacentHTML("beforeend",
+        `<tr>${chk}${cells.map(td=>`<td>${td}</td>`).join("")}</tr>`);
     });
   });
 
-  /* ---------- Flash-card DOM refs ---------- */
-  const kana    = document.getElementById("kana");
-  const romaji  = document.getElementById("romaji");
-  const player  = document.getElementById("player");
-  const nextBtn = document.getElementById("next-btn");
-  const stage   = document.getElementById("stage");
+  /* ─── DOM refs ─── */
+  const kana     = document.getElementById("kana");
+  const romaji   = document.getElementById("romaji");
+  const player   = document.getElementById("player");
+  const nextBtn  = document.getElementById("next-btn");
+  const stage    = document.getElementById("stage");
+  const ans      = document.getElementById("answer-buttons");
+  const rightBtn = document.getElementById("right-btn");
+  const wrongBtn = document.getElementById("wrong-btn");
 
-  const ansWrap = document.getElementById("answer-buttons");
-  const rightBtn= document.getElementById("right-btn");
-  const wrongBtn= document.getElementById("wrong-btn");
+  /* ─── state ─── */
+  let pool   = [];
+  let cycle  = 0;      // increments per answer
+  let card   = null;
+  let shown  = false;  // revealed?
+  let delay  = null;
 
-  /* ---------- State ---------- */
-  let pool        = [];    // flattened active cards
-  let revealed    = false;
-  let timerId     = null;
-  let currentCard = null;
-  let reviewCount = 0;     // increments every time a card is graded
-
-  /* ---------------- SM-2 helpers ---------------- */
-  /** Update card scheduling based on whether the user was correct */
-  function gradeCard(card, correct) {
-    const quality = correct ? 5 : 2; // SM-2: >=3 = success
-
-    if (quality >= 3) {
-      if (card.reps === 0) {
-        card.interval = 1;
-      } else if (card.reps === 1) {
-        card.interval = 6;
-      } else {
-        card.interval = Math.round(card.interval * card.ef);
-      }
-      card.reps += 1;
-    } else {
-      card.reps = 0;
-      card.interval = 1;
-    }
-
-    // ease-factor adjustment
-    card.ef = card.ef + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
-    if (card.ef < 1.3) card.ef = 1.3;
-
-    card.due = reviewCount + card.interval;
-  }
-
-  /** Get a due card (if any) or the one with the earliest due */
-  function getNextCard() {
-    if (!pool.length) return null;
-
-    const dueCards = pool.filter(c => c.due <= reviewCount);
-    if (dueCards.length) {
-      return dueCards[Math.floor(Math.random() * dueCards.length)];
-    }
-
-    // nothing due yet: take the soonest-due card (still random if tie)
-    let soonest = pool[0];
-    pool.forEach(c => {
-      if (c.due < soonest.due) soonest = c;
-    });
-    return soonest;
-  }
-
-  /* rebuild pool from checked rows */
-  const rebuildPool = () => {
-    pool = [];
-    document.querySelectorAll(".row-toggle").forEach(cb => {
-      if (cb.checked) {
-        /* unravel row index back into section.rows[rowOffset] */
-        let idx = Number(cb.dataset.index);
-        outer: for (const sec of SECTIONS) {
-          for (const r of sec.rows) {
-            if (idx-- === 0) { pool.push(...r); break outer; }
-          }
-        }
-      }
-    });
-
-    if (!pool.length) {             // no selection
-      kana.textContent   = "☚ select rows";
-      romaji.textContent = "";
-      romaji.classList.add("hidden");
-      ansWrap.classList.add("hidden");
-      currentCard = null;
-    }
+  /* ─── util ─── */
+  const shuffle = a=>{
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    return a;
   };
 
-  /* ---------- Display helpers ---------- */
-  function showCard(card) {
-    if (!card) return;              // nothing selected
-    if (timerId) { clearTimeout(timerId); timerId = null; }
+  /* ─── SM-2 grade ─── */
+  function grade(c, correct){
+    const q = correct ? 5 : 2;                 // quality
+    if(q>=3){
+      c.interval = c.reps===0?1:c.reps===1?6:Math.round(c.interval*c.ef);
+      c.reps++;
+    }else{
+      c.reps=0; c.interval=1;
+    }
+    c.ef += 0.1 - (5-q)*(0.08+(5-q)*0.02);
+    if(c.ef<1.3) c.ef = 1.3;
 
-    revealed    = false;
-    currentCard = card;
+    const jitter = (Math.random()*2-1)*JITTER_RANGE;   // ±1
+    c.due = cycle + c.interval + jitter;
+  }
 
-    kana.textContent   = card.k;
-    romaji.textContent = card.r;
+  /* ─── next card selector ─── */
+  function nextCard(){
+    if(!pool.length) return null;
+    const dueNow = pool.filter(c=>c.due <= cycle+1e-9);
+    if(dueNow.length) return shuffle(dueNow)[0];
+
+    const soon = Math.min(...pool.map(c=>c.due));
+    return shuffle(pool.filter(c=>Math.abs(c.due-soon)<1e-9))[0];
+  }
+
+  /* ─── pool rebuild ─── */
+  function rebuild(){
+    pool=[];
+    document.querySelectorAll(".row-toggle").forEach(cb=>{
+      if(cb.checked){
+        let idx=+cb.dataset.index;
+        outer:for(const sec of SECTIONS)
+          for(const row of sec.rows)
+            if(idx--===0){ pool.push(...row); break outer; }
+      }
+    });
+    if(!pool.length){
+      kana.textContent="☚ select rows";
+      romaji.classList.add("hidden");
+      ans.classList.add("hidden");
+      card=null;
+    }
+  }
+
+  /* ─── render ─── */
+  function show(c){
+    if(!c) return;
+    if(delay){clearTimeout(delay);delay=null;}
+    card=c; shown=false;
+    kana.textContent=c.k;
+    romaji.textContent=c.r;
     romaji.classList.add("hidden");
-    ansWrap.classList.add("hidden");      // hide grading buttons
-
-    player.src = `audio/${card.r}.mp3`;
+    ans.classList.add("hidden");
+    player.src=`audio/${c.r}.mp3`;
   }
 
-  function revealCard() {
-    if (revealed || !currentCard) return;
-    revealed = true;
-
-    player.currentTime = 0;
-    player.play().catch(() => { /* gesture policy */ });
-
-    timerId = setTimeout(() => {
+  function reveal(){
+    if(shown||!card) return;
+    shown=true;
+    player.currentTime=0; player.play().catch(()=>{});
+    delay=setTimeout(()=>{
       romaji.classList.remove("hidden");
-      ansWrap.classList.remove("hidden"); // show grading buttons
-      timerId = null;
-    }, 1000);
+      ans.classList.remove("hidden");
+      delay=null;
+    },1000);
   }
 
-  /* ----------- Event wiring ----------- */
-  document.querySelectorAll(".row-toggle").forEach(cb => {
-    cb.addEventListener("change", () => {
-      const wasEmpty = !pool.length;
-      rebuildPool();
-      if (wasEmpty || !pool.includes(currentCard)) showCard(getNextCard());
+  /* ─── events ─── */
+  document.querySelectorAll(".row-toggle").forEach(cb=>{
+    cb.addEventListener("change",()=>{
+      const empty=!pool.length;
+      rebuild();
+      if(empty||!pool.includes(card)) show(nextCard());
     });
   });
 
-  nextBtn.addEventListener("click", e => {
+  nextBtn.addEventListener("click",e=>{
     e.stopPropagation();
-    if (pool.length) showCard(getNextCard());
+    if(pool.length) show(nextCard());
   });
+  stage.addEventListener("click",reveal);
 
-  stage.addEventListener("click", revealCard);
-
-  rightBtn.addEventListener("click", e => {
+  rightBtn.addEventListener("click",e=>{
     e.stopPropagation();
-    if (!currentCard) return;
-    gradeCard(currentCard, true);
-    reviewCount++;
-    showCard(getNextCard());
+    if(!card) return;
+    grade(card,true); cycle++; show(nextCard());
   });
-
-  wrongBtn.addEventListener("click", e => {
+  wrongBtn.addEventListener("click",e=>{
     e.stopPropagation();
-    if (!currentCard) return;
-    gradeCard(currentCard, false);
-    reviewCount++;
-    showCard(getNextCard());
+    if(!card) return;
+    grade(card,false); cycle++; show(nextCard());
   });
 
-  window.addEventListener("keydown", e => {
-    if (e.code === "Space") {                // space = reveal
-      e.preventDefault();
-      revealCard();
-    } else if (e.code === "ArrowRight") {    // right = correct
-      if (revealed && !ansWrap.classList.contains("hidden")) rightBtn.click();
-    } else if (e.code === "ArrowLeft") {     // left = wrong
-      if (revealed && !ansWrap.classList.contains("hidden")) wrongBtn.click();
-    }
+  window.addEventListener("keydown",e=>{
+    if(e.code==="Space"){ e.preventDefault(); reveal(); }
+    else if(e.code==="ArrowRight" && shown) rightBtn.click();
+    else if(e.code==="ArrowLeft"  && shown) wrongBtn.click();
   });
 
-  /* ------------- Init ------------- */
-  rebuildPool();
-  showCard(getNextCard());
+  /* ─── init ─── */
+  rebuild();
+  show(nextCard());
 })();
 
