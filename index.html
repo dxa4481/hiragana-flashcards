@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hiragana Flash-Cards</title>
+  <title>Hiragana Flashcards</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- ===== Site title (fixed, top-left) ===== -->
+<header id="site-title"><h1>Hiragana&nbsp;Flashcards</h1></header>
 
 <div id="container">
   <!-- ============ Flash-card stage ============ -->
@@ -18,13 +21,10 @@
 
   <!-- ============== Legend pane =============== -->
   <aside id="legend">
-    <h2>Legend</h2>
-    <p class="hint">✓ rows are used for random cards</p>
-
     <table id="legend-table">
       <colgroup>
-        <col style="width:26px">       <!-- checkbox -->
-        <col span="5" style="width:18%"> <!-- a-i-u-e-o -->
+        <col style="width:26px">
+        <col span="5" style="width:18%">
       </colgroup>
       <thead>
         <tr class="header">
