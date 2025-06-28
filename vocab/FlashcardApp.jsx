@@ -95,7 +95,7 @@ function FlashcardApp() {
   const playAudio = () => {
     if (!current) return;
     const audioPath = `public/audio/${current.audio}`; // relative to current dir, works under sub‑folders
-    new Howl({ src: [audioPath] }).play();
+    new Howl({ src: [audioPath], html5: true }).play();
   };
 
   // ---------------------- grading -----------------------------------------
