@@ -86,7 +86,6 @@
       if (!current) return;
       setCards(prev => prev.map(c => c.id===current.id? { ...c, repetitions:c.repetitions+(isRight?1:0) }:c));
       setStats(s => ({ ...s, [isRight?'right':'wrong']: s[isRight?'right':'wrong']+1 }));
-      pickNext();
     };
 
     // --------------- counts & arrays ----------------
