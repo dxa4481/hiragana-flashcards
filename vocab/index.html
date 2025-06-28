@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Japanese Flashcards</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Tailwind (utility classes used in the JSX) -->
+  <title>Japanese Vocabulary Flashcards</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>body{background:#f3f4f6}</style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="flex items-center justify-center min-h-screen">
   <div id="root"></div>
 
-  <!-- React + dayjs + howler (UMD builds, so no bundler needed) -->
+  <!-- UMD libraries -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="https://unpkg.com/howler/dist/howler.core.min.js"></script>
-
-  <!-- Babel in-browser compiler so we can load JSX directly -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Your component (served as plain text, compiled on the fly) -->
-  <script type="text/babel" src="./FlashcardApp.jsx" data-presets="react"></script>
-
-  <!-- Kick-start the app -->
-  <script type="text/babel">
-    ReactDOM.createRoot(document.getElementById("root")).render(<FlashcardApp />);
-  </script>
+  <!-- App scripts (App.jsx now self‑mounts) -->
+  <script type="text/babel" src="./sm2.js"></script>
+  <script type="text/babel" src="./useFlashcards.js"></script>
+  <script type="text/babel" src="./Scoreboard.jsx" data-presets="react"></script>
+  <script type="text/babel" src="./FlashcardCard.jsx" data-presets="react"></script>
+  <script type="text/babel" src="./App.jsx" data-presets="react"></script>
 </body>
 </html>
 
