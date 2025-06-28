@@ -1,0 +1,9824 @@
+[
+  {
+    "id": 1,
+    "kana": "だ",
+    "romaji": "da",
+    "english": "to be",
+    "pos": "verb",
+    "audio": "ta.mp3",
+    "type": "word"
+  },
+  {
+    "id": 2,
+    "kana": "する",
+    "romaji": "suru",
+    "english": "to do",
+    "pos": "verb",
+    "audio": "suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 3,
+    "kana": "です",
+    "romaji": "desu",
+    "english": "to be",
+    "pos": "verb",
+    "audio": "tesu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 4,
+    "kana": "いる",
+    "romaji": "iru",
+    "english": "to be",
+    "pos": "verb",
+    "audio": "iru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 5,
+    "kana": "わたし",
+    "kanji": "私",
+    "romaji": "watashi",
+    "english": "I",
+    "pos": "pronoun",
+    "audio": "watashi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 6,
+    "kana": "ある",
+    "romaji": "aru",
+    "english": "to be",
+    "pos": "verb",
+    "audio": "aru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 7,
+    "kana": "こと",
+    "romaji": "koto",
+    "english": "a thing",
+    "pos": "noun",
+    "audio": "koto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 8,
+    "kana": "なに",
+    "kanji": "何",
+    "romaji": "nani",
+    "english": "what",
+    "pos": "pronoun",
+    "audio": "nani.mp3",
+    "type": "word"
+  },
+  {
+    "id": 9,
+    "kana": "それ",
+    "romaji": "sore",
+    "english": "that",
+    "pos": "pronoun",
+    "audio": "sore.mp3",
+    "type": "word"
+  },
+  {
+    "id": 10,
+    "kana": "なる",
+    "romaji": "naru",
+    "english": "to become",
+    "pos": "verb",
+    "audio": "naru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 11,
+    "kana": "この",
+    "romaji": "kono",
+    "english": "this",
+    "pos": "adnominal",
+    "audio": "kono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 12,
+    "kana": "これ",
+    "romaji": "kore",
+    "english": "this one",
+    "pos": "pronoun",
+    "audio": "kore.mp3",
+    "type": "word"
+  },
+  {
+    "id": 13,
+    "kana": "そう",
+    "romaji": "sou",
+    "english": "so",
+    "pos": "adverb",
+    "audio": "sou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 14,
+    "kana": "いう",
+    "kanji": "言う",
+    "romaji": "iu",
+    "english": "to tell",
+    "pos": "verb",
+    "audio": "yan-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 15,
+    "kana": "かれ",
+    "kanji": "彼",
+    "romaji": "kare",
+    "english": "he",
+    "pos": "pronoun",
+    "audio": "kare.mp3",
+    "type": "word"
+  },
+  {
+    "id": 16,
+    "kana": "どう",
+    "romaji": "dou",
+    "english": "how",
+    "pos": "adverb",
+    "audio": "tou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 17,
+    "kana": "いい",
+    "romaji": "ii",
+    "english": "good",
+    "pos": "adjective",
+    "audio": "ii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 18,
+    "kana": "にん",
+    "kanji": "人",
+    "romaji": "hito",
+    "english": "a person",
+    "pos": "noun",
+    "audio": "hito.mp3",
+    "type": "word"
+  },
+  {
+    "id": 19,
+    "kana": "あなた",
+    "romaji": "anata",
+    "english": "you",
+    "pos": "pronoun",
+    "audio": "anata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 20,
+    "kana": "おれ",
+    "kanji": "俺",
+    "romaji": "ore",
+    "english": "I",
+    "pos": "pronoun",
+    "audio": "ore.mp3",
+    "type": "word"
+  },
+  {
+    "id": 21,
+    "kana": "その",
+    "romaji": "sono",
+    "english": "the",
+    "pos": "adnominal",
+    "audio": "sono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 22,
+    "kana": "くん",
+    "kanji": "君",
+    "romaji": "kimi",
+    "english": "you",
+    "pos": "pronoun",
+    "audio": "kimi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 23,
+    "kana": "やる",
+    "romaji": "yaru",
+    "english": "to do",
+    "pos": "verb",
+    "audio": "yaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 24,
+    "kana": "みる",
+    "kanji": "見る",
+    "romaji": "miru",
+    "english": "to look",
+    "pos": "verb",
+    "audio": "jian-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 25,
+    "kana": "いく",
+    "kanji": "行く",
+    "romaji": "iku",
+    "english": "to go",
+    "pos": "verb",
+    "audio": "xing-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 26,
+    "kana": "いう",
+    "romaji": "iu",
+    "english": "to say",
+    "pos": "verb",
+    "audio": "iu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 27,
+    "kana": "くれる",
+    "romaji": "kureru",
+    "english": "to give",
+    "pos": "verb",
+    "audio": "kureru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 28,
+    "kana": "できる",
+    "romaji": "dekiru",
+    "english": "can",
+    "pos": "verb",
+    "audio": "tekiru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 29,
+    "kana": "ここ",
+    "romaji": "koko",
+    "english": "here",
+    "pos": "pronoun",
+    "audio": "koko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 30,
+    "kana": "おまえ",
+    "kanji": "お前",
+    "romaji": "omae",
+    "english": "you",
+    "pos": "pronoun",
+    "audio": "oqian.mp3",
+    "type": "word"
+  },
+  {
+    "id": 31,
+    "kana": "しる",
+    "kanji": "知る",
+    "romaji": "shiru",
+    "english": "to know",
+    "pos": "verb",
+    "audio": "zhi-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 32,
+    "kana": "くる",
+    "kanji": "来る",
+    "romaji": "kuru",
+    "english": "to come",
+    "pos": "verb",
+    "audio": "lai-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 33,
+    "kana": "もう",
+    "romaji": "mou",
+    "english": "already",
+    "pos": "adverb",
+    "audio": "mou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 34,
+    "kana": "だれ",
+    "kanji": "誰",
+    "romaji": "dare",
+    "english": "who",
+    "pos": "pronoun",
+    "audio": "dare.mp3",
+    "type": "word"
+  },
+  {
+    "id": 35,
+    "kana": "いま",
+    "kanji": "今",
+    "romaji": "ima",
+    "english": "now",
+    "pos": "noun",
+    "audio": "ima.mp3",
+    "type": "word"
+  },
+  {
+    "id": 36,
+    "kana": "もの",
+    "kanji": "者",
+    "romaji": "mono",
+    "english": "person",
+    "pos": "noun",
+    "audio": "mono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 37,
+    "kana": "けど",
+    "romaji": "kedo",
+    "english": "but",
+    "pos": "conjunction",
+    "audio": "keto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 38,
+    "kana": "かのじょ",
+    "kanji": "彼女",
+    "romaji": "kanojo",
+    "english": "she",
+    "pos": "pronoun",
+    "audio": "kanojo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 39,
+    "kana": "ぼく",
+    "kanji": "僕",
+    "romaji": "boku",
+    "english": "I",
+    "pos": "pronoun",
+    "audio": "boku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 40,
+    "kana": "あの",
+    "romaji": "ano",
+    "english": "that",
+    "pos": "adnominal",
+    "audio": "ano.mp3",
+    "type": "word"
+  },
+  {
+    "id": 41,
+    "kana": "わかる",
+    "kanji": "分かる",
+    "romaji": "wakaru",
+    "english": "to understand",
+    "pos": "verb",
+    "audio": "fen-karu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 42,
+    "kana": "ねん",
+    "kanji": "年",
+    "romaji": "toshi",
+    "english": "year",
+    "pos": "noun",
+    "audio": "toshi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 43,
+    "kana": "なか",
+    "kanji": "中",
+    "romaji": "naka",
+    "english": "the middle",
+    "pos": "noun",
+    "audio": "naka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 44,
+    "kana": "まえ",
+    "kanji": "前",
+    "romaji": "mae",
+    "english": "the front",
+    "pos": "noun",
+    "audio": "mae.mp3",
+    "type": "word"
+  },
+  {
+    "id": 45,
+    "kana": "とき",
+    "kanji": "時",
+    "romaji": "toki",
+    "english": "time",
+    "pos": "noun",
+    "audio": "toki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 46,
+    "kana": "きく",
+    "kanji": "聞く",
+    "romaji": "kiku",
+    "english": "to listen",
+    "pos": "verb",
+    "audio": "wen-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 47,
+    "kana": "じぶん",
+    "kanji": "自分",
+    "romaji": "jibun",
+    "english": "oneself",
+    "pos": "noun",
+    "audio": "jibun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 48,
+    "kana": "つく",
+    "romaji": "tsuku",
+    "english": "to arrive",
+    "pos": "verb",
+    "audio": "tuku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 49,
+    "kana": "もつ",
+    "kanji": "持つ",
+    "romaji": "motsu",
+    "english": "to have",
+    "pos": "verb",
+    "audio": "chi-tu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 50,
+    "kana": "どこ",
+    "romaji": "doko",
+    "english": "where",
+    "pos": "pronoun",
+    "audio": "toko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 51,
+    "kana": "そして",
+    "romaji": "soshite",
+    "english": "and",
+    "pos": "conjunction",
+    "audio": "sosite.mp3",
+    "type": "word"
+  },
+  {
+    "id": 52,
+    "kana": "はなし",
+    "kanji": "話",
+    "romaji": "hanashi",
+    "english": "a story, a speech",
+    "pos": "noun",
+    "audio": "hanashi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 53,
+    "kana": "そんな",
+    "romaji": "sonna",
+    "english": "that kind of thing",
+    "pos": "adjective",
+    "audio": "sonna.mp3",
+    "type": "word"
+  },
+  {
+    "id": 54,
+    "kana": "でる",
+    "kanji": "出る",
+    "romaji": "deru",
+    "english": "to go out, to leave",
+    "pos": "verb",
+    "audio": "chu-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 55,
+    "kana": "ひつよう",
+    "kanji": "必要",
+    "romaji": "hitsuyou",
+    "english": "necessary",
+    "pos": "adjective",
+    "audio": "hitsuyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 56,
+    "kana": "なん",
+    "romaji": "nan",
+    "english": "what",
+    "pos": "pronoun",
+    "audio": "nan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 57,
+    "kana": "はなす",
+    "kanji": "話す",
+    "romaji": "hanasu",
+    "english": "to talk",
+    "pos": "verb",
+    "audio": "hua-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 58,
+    "kana": "まつ",
+    "kanji": "待つ",
+    "romaji": "matsu",
+    "english": "to wait",
+    "pos": "verb",
+    "audio": "dai-tu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 59,
+    "kana": "だす",
+    "kanji": "出す",
+    "romaji": "dasu",
+    "english": "to put out, to issue",
+    "pos": "verb",
+    "audio": "chu-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 60,
+    "kana": "ほう",
+    "kanji": "方",
+    "romaji": "kata",
+    "english": "direction",
+    "pos": "noun",
+    "audio": "kata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 61,
+    "kana": "いち",
+    "kanji": "一",
+    "romaji": "ichi",
+    "english": "one",
+    "pos": "numeral",
+    "audio": "ichi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 62,
+    "kana": "かんがえる",
+    "kanji": "考える",
+    "romaji": "kangaeru",
+    "english": "to think",
+    "pos": "verb",
+    "audio": "kao-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 63,
+    "kana": "いえ",
+    "kanji": "家",
+    "romaji": "ie",
+    "english": "a house",
+    "pos": "noun",
+    "audio": "ie.mp3",
+    "type": "word"
+  },
+  {
+    "id": 64,
+    "kana": "しぬ",
+    "kanji": "死ぬ",
+    "romaji": "shinu",
+    "english": "to perish",
+    "pos": "verb",
+    "audio": "si-nu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 65,
+    "kana": "き",
+    "kanji": "気",
+    "romaji": "ki",
+    "english": "spirit, mood, air",
+    "pos": "noun",
+    "audio": "ki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 66,
+    "kana": "じかん",
+    "kanji": "時間",
+    "romaji": "jikan",
+    "english": "time",
+    "pos": "noun",
+    "audio": "jikan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 67,
+    "kana": "ちょっと",
+    "romaji": "chotto",
+    "english": "a little bit, somewhat",
+    "pos": "adverb",
+    "audio": "tiyotuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 68,
+    "kana": "ほんとう",
+    "kanji": "本当",
+    "romaji": "hontou",
+    "english": "truth",
+    "pos": "noun",
+    "audio": "hontou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 69,
+    "kana": "われわれ",
+    "kanji": "我々",
+    "romaji": "wareware",
+    "english": "we",
+    "pos": "pronoun",
+    "audio": "wareware.mp3",
+    "type": "word"
+  },
+  {
+    "id": 70,
+    "kana": "はい",
+    "romaji": "hai",
+    "english": "yes",
+    "pos": "interjection",
+    "audio": "hai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 71,
+    "kana": "まだ",
+    "romaji": "mada",
+    "english": "still",
+    "pos": "adverb",
+    "audio": "mata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 72,
+    "kana": "くださる",
+    "romaji": "kudasaru",
+    "english": "to give",
+    "pos": "verb",
+    "audio": "kutasaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 73,
+    "kana": "そこ",
+    "romaji": "soko",
+    "english": "there",
+    "pos": "pronoun",
+    "audio": "soko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 74,
+    "kana": "にち",
+    "kanji": "日",
+    "romaji": "hi",
+    "english": "a day",
+    "pos": "noun",
+    "audio": "hi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 75,
+    "kana": "せかい",
+    "kanji": "世界",
+    "romaji": "sekai",
+    "english": "world",
+    "pos": "noun",
+    "audio": "sekai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 76,
+    "kana": "よい",
+    "kanji": "良い",
+    "romaji": "yoi",
+    "english": "good",
+    "pos": "adjective",
+    "audio": "liang-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 77,
+    "kana": "みる",
+    "romaji": "miru",
+    "english": "to see",
+    "pos": "verb",
+    "audio": "miru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 78,
+    "kana": "なぜ",
+    "romaji": "naze",
+    "english": "why",
+    "pos": "adverb",
+    "audio": "nase.mp3",
+    "type": "word"
+  },
+  {
+    "id": 79,
+    "kana": "つかう",
+    "kanji": "使う",
+    "romaji": "tsukau",
+    "english": "to use",
+    "pos": "verb",
+    "audio": "shi-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 80,
+    "kana": "だいじょうぶ",
+    "kanji": "大丈夫",
+    "romaji": "daijoubu",
+    "english": "all right, okay",
+    "pos": "adjective",
+    "audio": "daijoubu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 81,
+    "kana": "のち",
+    "kanji": "後",
+    "romaji": "ato",
+    "english": "the rear",
+    "pos": "noun",
+    "audio": "ato.mp3",
+    "type": "word"
+  },
+  {
+    "id": 82,
+    "kana": "こんな",
+    "romaji": "konna",
+    "english": "like this",
+    "pos": "adjective",
+    "audio": "konna.mp3",
+    "type": "word"
+  },
+  {
+    "id": 83,
+    "kana": "おとこ",
+    "kanji": "男",
+    "romaji": "otoko",
+    "english": "a man",
+    "pos": "noun",
+    "audio": "otoko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 84,
+    "kana": "ほか",
+    "kanji": "他",
+    "romaji": "hoka",
+    "english": "another",
+    "pos": "noun",
+    "audio": "hoka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 85,
+    "kana": "て",
+    "kanji": "手",
+    "romaji": "te",
+    "english": "a hand",
+    "pos": "noun",
+    "audio": "te.mp3",
+    "type": "word"
+  },
+  {
+    "id": 86,
+    "kana": "しごと",
+    "kanji": "仕事",
+    "romaji": "shigoto",
+    "english": "a job, work",
+    "pos": "noun",
+    "audio": "shigoto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 87,
+    "kana": "もんだい",
+    "kanji": "問題",
+    "romaji": "mondai",
+    "english": "a problem",
+    "pos": "noun",
+    "audio": "mondai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 88,
+    "kana": "また",
+    "romaji": "mata",
+    "english": "also",
+    "pos": "conjunction",
+    "audio": "mata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 89,
+    "kana": "おなじ",
+    "kanji": "同じ",
+    "romaji": "onaji",
+    "english": "same",
+    "pos": "adjective",
+    "audio": "tong-si.mp3",
+    "type": "word"
+  },
+  {
+    "id": 90,
+    "kana": "いる",
+    "kanji": "入る",
+    "romaji": "hairu",
+    "english": "to enter",
+    "pos": "verb",
+    "audio": "ru-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 91,
+    "kana": "ちがう",
+    "kanji": "違う",
+    "romaji": "chigau",
+    "english": "to differ",
+    "pos": "verb",
+    "audio": "wei-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 92,
+    "kana": "いっしょ",
+    "kanji": "一緒",
+    "romaji": "issho",
+    "english": "a combination",
+    "pos": "noun",
+    "audio": "issho.mp3",
+    "type": "word"
+  },
+  {
+    "id": 93,
+    "kana": "あう",
+    "kanji": "会う",
+    "romaji": "au",
+    "english": "to meet",
+    "pos": "verb",
+    "audio": "hui-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 94,
+    "kana": "さま",
+    "kanji": "様",
+    "romaji": "youna",
+    "english": "appearance",
+    "pos": "noun",
+    "audio": "youna.mp3",
+    "type": "word"
+  },
+  {
+    "id": 95,
+    "kana": "つくる",
+    "kanji": "作る",
+    "romaji": "tsukuru",
+    "english": "to make",
+    "pos": "verb",
+    "audio": "zuo-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 96,
+    "kana": "みたい",
+    "romaji": "mitai",
+    "english": "to want to see",
+    "pos": "verb",
+    "audio": "mitai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 97,
+    "kana": "もどる",
+    "kanji": "戻る",
+    "romaji": "modoru",
+    "english": "to return",
+    "pos": "verb",
+    "audio": "li-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 98,
+    "kana": "きょう",
+    "kanji": "今日",
+    "romaji": "kyou",
+    "english": "today",
+    "pos": "noun",
+    "audio": "kyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 99,
+    "kana": "わるい",
+    "kanji": "悪い",
+    "romaji": "warui",
+    "english": "bad",
+    "pos": "adjective",
+    "audio": "e-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 100,
+    "kana": "みつける",
+    "kanji": "見つける",
+    "romaji": "mitsukeru",
+    "english": "to find",
+    "pos": "verb",
+    "audio": "jian-tukeru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 101,
+    "kana": "こ",
+    "kanji": "子",
+    "romaji": "ko",
+    "english": "a child",
+    "pos": "noun",
+    "audio": "ko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 102,
+    "kana": "あんた",
+    "romaji": "anta",
+    "english": "you",
+    "pos": "pronoun",
+    "audio": "anta.mp3",
+    "type": "word"
+  },
+  {
+    "id": 103,
+    "kana": "みんな",
+    "romaji": "minna",
+    "english": "everyone",
+    "pos": "noun",
+    "audio": "minna.mp3",
+    "type": "word"
+  },
+  {
+    "id": 104,
+    "kana": "すぐ",
+    "romaji": "sugu",
+    "english": "immediately, soon",
+    "pos": "adverb",
+    "audio": "suku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 105,
+    "kana": "でんわ",
+    "kanji": "電話",
+    "romaji": "denwa",
+    "english": "a telephone",
+    "pos": "noun",
+    "audio": "denwa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 106,
+    "kana": "しかし",
+    "romaji": "shikashi",
+    "english": "but",
+    "pos": "conjunction",
+    "audio": "sikasi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 107,
+    "kana": "もし",
+    "romaji": "moshi",
+    "english": "if",
+    "pos": "adverb",
+    "audio": "mosi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 108,
+    "kana": "にんげん",
+    "kanji": "人間",
+    "romaji": "ningen",
+    "english": "human",
+    "pos": "noun",
+    "audio": "ningen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 109,
+    "kana": "ばしょ",
+    "kanji": "場所",
+    "romaji": "basho",
+    "english": "a place",
+    "pos": "noun",
+    "audio": "basho.mp3",
+    "type": "word"
+  },
+  {
+    "id": 110,
+    "kana": "なさる",
+    "romaji": "nasaru",
+    "english": "to do",
+    "pos": "verb",
+    "audio": "nasaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 111,
+    "kana": "ところ",
+    "kanji": "所",
+    "romaji": "tokoro",
+    "english": "a place",
+    "pos": "noun",
+    "audio": "tokoro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 112,
+    "kana": "こども",
+    "kanji": "子供",
+    "romaji": "kodomo",
+    "english": "child",
+    "pos": "noun",
+    "audio": "kodomo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 113,
+    "kana": "ちから",
+    "kanji": "力",
+    "romaji": "chikara",
+    "english": "power",
+    "pos": "noun",
+    "audio": "chikara.mp3",
+    "type": "word"
+  },
+  {
+    "id": 114,
+    "kana": "うえ",
+    "kanji": "上",
+    "romaji": "ue",
+    "english": "the top",
+    "pos": "noun",
+    "audio": "ue.mp3",
+    "type": "word"
+  },
+  {
+    "id": 115,
+    "kana": "ない",
+    "kanji": "無い",
+    "romaji": "nai",
+    "english": "nonexistent",
+    "pos": "adjective",
+    "audio": "wu-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 116,
+    "kana": "こう",
+    "romaji": "kou",
+    "english": "like this",
+    "pos": "adverb",
+    "audio": "kou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 117,
+    "kana": "よぶ",
+    "kanji": "呼ぶ",
+    "romaji": "yobu",
+    "english": "to call",
+    "pos": "verb",
+    "audio": "hu-hu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 118,
+    "kana": "しまう",
+    "romaji": "shimau",
+    "english": "to put away",
+    "pos": "verb",
+    "audio": "simau.mp3",
+    "type": "word"
+  },
+  {
+    "id": 119,
+    "kana": "ところ",
+    "romaji": "tokoro",
+    "english": "a place",
+    "pos": "noun",
+    "audio": "tokoro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 120,
+    "kana": "かえる",
+    "kanji": "帰る",
+    "romaji": "kaeru",
+    "english": "to go home",
+    "pos": "verb",
+    "audio": "gui-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 121,
+    "kana": "みえる",
+    "kanji": "見える",
+    "romaji": "mieru",
+    "english": "to appear",
+    "pos": "verb",
+    "audio": "jian-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 122,
+    "kana": "いれる",
+    "kanji": "入れる",
+    "romaji": "ireru",
+    "english": "to put in",
+    "pos": "verb",
+    "audio": "ru-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 123,
+    "kana": "うける",
+    "kanji": "受ける",
+    "romaji": "ukeru",
+    "english": "to receive",
+    "pos": "verb",
+    "audio": "shou-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 124,
+    "kana": "ただ",
+    "romaji": "tada",
+    "english": "only, just",
+    "pos": "adverb",
+    "audio": "tata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 125,
+    "kana": "いきる",
+    "kanji": "生きる",
+    "romaji": "ikiru",
+    "english": "to live",
+    "pos": "verb",
+    "audio": "sheng-kiru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 126,
+    "kana": "あれ",
+    "romaji": "are",
+    "english": "that",
+    "pos": "pronoun",
+    "audio": "are.mp3",
+    "type": "word"
+  },
+  {
+    "id": 127,
+    "kana": "よく",
+    "romaji": "yoku",
+    "english": "often",
+    "pos": "adverb",
+    "audio": "yoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 128,
+    "kana": "きん",
+    "kanji": "金",
+    "romaji": "kane",
+    "english": "money",
+    "pos": "noun",
+    "audio": "kane.mp3",
+    "type": "word"
+  },
+  {
+    "id": 129,
+    "kana": "わけ",
+    "romaji": "wake",
+    "english": "a reason",
+    "pos": "noun",
+    "audio": "wake.mp3",
+    "type": "word"
+  },
+  {
+    "id": 130,
+    "kana": "すき",
+    "kanji": "好き",
+    "romaji": "suki",
+    "english": "favorite, liked",
+    "pos": "adjective",
+    "audio": "hao-ki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 131,
+    "kana": "すこし",
+    "kanji": "少し",
+    "romaji": "sukoshi",
+    "english": "a bit",
+    "pos": "adverb",
+    "audio": "shao-si.mp3",
+    "type": "word"
+  },
+  {
+    "id": 132,
+    "kana": "すべて",
+    "kanji": "全て",
+    "romaji": "subete",
+    "english": "everything, all",
+    "pos": "noun",
+    "audio": "quan-te.mp3",
+    "type": "word"
+  },
+  {
+    "id": 133,
+    "kana": "せい",
+    "kanji": "性",
+    "romaji": "sei",
+    "english": "gender",
+    "pos": "noun",
+    "audio": "sei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 134,
+    "kana": "くるま",
+    "kanji": "車",
+    "romaji": "kuruma",
+    "english": "a car",
+    "pos": "noun",
+    "audio": "kuruma.mp3",
+    "type": "word"
+  },
+  {
+    "id": 135,
+    "kana": "せんせい",
+    "kanji": "先生",
+    "romaji": "sensei",
+    "english": "teacher",
+    "pos": "noun",
+    "audio": "sensei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 136,
+    "kana": "でる",
+    "romaji": "deru",
+    "english": "to appear",
+    "pos": "verb",
+    "audio": "teru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 137,
+    "kana": "こむ",
+    "kanji": "込む",
+    "romaji": "komu",
+    "english": "to enter",
+    "pos": "verb",
+    "audio": "ip-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 138,
+    "kana": "つぎ",
+    "kanji": "次",
+    "romaji": "tsugi",
+    "english": "next",
+    "pos": "noun",
+    "audio": "tsugi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 139,
+    "kana": "すむ",
+    "romaji": "sumu",
+    "english": "to finish",
+    "pos": "verb",
+    "audio": "sumu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 140,
+    "kana": "もっと",
+    "romaji": "motto",
+    "english": "more",
+    "pos": "adverb",
+    "audio": "motuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 141,
+    "kana": "はやい",
+    "kanji": "早い",
+    "romaji": "hayai",
+    "english": "early",
+    "pos": "adjective",
+    "audio": "zao-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 142,
+    "kana": "ふん",
+    "kanji": "分",
+    "romaji": "bun",
+    "english": "minutes",
+    "pos": "noun",
+    "audio": "bun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 143,
+    "kana": "どんな",
+    "romaji": "donna",
+    "english": "what kind",
+    "pos": "adjective",
+    "audio": "tonna.mp3",
+    "type": "word"
+  },
+  {
+    "id": 144,
+    "kana": "もらう",
+    "romaji": "morau",
+    "english": "to get, to receive",
+    "pos": "verb",
+    "audio": "morau.mp3",
+    "type": "word"
+  },
+  {
+    "id": 145,
+    "kana": "とる",
+    "romaji": "toru",
+    "english": "to take",
+    "pos": "verb",
+    "audio": "toru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 146,
+    "kana": "しんずる",
+    "kanji": "信ずる",
+    "romaji": "shinjiru",
+    "english": "to believe, to trust",
+    "pos": "verb",
+    "audio": "xin-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 147,
+    "kana": "おしえる",
+    "kanji": "教える",
+    "romaji": "oshieru",
+    "english": "to teach",
+    "pos": "verb",
+    "audio": "jiao-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 148,
+    "kana": "かんけい",
+    "kanji": "関係",
+    "romaji": "kankei",
+    "english": "a relationship",
+    "pos": "noun",
+    "audio": "kankei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 149,
+    "kana": "かん",
+    "kanji": "間",
+    "romaji": "aida",
+    "english": "an interval",
+    "pos": "noun",
+    "audio": "aida.mp3",
+    "type": "word"
+  },
+  {
+    "id": 150,
+    "kana": "なまえ",
+    "kanji": "名前",
+    "romaji": "namae",
+    "english": "a name",
+    "pos": "noun",
+    "audio": "namae.mp3",
+    "type": "word"
+  },
+  {
+    "id": 151,
+    "kana": "かのう",
+    "kanji": "可能",
+    "romaji": "kanou",
+    "english": "possible",
+    "pos": "adjective",
+    "audio": "kanou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 152,
+    "kana": "いつ",
+    "romaji": "itsu",
+    "english": "when",
+    "pos": "pronoun",
+    "audio": "itu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 153,
+    "kana": "はじめる",
+    "kanji": "始める",
+    "romaji": "hajimeru",
+    "english": "to start",
+    "pos": "verb",
+    "audio": "shi-meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 154,
+    "kana": "とても",
+    "romaji": "totemo",
+    "english": "very",
+    "pos": "adverb",
+    "audio": "totemo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 155,
+    "kana": "いみ",
+    "kanji": "意味",
+    "romaji": "imi",
+    "english": "a meaning",
+    "pos": "noun",
+    "audio": "imi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 156,
+    "kana": "もの",
+    "kanji": "物",
+    "romaji": "mono",
+    "english": "a thing",
+    "pos": "noun",
+    "audio": "mono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 157,
+    "kana": "ひく",
+    "kanji": "引く",
+    "romaji": "hiku",
+    "english": "to pull",
+    "pos": "verb",
+    "audio": "yin-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 158,
+    "kana": "さがす",
+    "kanji": "探す",
+    "romaji": "sagasu",
+    "english": "to search",
+    "pos": "verb",
+    "audio": "tan-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 159,
+    "kana": "たすける",
+    "kanji": "助ける",
+    "romaji": "tasukeru",
+    "english": "to help",
+    "pos": "verb",
+    "audio": "zhu-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 160,
+    "kana": "おんな",
+    "kanji": "女",
+    "romaji": "onna",
+    "english": "a woman",
+    "pos": "noun",
+    "audio": "onna.mp3",
+    "type": "word"
+  },
+  {
+    "id": 161,
+    "kana": "ど",
+    "kanji": "度",
+    "romaji": "do",
+    "english": "whenever",
+    "pos": "noun",
+    "audio": "do.mp3",
+    "type": "word"
+  },
+  {
+    "id": 162,
+    "kana": "いつも",
+    "romaji": "itsumo",
+    "english": "usually",
+    "pos": "adverb",
+    "audio": "itumo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 163,
+    "kana": "たべる",
+    "kanji": "食べる",
+    "romaji": "taberu",
+    "english": "to eat",
+    "pos": "verb",
+    "audio": "shi-heru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 164,
+    "kana": "かず",
+    "kanji": "数",
+    "romaji": "kazu",
+    "english": "number",
+    "pos": "noun",
+    "audio": "kazu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 165,
+    "kana": "あたらしい",
+    "kanji": "新しい",
+    "romaji": "atarashii",
+    "english": "new",
+    "pos": "adjective",
+    "audio": "xin-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 166,
+    "kana": "かぞく",
+    "kanji": "家族",
+    "romaji": "kazoku",
+    "english": "a family",
+    "pos": "noun",
+    "audio": "kazoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 167,
+    "kana": "とうり",
+    "kanji": "通り",
+    "romaji": "tōri",
+    "english": "a street",
+    "pos": "noun",
+    "audio": "tong-ri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 168,
+    "kana": "さいご",
+    "kanji": "最後",
+    "romaji": "saigo",
+    "english": "last",
+    "pos": "noun",
+    "audio": "saigo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 169,
+    "kana": "じょせい",
+    "kanji": "女性",
+    "romaji": "josei",
+    "english": "woman",
+    "pos": "noun",
+    "audio": "josei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 170,
+    "kana": "jjhjh",
+    "kanji": "情報",
+    "romaji": "jōhō",
+    "english": "information",
+    "pos": "noun",
+    "audio": "joho.mp3",
+    "type": "word"
+  },
+  {
+    "id": 171,
+    "kana": "こころ",
+    "kanji": "心",
+    "romaji": "kokoro",
+    "english": "heart, mind",
+    "pos": "noun",
+    "audio": "kokoro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 172,
+    "kana": "やめる",
+    "kanji": "止める",
+    "romaji": "tomeru",
+    "english": "to stop",
+    "pos": "verb",
+    "audio": "zhi-meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 173,
+    "kana": "つれる",
+    "kanji": "連れる",
+    "romaji": "tureru",
+    "english": "to lead",
+    "pos": "verb",
+    "audio": "lian-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 174,
+    "kana": "しんぱいする",
+    "kanji": "心配する",
+    "romaji": "shinpai suru",
+    "english": "to worry",
+    "pos": "verb",
+    "audio": "xin-pei-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 175,
+    "kana": "あう",
+    "kanji": "合う",
+    "romaji": "au",
+    "english": "to fit, to match",
+    "pos": "verb",
+    "audio": "he-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 176,
+    "kana": "ひとびと",
+    "kanji": "人々",
+    "romaji": "hitobito",
+    "english": "people",
+    "pos": "noun",
+    "audio": "hitobito.mp3",
+    "type": "word"
+  },
+  {
+    "id": 177,
+    "kana": "にげる",
+    "kanji": "逃げる",
+    "romaji": "nigeru",
+    "english": "to escape",
+    "pos": "verb",
+    "audio": "tao-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 178,
+    "kana": "べつ",
+    "kanji": "別",
+    "romaji": "betsu",
+    "english": "another",
+    "pos": "adjective",
+    "audio": "betsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 179,
+    "kana": "われ",
+    "kanji": "我",
+    "romaji": "ware",
+    "english": "I",
+    "pos": "pronoun",
+    "audio": "ware.mp3",
+    "type": "word"
+  },
+  {
+    "id": 180,
+    "kana": "おきる",
+    "kanji": "起きる",
+    "romaji": "okiru",
+    "english": "to wake up, to get up",
+    "pos": "verb",
+    "audio": "qi-kiru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 181,
+    "kana": "おちる",
+    "kanji": "落ちる",
+    "romaji": "ochiru",
+    "english": "to fall",
+    "pos": "verb",
+    "audio": "luo-tiru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 182,
+    "kana": "たつ",
+    "kanji": "立つ",
+    "romaji": "tatsu",
+    "english": "to stand, to rise",
+    "pos": "verb",
+    "audio": "li-tu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 183,
+    "kana": "こっち",
+    "romaji": "kocchi",
+    "english": "here",
+    "pos": "pronoun",
+    "audio": "kotuti.mp3",
+    "type": "word"
+  },
+  {
+    "id": 184,
+    "kana": "hhhhh",
+    "kanji": "方法",
+    "romaji": "hōhō",
+    "english": "method",
+    "pos": "noun",
+    "audio": "hoho.mp3",
+    "type": "word"
+  },
+  {
+    "id": 185,
+    "kana": "riyriy",
+    "kanji": "理由",
+    "romaji": "riyū",
+    "english": "a reason",
+    "pos": "noun",
+    "audio": "riyu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 186,
+    "kana": "みせる",
+    "kanji": "見せる",
+    "romaji": "miseru",
+    "english": "to show",
+    "pos": "verb",
+    "audio": "jian-seru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 187,
+    "kana": "おれ",
+    "romaji": "ore",
+    "english": "I, me",
+    "pos": "pronoun",
+    "audio": "ore.mp3",
+    "type": "word"
+  },
+  {
+    "id": 188,
+    "kana": "kenkykenky",
+    "kanji": "研究",
+    "romaji": "kenkyū",
+    "english": "a study",
+    "pos": "noun",
+    "audio": "kenkyu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 189,
+    "kana": "わすれる",
+    "kanji": "忘れる",
+    "romaji": "wasureru",
+    "english": "to forget",
+    "pos": "verb",
+    "audio": "wang-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 190,
+    "kana": "さいしょ",
+    "kanji": "最初",
+    "romaji": "saisho",
+    "english": "first",
+    "pos": "noun",
+    "audio": "saisho.mp3",
+    "type": "word"
+  },
+  {
+    "id": 191,
+    "kana": "まもる",
+    "kanji": "守る",
+    "romaji": "mamoru",
+    "english": "to protect",
+    "pos": "verb",
+    "audio": "shou-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 192,
+    "kana": "すごい",
+    "romaji": "sugoi",
+    "english": "amazing",
+    "pos": "adjective",
+    "audio": "sukoi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 193,
+    "kana": "ずっと",
+    "romaji": "zutto",
+    "english": "forever",
+    "pos": "adverb",
+    "audio": "sututo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 194,
+    "kana": "に",
+    "kanji": "二",
+    "romaji": "ni",
+    "english": "two",
+    "pos": "numeral",
+    "audio": "ni.mp3",
+    "type": "word"
+  },
+  {
+    "id": 195,
+    "kana": "じけん",
+    "kanji": "事件",
+    "romaji": "jiken",
+    "english": "event, incident",
+    "pos": "noun",
+    "audio": "jiken.mp3",
+    "type": "word"
+  },
+  {
+    "id": 196,
+    "kana": "たのむ",
+    "kanji": "頼む",
+    "romaji": "tanomu",
+    "english": "to ask, to request",
+    "pos": "verb",
+    "audio": "lai-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 197,
+    "kana": "ひとり",
+    "kanji": "一人",
+    "romaji": "hitori",
+    "english": "one person",
+    "pos": "noun",
+    "audio": "hitori.mp3",
+    "type": "word"
+  },
+  {
+    "id": 198,
+    "kana": "つづける",
+    "kanji": "続ける",
+    "romaji": "tsuzukeru",
+    "english": "to continue",
+    "pos": "verb",
+    "audio": "sok-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 199,
+    "kana": "つまり",
+    "romaji": "tsumari",
+    "english": "in other words",
+    "pos": "adverb",
+    "audio": "tumari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 200,
+    "kana": "からだ",
+    "kanji": "体",
+    "romaji": "karada",
+    "english": "body",
+    "pos": "noun",
+    "audio": "karada.mp3",
+    "type": "word"
+  },
+  {
+    "id": 201,
+    "kana": "けいさつ",
+    "kanji": "警察",
+    "romaji": "keisatsu",
+    "english": "police",
+    "pos": "noun",
+    "audio": "keisatsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 202,
+    "kana": "じんせい",
+    "kanji": "人生",
+    "romaji": "jinsei",
+    "english": "life",
+    "pos": "noun",
+    "audio": "jinsei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 203,
+    "kana": "くに",
+    "kanji": "国",
+    "romaji": "kuni",
+    "english": "a country",
+    "pos": "noun",
+    "audio": "kuni.mp3",
+    "type": "word"
+  },
+  {
+    "id": 204,
+    "kana": "かく",
+    "kanji": "書く",
+    "romaji": "kaku",
+    "english": "to write",
+    "pos": "verb",
+    "audio": "shu-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 205,
+    "kana": "あたま",
+    "kanji": "頭",
+    "romaji": "atama",
+    "english": "a head",
+    "pos": "noun",
+    "audio": "atama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 206,
+    "kana": "しゃしん",
+    "kanji": "写真",
+    "romaji": "shashin",
+    "english": "a photograph",
+    "pos": "noun",
+    "audio": "shashin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 207,
+    "kana": "かお",
+    "kanji": "顔",
+    "romaji": "kao",
+    "english": "a face, a reputation",
+    "pos": "noun",
+    "audio": "kao.mp3",
+    "type": "word"
+  },
+  {
+    "id": 208,
+    "kana": "える",
+    "kanji": "得る",
+    "romaji": "eru",
+    "english": "to obtain",
+    "pos": "verb",
+    "audio": "de-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 209,
+    "kana": "ぜんぶ",
+    "kanji": "全部",
+    "romaji": "zenbu",
+    "english": "all, totally",
+    "pos": "adverb",
+    "audio": "zenbu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 210,
+    "kana": "かわる",
+    "kanji": "変わる",
+    "romaji": "kawaru",
+    "english": "to change",
+    "pos": "verb",
+    "audio": "bian-waru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 211,
+    "kana": "まま",
+    "romaji": "mama",
+    "english": "Mama",
+    "pos": "noun",
+    "audio": "mama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 212,
+    "kana": "おわる",
+    "kanji": "終わる",
+    "romaji": "owaru",
+    "english": "to end",
+    "pos": "verb",
+    "audio": "zhong-waru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 213,
+    "kana": "あげる",
+    "kanji": "上げる",
+    "romaji": "ageru",
+    "english": "to increase",
+    "pos": "verb",
+    "audio": "shang-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 214,
+    "kana": "へや",
+    "kanji": "部屋",
+    "romaji": "heya",
+    "english": "room",
+    "pos": "noun",
+    "audio": "heya.mp3",
+    "type": "word"
+  },
+  {
+    "id": 215,
+    "kana": "おおく",
+    "kanji": "多く",
+    "romaji": "ooku",
+    "english": "many",
+    "pos": "noun",
+    "audio": "duo-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 216,
+    "kana": "おくる",
+    "kanji": "送る",
+    "romaji": "okuru",
+    "english": "to send",
+    "pos": "verb",
+    "audio": "song-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 217,
+    "kana": "つく",
+    "kanji": "着く",
+    "romaji": "tsuku",
+    "english": "to arrive",
+    "pos": "verb",
+    "audio": "zhao-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 218,
+    "kana": "むすめ",
+    "kanji": "娘",
+    "romaji": "musume",
+    "english": "daughter",
+    "pos": "noun",
+    "audio": "musume.mp3",
+    "type": "word"
+  },
+  {
+    "id": 219,
+    "kana": "さき",
+    "kanji": "先",
+    "romaji": "saki",
+    "english": "destination",
+    "pos": "noun",
+    "audio": "saki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 220,
+    "kana": "ほん",
+    "kanji": "本",
+    "romaji": "hon",
+    "english": "book",
+    "pos": "noun",
+    "audio": "hon.mp3",
+    "type": "word"
+  },
+  {
+    "id": 221,
+    "kana": "ちち",
+    "kanji": "父",
+    "romaji": "chichi",
+    "english": "father",
+    "pos": "noun",
+    "audio": "chichi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 222,
+    "kana": "りかいする",
+    "kanji": "理解する",
+    "romaji": "rikai suru",
+    "english": "to understand",
+    "pos": "verb",
+    "audio": "li-jie-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 223,
+    "kana": "きる",
+    "kanji": "切る",
+    "romaji": "kiru",
+    "english": "to cut",
+    "pos": "verb",
+    "audio": "qie-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 224,
+    "kana": "あいつ",
+    "romaji": "aitsu",
+    "english": "that person",
+    "pos": "pronoun",
+    "audio": "aitu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 225,
+    "kana": "おぼえる",
+    "kanji": "覚える",
+    "romaji": "oboeru",
+    "english": "to remember, to memorize",
+    "pos": "verb",
+    "audio": "jue-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 226,
+    "kana": "むすこ",
+    "kanji": "息子",
+    "romaji": "musuko",
+    "english": "son",
+    "pos": "noun",
+    "audio": "musuko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 227,
+    "kana": "けっこんする",
+    "kanji": "結婚する",
+    "romaji": "kekkon suru",
+    "english": "to get married",
+    "pos": "verb",
+    "audio": "jie-hun-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 228,
+    "kana": "まま",
+    "romaji": "mama",
+    "english": "mom",
+    "pos": "noun",
+    "audio": "mama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 229,
+    "kana": "よし",
+    "romaji": "yoshi",
+    "english": "okay",
+    "pos": "noun",
+    "audio": "yosi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 230,
+    "kana": "のむ",
+    "kanji": "飲む",
+    "romaji": "nomu",
+    "english": "to drink",
+    "pos": "verb",
+    "audio": "yin-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 231,
+    "kana": "かいしゃ",
+    "kanji": "会社",
+    "romaji": "kaisha",
+    "english": "company",
+    "pos": "noun",
+    "audio": "kaisha.mp3",
+    "type": "word"
+  },
+  {
+    "id": 232,
+    "kana": "じっさい",
+    "kanji": "実際",
+    "romaji": "jissai",
+    "english": "actual",
+    "pos": "noun",
+    "audio": "jissai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 233,
+    "kana": "かん",
+    "kanji": "官",
+    "romaji": "kan",
+    "english": "government",
+    "pos": "noun",
+    "audio": "kan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 234,
+    "kana": "こちら",
+    "romaji": "kochira",
+    "english": "here",
+    "pos": "pronoun",
+    "audio": "kotira.mp3",
+    "type": "word"
+  },
+  {
+    "id": 235,
+    "kana": "ともだち",
+    "kanji": "友達",
+    "romaji": "tomodachi",
+    "english": "friend",
+    "pos": "noun",
+    "audio": "tomodachi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 236,
+    "kana": "ばか",
+    "romaji": "baka",
+    "english": "fool",
+    "pos": "noun",
+    "audio": "haka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 237,
+    "kana": "ぱぱ",
+    "romaji": "papa",
+    "english": "daddy",
+    "pos": "noun",
+    "audio": "haha.mp3",
+    "type": "word"
+  },
+  {
+    "id": 238,
+    "kana": "かえる",
+    "kanji": "変える",
+    "romaji": "kaeru",
+    "english": "to change",
+    "pos": "verb",
+    "audio": "bian-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 239,
+    "kana": "ねがう",
+    "kanji": "願う",
+    "romaji": "negau",
+    "english": "to wish",
+    "pos": "verb",
+    "audio": "yuan-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 240,
+    "kana": "しらべる",
+    "kanji": "調べる",
+    "romaji": "shiraberu",
+    "english": "to investigate",
+    "pos": "verb",
+    "audio": "diao-heru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 241,
+    "kana": "がっこう",
+    "kanji": "学校",
+    "romaji": "gakkou",
+    "english": "school",
+    "pos": "noun",
+    "audio": "gakkou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 242,
+    "kana": "じゅうよう",
+    "kanji": "重要",
+    "romaji": "juyou",
+    "english": "important",
+    "pos": "adjective",
+    "audio": "juyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 243,
+    "kana": "おう",
+    "kanji": "追う",
+    "romaji": "ou",
+    "english": "to pursue",
+    "pos": "verb",
+    "audio": "zhui-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 244,
+    "kana": "そうさ",
+    "kanji": "捜査",
+    "romaji": "sousa",
+    "english": "investigation",
+    "pos": "noun",
+    "audio": "sousa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 245,
+    "kana": "した",
+    "kanji": "下",
+    "romaji": "shita",
+    "english": "under",
+    "pos": "noun",
+    "audio": "shita.mp3",
+    "type": "word"
+  },
+  {
+    "id": 246,
+    "kana": "どういう",
+    "romaji": "dou iu",
+    "english": "what kind of",
+    "pos": "adnominal",
+    "audio": "touiu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 247,
+    "kana": "これ",
+    "kanji": "是",
+    "romaji": "kore",
+    "english": "right",
+    "pos": "noun",
+    "audio": "kore.mp3",
+    "type": "word"
+  },
+  {
+    "id": 248,
+    "kana": "あと",
+    "romaji": "ato",
+    "english": "after",
+    "pos": "noun",
+    "audio": "ato.mp3",
+    "type": "word"
+  },
+  {
+    "id": 249,
+    "kana": "のる",
+    "kanji": "乗る",
+    "romaji": "noru",
+    "english": "to get on",
+    "pos": "verb",
+    "audio": "cheng-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 250,
+    "kana": "そと",
+    "kanji": "外",
+    "romaji": "soto",
+    "english": "outside",
+    "pos": "noun",
+    "audio": "soto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 251,
+    "kana": "くらい",
+    "romaji": "kurai",
+    "english": "about",
+    "pos": "adverb",
+    "audio": "kurai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 252,
+    "kana": "かかる",
+    "romaji": "kakaru",
+    "english": "to require",
+    "pos": "verb",
+    "audio": "kakaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 253,
+    "kana": "あいする",
+    "kanji": "愛する",
+    "romaji": "aisuru",
+    "english": "to love",
+    "pos": "verb",
+    "audio": "ai-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 254,
+    "kana": "どる",
+    "romaji": "doru",
+    "english": "dollar",
+    "pos": "noun",
+    "audio": "toru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 255,
+    "kana": "じゅんび",
+    "kanji": "準備",
+    "romaji": "junbi",
+    "english": "preparation",
+    "pos": "noun",
+    "audio": "junbi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 256,
+    "kana": "かう",
+    "kanji": "買う",
+    "romaji": "kau",
+    "english": "to buy",
+    "pos": "verb",
+    "audio": "mai-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 257,
+    "kana": "くださる",
+    "kanji": "下さる",
+    "romaji": "kudasaru",
+    "english": "give it to me",
+    "pos": "verb",
+    "audio": "xia-saru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 258,
+    "kana": "ことば",
+    "kanji": "言葉",
+    "romaji": "kotoba",
+    "english": "words",
+    "pos": "noun",
+    "audio": "kotoba.mp3",
+    "type": "word"
+  },
+  {
+    "id": 259,
+    "kana": "かい",
+    "kanji": "回",
+    "romaji": "kai",
+    "english": "times",
+    "pos": "noun",
+    "audio": "kai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 260,
+    "kana": "なに",
+    "romaji": "nani",
+    "english": "what",
+    "pos": "pronoun",
+    "audio": "nani.mp3",
+    "type": "word"
+  },
+  {
+    "id": 261,
+    "kana": "ねがい",
+    "kanji": "願い",
+    "romaji": "negai",
+    "english": "wish",
+    "pos": "noun",
+    "audio": "yuan-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 262,
+    "kana": "むり",
+    "kanji": "無理",
+    "romaji": "muri",
+    "english": "impossible",
+    "pos": "adjective",
+    "audio": "muri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 263,
+    "kana": "おこる",
+    "kanji": "起こる",
+    "romaji": "okoru",
+    "english": "to happen",
+    "pos": "verb",
+    "audio": "qi-koru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 264,
+    "kana": "つよい",
+    "kanji": "強い",
+    "romaji": "tsuyoi",
+    "english": "strong",
+    "pos": "adjective",
+    "audio": "qiang-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 265,
+    "kana": "やくそくする",
+    "kanji": "約束する",
+    "romaji": "yakusoku suru",
+    "english": "to promise",
+    "pos": "verb",
+    "audio": "yue-shu-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 266,
+    "kana": "たしか",
+    "kanji": "確か",
+    "romaji": "tashika",
+    "english": "certain",
+    "pos": "adjective",
+    "audio": "que-ka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 267,
+    "kana": "れんらく",
+    "kanji": "連絡",
+    "romaji": "renraku",
+    "english": "contact",
+    "pos": "noun",
+    "audio": "renraku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 268,
+    "kana": "はたらく",
+    "kanji": "働く",
+    "romaji": "hataraku",
+    "english": "to work",
+    "pos": "verb",
+    "audio": "dong-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 269,
+    "kana": "おおきな",
+    "kanji": "大きな",
+    "romaji": "ookina",
+    "english": "big",
+    "pos": "adnominal",
+    "audio": "da-kina.mp3",
+    "type": "word"
+  },
+  {
+    "id": 270,
+    "kana": "すばらしい",
+    "kanji": "素晴らしい",
+    "romaji": "subarashii",
+    "english": "wonderful",
+    "pos": "adjective",
+    "audio": "su-qing-rasii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 271,
+    "kana": "いちど",
+    "kanji": "一度",
+    "romaji": "ichido",
+    "english": "one time",
+    "pos": "noun",
+    "audio": "ichido.mp3",
+    "type": "word"
+  },
+  {
+    "id": 272,
+    "kana": "あいて",
+    "kanji": "相手",
+    "romaji": "aite",
+    "english": "partner",
+    "pos": "noun",
+    "audio": "aite.mp3",
+    "type": "word"
+  },
+  {
+    "id": 273,
+    "kana": "ゆめ",
+    "kanji": "夢",
+    "romaji": "yume",
+    "english": "dream, aspiration",
+    "pos": "noun",
+    "audio": "yume.mp3",
+    "type": "word"
+  },
+  {
+    "id": 274,
+    "kana": "あんぜん",
+    "kanji": "安全",
+    "romaji": "anzen",
+    "english": "safety",
+    "pos": "adjective",
+    "audio": "anzen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 275,
+    "kana": "あした",
+    "kanji": "明日",
+    "romaji": "ashita",
+    "english": "tomorrow",
+    "pos": "noun",
+    "audio": "ashita.mp3",
+    "type": "word"
+  },
+  {
+    "id": 276,
+    "kana": "きけん",
+    "kanji": "危険",
+    "romaji": "kiken",
+    "english": "danger",
+    "pos": "adjective",
+    "audio": "kiken.mp3",
+    "type": "word"
+  },
+  {
+    "id": 277,
+    "kana": "やつ",
+    "romaji": "yatsu",
+    "english": "guy",
+    "pos": "noun",
+    "audio": "yatu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 278,
+    "kana": "うまい",
+    "romaji": "umai",
+    "english": "good",
+    "pos": "adjective",
+    "audio": "umai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 279,
+    "kana": "うしなう",
+    "kanji": "失う",
+    "romaji": "ushinau",
+    "english": "to lose",
+    "pos": "verb",
+    "audio": "shi-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 280,
+    "kana": "はんにん",
+    "kanji": "犯人",
+    "romaji": "hannin",
+    "english": "culprit",
+    "pos": "noun",
+    "audio": "hannin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 281,
+    "kana": "つたえる",
+    "kanji": "伝える",
+    "romaji": "tsutaeru",
+    "english": "to tell",
+    "pos": "verb",
+    "audio": "chuan-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 282,
+    "kana": "おる",
+    "romaji": "oru",
+    "english": "is",
+    "pos": "verb",
+    "audio": "oru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 283,
+    "kana": "き",
+    "kanji": "機",
+    "romaji": "ki",
+    "english": "machine",
+    "pos": "noun",
+    "audio": "ki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 284,
+    "kana": "かえす",
+    "kanji": "返す",
+    "romaji": "kaesu",
+    "english": "to return",
+    "pos": "verb",
+    "audio": "fan-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 285,
+    "kana": "たのしい",
+    "kanji": "楽しい",
+    "romaji": "tanoshii",
+    "english": "fun",
+    "pos": "adjective",
+    "audio": "le-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 286,
+    "kana": "こいつ",
+    "romaji": "koitsu",
+    "english": "this guy",
+    "pos": "noun",
+    "audio": "koitu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 287,
+    "kana": "ぜったい",
+    "kanji": "絶対",
+    "romaji": "zettai",
+    "english": "absolute",
+    "pos": "noun",
+    "audio": "zettai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 288,
+    "kana": "どの",
+    "romaji": "dono",
+    "english": "which",
+    "pos": "adnominal",
+    "audio": "tono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 289,
+    "kana": "しつもん",
+    "kanji": "質問",
+    "romaji": "shitsumon",
+    "english": "question",
+    "pos": "noun",
+    "audio": "shitsumon.mp3",
+    "type": "word"
+  },
+  {
+    "id": 290,
+    "kana": "すぎる",
+    "romaji": "sugiru",
+    "english": "to exceed",
+    "pos": "verb",
+    "audio": "sukiru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 291,
+    "kana": "うごく",
+    "kanji": "動く",
+    "romaji": "ugoku",
+    "english": "to move",
+    "pos": "verb",
+    "audio": "dong-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 292,
+    "kana": "うそ",
+    "kanji": "嘘",
+    "romaji": "uso",
+    "english": "a lie",
+    "pos": "noun",
+    "audio": "uso.mp3",
+    "type": "word"
+  },
+  {
+    "id": 293,
+    "kana": "せつめいする",
+    "kanji": "説明する",
+    "romaji": "setsumei suru",
+    "english": "to explain",
+    "pos": "verb",
+    "audio": "shuo-ming-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 294,
+    "kana": "なかま",
+    "kanji": "仲間",
+    "romaji": "nakama",
+    "english": "fellow",
+    "pos": "noun",
+    "audio": "nakama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 295,
+    "kana": "おこなう",
+    "kanji": "行う",
+    "romaji": "okonau",
+    "english": "to conduct",
+    "pos": "verb",
+    "audio": "xing-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 296,
+    "kana": "こわい",
+    "kanji": "怖い",
+    "romaji": "kowai",
+    "english": "scared",
+    "pos": "adjective",
+    "audio": "bu-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 297,
+    "kana": "けっか",
+    "kanji": "結果",
+    "romaji": "kekka",
+    "english": "result",
+    "pos": "noun",
+    "audio": "kekka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 298,
+    "kana": "ぎじゅつ",
+    "kanji": "技術",
+    "romaji": "gijutsu",
+    "english": "technology",
+    "pos": "noun",
+    "audio": "gijutsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 299,
+    "kana": "よる",
+    "kanji": "夜",
+    "romaji": "yoru",
+    "english": "night",
+    "pos": "noun",
+    "audio": "yoru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 300,
+    "kana": "そんざい",
+    "kanji": "存在",
+    "romaji": "sonzai",
+    "english": "existence",
+    "pos": "noun",
+    "audio": "sonzai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 301,
+    "kana": "たいする",
+    "kanji": "対する",
+    "romaji": "tai suru",
+    "english": "to be against",
+    "pos": "verb",
+    "audio": "dui-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 302,
+    "kana": "まず",
+    "romaji": "mazu",
+    "english": "first",
+    "pos": "adverb",
+    "audio": "masu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 303,
+    "kana": "しつ",
+    "kanji": "室",
+    "romaji": "muro",
+    "english": "room",
+    "pos": "noun",
+    "audio": "muro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 304,
+    "kana": "かい",
+    "kanji": "会",
+    "romaji": "kai",
+    "english": "meeting",
+    "pos": "noun",
+    "audio": "kai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 305,
+    "kana": "がつ",
+    "kanji": "月",
+    "romaji": "tsuki",
+    "english": "month",
+    "pos": "noun",
+    "audio": "tsuki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 306,
+    "kana": "はじめて",
+    "kanji": "初めて",
+    "romaji": "hajimete",
+    "english": "first time",
+    "pos": "adverb",
+    "audio": "chu-mete.mp3",
+    "type": "word"
+  },
+  {
+    "id": 307,
+    "kana": "いのち",
+    "kanji": "命",
+    "romaji": "inochi",
+    "english": "life",
+    "pos": "noun",
+    "audio": "inochi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 308,
+    "kana": "さいこう",
+    "kanji": "最高",
+    "romaji": "saikou",
+    "english": "the best",
+    "pos": "noun",
+    "audio": "saikou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 309,
+    "kana": "おく",
+    "kanji": "置く",
+    "romaji": "oku",
+    "english": "to put",
+    "pos": "verb",
+    "audio": "zhi-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 310,
+    "kana": "のこる",
+    "kanji": "残る",
+    "romaji": "nokoru",
+    "english": "to remain",
+    "pos": "verb",
+    "audio": "can-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 311,
+    "kana": "みず",
+    "kanji": "水",
+    "romaji": "mizu",
+    "english": "water",
+    "pos": "noun",
+    "audio": "mizu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 312,
+    "kana": "ながい",
+    "kanji": "長い",
+    "romaji": "nagai",
+    "english": "long",
+    "pos": "adjective",
+    "audio": "chang-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 313,
+    "kana": "おおきい",
+    "kanji": "大きい",
+    "romaji": "ookii",
+    "english": "big",
+    "pos": "adjective",
+    "audio": "da-kii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 314,
+    "kana": "いちばん",
+    "kanji": "一番",
+    "romaji": "ichiban",
+    "english": "number one",
+    "pos": "adverb",
+    "audio": "ichiban.mp3",
+    "type": "word"
+  },
+  {
+    "id": 315,
+    "kana": "じょうきょう",
+    "kanji": "状況",
+    "romaji": "joukyou",
+    "english": "situation",
+    "pos": "noun",
+    "audio": "joukyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 316,
+    "kana": "どれ",
+    "romaji": "dore",
+    "english": "which one",
+    "pos": "pronoun",
+    "audio": "tore.mp3",
+    "type": "word"
+  },
+  {
+    "id": 317,
+    "kana": "たかい",
+    "kanji": "高い",
+    "romaji": "takai",
+    "english": "expensive",
+    "pos": "adjective",
+    "audio": "gao-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 318,
+    "kana": "けいかく",
+    "kanji": "計画",
+    "romaji": "keikaku",
+    "english": "plan",
+    "pos": "noun",
+    "audio": "keikaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 319,
+    "kana": "よむ",
+    "kanji": "読む",
+    "romaji": "yomu",
+    "english": "to read",
+    "pos": "verb",
+    "audio": "du-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 320,
+    "kana": "びょういん",
+    "kanji": "病院",
+    "romaji": "byouin",
+    "english": "hospital",
+    "pos": "noun",
+    "audio": "byouin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 321,
+    "kana": "ゆうじん",
+    "kanji": "友人",
+    "romaji": "yuujin",
+    "english": "friend",
+    "pos": "noun",
+    "audio": "yuujin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 322,
+    "kana": "がく",
+    "kanji": "学",
+    "romaji": "gaku",
+    "english": "studies",
+    "pos": "noun",
+    "audio": "gaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 323,
+    "kana": "かくにん",
+    "kanji": "確認",
+    "romaji": "kakunin",
+    "english": "confirmation",
+    "pos": "noun",
+    "audio": "kakunin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 324,
+    "kana": "むかう",
+    "kanji": "向かう",
+    "romaji": "mukau",
+    "english": "heading towards",
+    "pos": "verb",
+    "audio": "xiang-kau.mp3",
+    "type": "word"
+  },
+  {
+    "id": 325,
+    "kana": "ふたり",
+    "kanji": "二人",
+    "romaji": "futari",
+    "english": "two people, a couple",
+    "pos": "noun",
+    "audio": "futari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 326,
+    "kana": "きこえる",
+    "kanji": "聞こえる",
+    "romaji": "kikoeru",
+    "english": "to hear",
+    "pos": "verb",
+    "audio": "wen-koeru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 327,
+    "kana": "かがく",
+    "kanji": "科学",
+    "romaji": "kagaku",
+    "english": "science",
+    "pos": "noun",
+    "audio": "kagaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 328,
+    "kana": "こえ",
+    "kanji": "声",
+    "romaji": "koe",
+    "english": "voice",
+    "pos": "noun",
+    "audio": "koe.mp3",
+    "type": "word"
+  },
+  {
+    "id": 329,
+    "kana": "ぶ",
+    "kanji": "部",
+    "romaji": "bu",
+    "english": "department",
+    "pos": "noun",
+    "audio": "bu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 330,
+    "kana": "せいかつ",
+    "kanji": "生活",
+    "romaji": "seikatsu",
+    "english": "life",
+    "pos": "noun",
+    "audio": "seikatsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 331,
+    "kana": "よう",
+    "kanji": "用",
+    "romaji": "you",
+    "english": "for",
+    "pos": "noun",
+    "audio": "you.mp3",
+    "type": "word"
+  },
+  {
+    "id": 332,
+    "kana": "し",
+    "kanji": "死",
+    "romaji": "shi",
+    "english": "death",
+    "pos": "noun",
+    "audio": "shi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 333,
+    "kana": "かんたん",
+    "kanji": "簡単",
+    "romaji": "kantan",
+    "english": "easy",
+    "pos": "adjective",
+    "audio": "kantan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 334,
+    "kana": "ばあい",
+    "kanji": "場合",
+    "romaji": "baai",
+    "english": "case",
+    "pos": "noun",
+    "audio": "baai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 335,
+    "kana": "きょうみ",
+    "kanji": "興味",
+    "romaji": "kyoumi",
+    "english": "interest",
+    "pos": "noun",
+    "audio": "kyoumi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 336,
+    "kana": "こうどう",
+    "kanji": "行動",
+    "romaji": "koudou",
+    "english": "action",
+    "pos": "noun",
+    "audio": "koudou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 337,
+    "kana": "きっと",
+    "romaji": "kitto",
+    "english": "surely",
+    "pos": "adverb",
+    "audio": "kituto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 338,
+    "kana": "ぜんいん",
+    "kanji": "全員",
+    "romaji": "zen'in",
+    "english": "everyone",
+    "pos": "noun",
+    "audio": "zen-in.mp3",
+    "type": "word"
+  },
+  {
+    "id": 339,
+    "kana": "ほしい",
+    "romaji": "hoshii",
+    "english": "want",
+    "pos": "adjective",
+    "audio": "hosii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 340,
+    "kana": "ちゃんと",
+    "romaji": "chanto",
+    "english": "properly",
+    "pos": "adverb",
+    "audio": "tiyanto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 341,
+    "kana": "しゃかい",
+    "kanji": "社会",
+    "romaji": "shakai",
+    "english": "society",
+    "pos": "noun",
+    "audio": "shakai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 342,
+    "kana": "めい",
+    "kanji": "名",
+    "romaji": "na",
+    "english": "given name",
+    "pos": "noun",
+    "audio": "na.mp3",
+    "type": "word"
+  },
+  {
+    "id": 343,
+    "kana": "いえる",
+    "kanji": "言える",
+    "romaji": "ieru",
+    "english": "to be able to say",
+    "pos": "verb",
+    "audio": "yan-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 344,
+    "kana": "ちーむ",
+    "romaji": "chiimu",
+    "english": "team",
+    "pos": "noun",
+    "audio": "timu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 345,
+    "kana": "なま",
+    "kanji": "生",
+    "romaji": "nama",
+    "english": "living",
+    "pos": "noun",
+    "audio": "nama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 346,
+    "kana": "ばん",
+    "kanji": "番",
+    "romaji": "ban",
+    "english": "number",
+    "pos": "noun",
+    "audio": "ban.mp3",
+    "type": "word"
+  },
+  {
+    "id": 347,
+    "kana": "きめる",
+    "kanji": "決める",
+    "romaji": "kimeru",
+    "english": "to decide",
+    "pos": "verb",
+    "audio": "jue-meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 348,
+    "kana": "しすてむ",
+    "romaji": "shisutemu",
+    "english": "system",
+    "pos": "noun",
+    "audio": "sisutemu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 349,
+    "kana": "どうぞ",
+    "romaji": "douzo",
+    "english": "please",
+    "pos": "adverb",
+    "audio": "touso.mp3",
+    "type": "word"
+  },
+  {
+    "id": 350,
+    "kana": "ねる",
+    "kanji": "寝る",
+    "romaji": "neru",
+    "english": "to sleep",
+    "pos": "verb",
+    "audio": "qin-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 351,
+    "kana": "ふかい",
+    "kanji": "深い",
+    "romaji": "fukai",
+    "english": "deep",
+    "pos": "adjective",
+    "audio": "shen-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 352,
+    "kana": "ひじょう",
+    "kanji": "非常",
+    "romaji": "hijou",
+    "english": "emergency",
+    "pos": "adjective",
+    "audio": "hijou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 353,
+    "kana": "ひらける",
+    "kanji": "開ける",
+    "romaji": "akeru",
+    "english": "to open",
+    "pos": "verb",
+    "audio": "kai-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 354,
+    "kana": "みち",
+    "kanji": "道",
+    "romaji": "michi",
+    "english": "road",
+    "pos": "noun",
+    "audio": "michi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 355,
+    "kana": "さる",
+    "kanji": "去る",
+    "romaji": "saru",
+    "english": "to leave",
+    "pos": "verb",
+    "audio": "qu-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 356,
+    "kana": "ふね",
+    "kanji": "船",
+    "romaji": "fune",
+    "english": "ship",
+    "pos": "noun",
+    "audio": "fune.mp3",
+    "type": "word"
+  },
+  {
+    "id": 357,
+    "kana": "かんずる",
+    "kanji": "感ずる",
+    "romaji": "kanzuru",
+    "english": "to feel",
+    "pos": "verb",
+    "audio": "gan-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 358,
+    "kana": "ただしい",
+    "kanji": "正しい",
+    "romaji": "tadashii",
+    "english": "correct",
+    "pos": "adjective",
+    "audio": "zheng-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 359,
+    "kana": "てん",
+    "kanji": "点",
+    "romaji": "ten",
+    "english": "point",
+    "pos": "noun",
+    "audio": "ten.mp3",
+    "type": "word"
+  },
+  {
+    "id": 360,
+    "kana": "みつかる",
+    "kanji": "見つかる",
+    "romaji": "mitsukaru",
+    "english": "to found",
+    "pos": "verb",
+    "audio": "jian-tukaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 361,
+    "kana": "しょうこ",
+    "kanji": "証拠",
+    "romaji": "shouko",
+    "english": "evidence",
+    "pos": "noun",
+    "audio": "shouko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 362,
+    "kana": "はなれる",
+    "kanji": "離れる",
+    "romaji": "hanareru",
+    "english": "to leave",
+    "pos": "verb",
+    "audio": "li-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 363,
+    "kana": "じしん",
+    "kanji": "自身",
+    "romaji": "jishin",
+    "english": "himself",
+    "pos": "noun",
+    "audio": "jishin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 364,
+    "kana": "はっけん",
+    "kanji": "発見",
+    "romaji": "hakken",
+    "english": "discovery",
+    "pos": "noun",
+    "audio": "hakken.mp3",
+    "type": "word"
+  },
+  {
+    "id": 365,
+    "kana": "まちがい",
+    "kanji": "間違い",
+    "romaji": "machigai",
+    "english": "error",
+    "pos": "noun",
+    "audio": "jian-wei-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 366,
+    "kana": "ちょう",
+    "kanji": "長",
+    "romaji": "naga",
+    "english": "long",
+    "pos": "noun",
+    "audio": "naga.mp3",
+    "type": "word"
+  },
+  {
+    "id": 367,
+    "kana": "うちゅう",
+    "kanji": "宇宙",
+    "romaji": "uchuu",
+    "english": "universe",
+    "pos": "noun",
+    "audio": "uchuu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 368,
+    "kana": "かいけつ",
+    "kanji": "解決",
+    "romaji": "kaiketsu",
+    "english": "solution",
+    "pos": "noun",
+    "audio": "kaiketsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 369,
+    "kana": "おこす",
+    "kanji": "起こす",
+    "romaji": "okosu",
+    "english": "to wake up",
+    "pos": "verb",
+    "audio": "qi-kosu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 370,
+    "kana": "かんがえ",
+    "kanji": "考え",
+    "romaji": "kangae",
+    "english": "thought",
+    "pos": "noun",
+    "audio": "kao-e.mp3",
+    "type": "word"
+  },
+  {
+    "id": 371,
+    "kana": "とぶ",
+    "kanji": "飛ぶ",
+    "romaji": "tobu",
+    "english": "to jump",
+    "pos": "verb",
+    "audio": "fei-hu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 372,
+    "kana": "ちちおや",
+    "kanji": "父親",
+    "romaji": "chichioya",
+    "english": "father",
+    "pos": "noun",
+    "audio": "chichioya.mp3",
+    "type": "word"
+  },
+  {
+    "id": 373,
+    "kana": "じゆう",
+    "kanji": "自由",
+    "romaji": "jiyuu",
+    "english": "freedom",
+    "pos": "adjective",
+    "audio": "jiyuu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 374,
+    "kana": "まち",
+    "kanji": "街",
+    "romaji": "machi",
+    "english": "city",
+    "pos": "noun",
+    "audio": "machi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 375,
+    "kana": "おおい",
+    "kanji": "多い",
+    "romaji": "ooi",
+    "english": "many",
+    "pos": "adjective",
+    "audio": "duo-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 376,
+    "kana": "えらぶ",
+    "kanji": "選ぶ",
+    "romaji": "erabu",
+    "english": "to choose",
+    "pos": "verb",
+    "audio": "xuan-hu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 377,
+    "kana": "いたい",
+    "kanji": "痛い",
+    "romaji": "itai",
+    "english": "painful",
+    "pos": "adjective",
+    "audio": "tong-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 378,
+    "kana": "もっとも",
+    "kanji": "最も",
+    "romaji": "mottomo",
+    "english": "most",
+    "pos": "adverb",
+    "audio": "zui-mo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 379,
+    "kana": "はは",
+    "kanji": "母",
+    "romaji": "haha",
+    "english": "mother",
+    "pos": "noun",
+    "audio": "haha.mp3",
+    "type": "word"
+  },
+  {
+    "id": 380,
+    "kana": "むかし",
+    "kanji": "昔",
+    "romaji": "mukashi",
+    "english": "long ago",
+    "pos": "noun",
+    "audio": "mukashi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 381,
+    "kana": "だいじ",
+    "kanji": "大事",
+    "romaji": "daiji",
+    "english": "important",
+    "pos": "adjective",
+    "audio": "daiji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 382,
+    "kana": "かんじゃ",
+    "kanji": "患者",
+    "romaji": "kanja",
+    "english": "patient",
+    "pos": "noun",
+    "audio": "kanja.mp3",
+    "type": "word"
+  },
+  {
+    "id": 383,
+    "kana": "のう",
+    "kanji": "脳",
+    "romaji": "nou",
+    "english": "brain",
+    "pos": "noun",
+    "audio": "nou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 384,
+    "kana": "いったい",
+    "kanji": "一体",
+    "romaji": "ittai",
+    "english": "together",
+    "pos": "adverb",
+    "audio": "ittai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 385,
+    "kana": "いそぐ",
+    "kanji": "急ぐ",
+    "romaji": "isogu",
+    "english": "to hurry",
+    "pos": "verb",
+    "audio": "ji-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 386,
+    "kana": "てき",
+    "kanji": "敵",
+    "romaji": "teki",
+    "english": "enemy",
+    "pos": "noun",
+    "audio": "teki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 387,
+    "kana": "しゅうかん",
+    "kanji": "週間",
+    "romaji": "shuukan",
+    "english": "week",
+    "pos": "noun",
+    "audio": "shuukan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 388,
+    "kana": "きもち",
+    "kanji": "気持ち",
+    "romaji": "kimochi",
+    "english": "feeling",
+    "pos": "noun",
+    "audio": "qi-chi-ti.mp3",
+    "type": "word"
+  },
+  {
+    "id": 389,
+    "kana": "すわる",
+    "kanji": "座る",
+    "romaji": "saru",
+    "english": "to sit",
+    "pos": "verb",
+    "audio": "zuo-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 390,
+    "kana": "だいがく",
+    "kanji": "大学",
+    "romaji": "daigaku",
+    "english": "university",
+    "pos": "noun",
+    "audio": "daigaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 391,
+    "kana": "すてる",
+    "kanji": "捨てる",
+    "romaji": "suteru",
+    "english": "to dispose of",
+    "pos": "verb",
+    "audio": "she-teru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 392,
+    "kana": "わたす",
+    "kanji": "渡す",
+    "romaji": "watasu",
+    "english": "to hand over",
+    "pos": "verb",
+    "audio": "du-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 393,
+    "kana": "たいへん",
+    "kanji": "大変",
+    "romaji": "taihen",
+    "english": "hard",
+    "pos": "adjective",
+    "audio": "taihen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 394,
+    "kana": "かんしゃする",
+    "kanji": "感謝する",
+    "romaji": "kansha suru",
+    "english": "to thank",
+    "pos": "verb",
+    "audio": "gan-xie-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 395,
+    "kana": "やろう",
+    "kanji": "野郎",
+    "romaji": "yarou",
+    "english": "bastard",
+    "pos": "noun",
+    "audio": "yarou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 396,
+    "kana": "つく",
+    "kanji": "付く",
+    "romaji": "tsuku",
+    "english": "to be attached to",
+    "pos": "verb",
+    "audio": "fu-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 397,
+    "kana": "ふつう",
+    "kanji": "普通",
+    "romaji": "futsuu",
+    "english": "usually",
+    "pos": "noun",
+    "audio": "futsuu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 398,
+    "kana": "すむ",
+    "kanji": "住む",
+    "romaji": "sumu",
+    "english": "to live",
+    "pos": "verb",
+    "audio": "zhu-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 399,
+    "kana": "つける",
+    "kanji": "付ける",
+    "romaji": "tsukeru",
+    "english": "to wear",
+    "pos": "verb",
+    "audio": "fu-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 400,
+    "kana": "きえる",
+    "kanji": "消える",
+    "romaji": "kieru",
+    "english": "to disappear",
+    "pos": "verb",
+    "audio": "xiao-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 401,
+    "kana": "しつれい",
+    "kanji": "失礼",
+    "romaji": "shitsurei",
+    "english": "rude",
+    "pos": "adjective",
+    "audio": "shitsurei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 402,
+    "kana": "かくす",
+    "kanji": "隠す",
+    "romaji": "kakusu",
+    "english": "to hide",
+    "pos": "verb",
+    "audio": "yin-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 403,
+    "kana": "さいきん",
+    "kanji": "最近",
+    "romaji": "saikin",
+    "english": "recently",
+    "pos": "noun",
+    "audio": "saikin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 404,
+    "kana": "けん",
+    "kanji": "件",
+    "romaji": "ken",
+    "english": "subject",
+    "pos": "noun",
+    "audio": "ken.mp3",
+    "type": "word"
+  },
+  {
+    "id": 405,
+    "kana": "かーど",
+    "romaji": "kaado",
+    "english": "card",
+    "pos": "noun",
+    "audio": "kato.mp3",
+    "type": "word"
+  },
+  {
+    "id": 406,
+    "kana": "がんばる",
+    "kanji": "頑張る",
+    "romaji": "ganbaru",
+    "english": "to strive",
+    "pos": "verb",
+    "audio": "wan-zhang-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 407,
+    "kana": "つま",
+    "kanji": "妻",
+    "romaji": "tsuma",
+    "english": "wife",
+    "pos": "noun",
+    "audio": "tsuma.mp3",
+    "type": "word"
+  },
+  {
+    "id": 408,
+    "kana": "でーた",
+    "romaji": "data",
+    "english": "data",
+    "pos": "noun",
+    "audio": "teta.mp3",
+    "type": "word"
+  },
+  {
+    "id": 409,
+    "kana": "すくう",
+    "kanji": "救う",
+    "romaji": "sukuu",
+    "english": "to save",
+    "pos": "verb",
+    "audio": "jiu-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 410,
+    "kana": "せきにん",
+    "kanji": "責任",
+    "romaji": "sekinin",
+    "english": "responsibility",
+    "pos": "noun",
+    "audio": "sekinin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 411,
+    "kana": "こんど",
+    "kanji": "今度",
+    "romaji": "kondo",
+    "english": "next time",
+    "pos": "noun",
+    "audio": "kondo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 412,
+    "kana": "いん",
+    "kanji": "員",
+    "romaji": "in",
+    "english": "member",
+    "pos": "noun",
+    "audio": "in.mp3",
+    "type": "word"
+  },
+  {
+    "id": 413,
+    "kana": "げーむ",
+    "romaji": "geemu",
+    "english": "game",
+    "pos": "noun",
+    "audio": "kemu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 414,
+    "kana": "うまれる",
+    "kanji": "生まれる",
+    "romaji": "umareru",
+    "english": "to be born",
+    "pos": "verb",
+    "audio": "sheng-mareru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 415,
+    "kana": "たくさん",
+    "romaji": "takusan",
+    "english": "a lot",
+    "pos": "adverb",
+    "audio": "takusan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 416,
+    "kana": "まったく",
+    "kanji": "全く",
+    "romaji": "mattaku",
+    "english": "absolutely",
+    "pos": "adverb",
+    "audio": "quan-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 417,
+    "kana": "ちいさな",
+    "kanji": "小さな",
+    "romaji": "chiisana",
+    "english": "small",
+    "pos": "adnominal",
+    "audio": "xiao-sana.mp3",
+    "type": "word"
+  },
+  {
+    "id": 418,
+    "kana": "じょうたい",
+    "kanji": "状態",
+    "romaji": "joutai",
+    "english": "situation",
+    "pos": "noun",
+    "audio": "joutai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 419,
+    "kana": "もどす",
+    "kanji": "戻す",
+    "romaji": "modosu",
+    "english": "to return",
+    "pos": "verb",
+    "audio": "li-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 420,
+    "kana": "かんじ",
+    "kanji": "感じ",
+    "romaji": "kanji",
+    "english": "feeling",
+    "pos": "noun",
+    "audio": "gan-si.mp3",
+    "type": "word"
+  },
+  {
+    "id": 421,
+    "kana": "おと",
+    "kanji": "音",
+    "romaji": "oto",
+    "english": "sound",
+    "pos": "noun",
+    "audio": "oto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 422,
+    "kana": "じゅうぶん",
+    "kanji": "十分",
+    "romaji": "jyuubun",
+    "english": "sufficient",
+    "pos": "adjective",
+    "audio": "jyuubun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 423,
+    "kana": "さて",
+    "romaji": "sate",
+    "english": "now",
+    "pos": "conjunction",
+    "audio": "sate.mp3",
+    "type": "word"
+  },
+  {
+    "id": 424,
+    "kana": "げんき",
+    "kanji": "元気",
+    "romaji": "genki",
+    "english": "fine",
+    "pos": "adjective",
+    "audio": "genki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 425,
+    "kana": "おわり",
+    "kanji": "終わり",
+    "romaji": "owari",
+    "english": "end",
+    "pos": "noun",
+    "audio": "zhong-wari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 426,
+    "kana": "しあわせ",
+    "kanji": "幸せ",
+    "romaji": "shiawase",
+    "english": "happy",
+    "pos": "adjective",
+    "audio": "xing-se.mp3",
+    "type": "word"
+  },
+  {
+    "id": 427,
+    "kana": "さん",
+    "kanji": "三",
+    "romaji": "san",
+    "english": "three",
+    "pos": "numeral",
+    "audio": "san.mp3",
+    "type": "word"
+  },
+  {
+    "id": 428,
+    "kana": "いろ",
+    "kanji": "色",
+    "romaji": "iro",
+    "english": "color",
+    "pos": "noun",
+    "audio": "iro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 429,
+    "kana": "ねんかん",
+    "kanji": "年間",
+    "romaji": "nengan",
+    "english": "yearly",
+    "pos": "noun",
+    "audio": "nengan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 430,
+    "kana": "おもしろい",
+    "kanji": "面白い",
+    "romaji": "omoshiroi",
+    "english": "interesting",
+    "pos": "adjective",
+    "audio": "mian-bai-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 431,
+    "kana": "えいが",
+    "kanji": "映画",
+    "romaji": "eiga",
+    "english": "movie",
+    "pos": "noun",
+    "audio": "eiga.mp3",
+    "type": "word"
+  },
+  {
+    "id": 432,
+    "kana": "あんな",
+    "romaji": "anna",
+    "english": "that kind of thing",
+    "pos": "adjective",
+    "audio": "anna.mp3",
+    "type": "word"
+  },
+  {
+    "id": 433,
+    "kana": "くち",
+    "kanji": "口",
+    "romaji": "kuchi",
+    "english": "mouth",
+    "pos": "noun",
+    "audio": "kuchi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 434,
+    "kana": "ひどい",
+    "romaji": "hidoi",
+    "english": "terrible",
+    "pos": "adjective",
+    "audio": "hitoi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 435,
+    "kana": "かんする",
+    "kanji": "関する",
+    "romaji": "kansuru",
+    "english": "to be related",
+    "pos": "verb",
+    "audio": "guan-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 436,
+    "kana": "ちょうさ",
+    "kanji": "調査",
+    "romaji": "chousa",
+    "english": "investigation",
+    "pos": "noun",
+    "audio": "chousa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 437,
+    "kana": "すぎる",
+    "kanji": "過ぎる",
+    "romaji": "sugiru",
+    "english": "to pass",
+    "pos": "verb",
+    "audio": "guo-kiru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 438,
+    "kana": "まさか",
+    "romaji": "masaka",
+    "english": "no way",
+    "pos": "adverb",
+    "audio": "masaka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 439,
+    "kana": "せいふ",
+    "kanji": "政府",
+    "romaji": "seifu",
+    "english": "government",
+    "pos": "noun",
+    "audio": "seifu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 440,
+    "kana": "けいけん",
+    "kanji": "経験",
+    "romaji": "keiken",
+    "english": "experience",
+    "pos": "noun",
+    "audio": "keiken.mp3",
+    "type": "word"
+  },
+  {
+    "id": 441,
+    "kana": "げんざい",
+    "kanji": "現在",
+    "romaji": "genzai",
+    "english": "the current",
+    "pos": "adverb",
+    "audio": "genzai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 442,
+    "kana": "ひがい",
+    "kanji": "被害",
+    "romaji": "higai",
+    "english": "damage",
+    "pos": "noun",
+    "audio": "higai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 443,
+    "kana": "もと",
+    "kanji": "元",
+    "romaji": "moto",
+    "english": "cause, origin",
+    "pos": "noun",
+    "audio": "moto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 444,
+    "kana": "まなぶ",
+    "kanji": "学ぶ",
+    "romaji": "manabu",
+    "english": "to learn",
+    "pos": "verb",
+    "audio": "xue-hu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 445,
+    "kana": "のこす",
+    "kanji": "残す",
+    "romaji": "nokosu",
+    "english": "to leave",
+    "pos": "verb",
+    "audio": "can-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 446,
+    "kana": "けいたい",
+    "kanji": "携帯",
+    "romaji": "keitai",
+    "english": "cell phone",
+    "pos": "noun",
+    "audio": "keitai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 447,
+    "kana": "はらう",
+    "kanji": "払う",
+    "romaji": "harau",
+    "english": "to pay",
+    "pos": "verb",
+    "audio": "fu-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 448,
+    "kana": "じだい",
+    "kanji": "時代",
+    "romaji": "jidai",
+    "english": "era",
+    "pos": "noun",
+    "audio": "jidai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 449,
+    "kana": "ば",
+    "kanji": "場",
+    "romaji": "ba",
+    "english": "place",
+    "pos": "noun",
+    "audio": "ba.mp3",
+    "type": "word"
+  },
+  {
+    "id": 450,
+    "kana": "こんや",
+    "kanji": "今夜",
+    "romaji": "konya",
+    "english": "tonight",
+    "pos": "noun",
+    "audio": "konya.mp3",
+    "type": "word"
+  },
+  {
+    "id": 451,
+    "kana": "あがる",
+    "kanji": "上がる",
+    "romaji": "agaru",
+    "english": "to go up",
+    "pos": "verb",
+    "audio": "shang-karu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 452,
+    "kana": "あなた",
+    "kanji": "貴方",
+    "romaji": "anata",
+    "english": "you",
+    "pos": "pronoun",
+    "audio": "anata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 453,
+    "kana": "はかせ",
+    "kanji": "博士",
+    "romaji": "hakase",
+    "english": "doctor",
+    "pos": "noun",
+    "audio": "hakase.mp3",
+    "type": "word"
+  },
+  {
+    "id": 454,
+    "kana": "みらい",
+    "kanji": "未来",
+    "romaji": "mirai",
+    "english": "future",
+    "pos": "noun",
+    "audio": "mirai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 455,
+    "kana": "おう",
+    "kanji": "王",
+    "romaji": "ou",
+    "english": "king",
+    "pos": "noun",
+    "audio": "ou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 456,
+    "kana": "やっぱり",
+    "romaji": "yappari",
+    "english": "on second thoughts",
+    "pos": "adverb",
+    "audio": "yatuhari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 457,
+    "kana": "はじまる",
+    "kanji": "始まる",
+    "romaji": "hajimaru",
+    "english": "to begin",
+    "pos": "verb",
+    "audio": "shi-maru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 458,
+    "kana": "きょうりょく",
+    "kanji": "協力",
+    "romaji": "kyouryoku",
+    "english": "cooperation",
+    "pos": "noun",
+    "audio": "kyouryoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 459,
+    "kana": "へん",
+    "kanji": "変",
+    "romaji": "hen",
+    "english": "strange",
+    "pos": "adjective",
+    "audio": "hen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 460,
+    "kana": "けいじ",
+    "kanji": "刑事",
+    "romaji": "keiji",
+    "english": "detective",
+    "pos": "noun",
+    "audio": "keiji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 461,
+    "kana": "ははおや",
+    "kanji": "母親",
+    "romaji": "hahaoya",
+    "english": "mother",
+    "pos": "noun",
+    "audio": "hahaoya.mp3",
+    "type": "word"
+  },
+  {
+    "id": 462,
+    "kana": "くすり",
+    "kanji": "薬",
+    "romaji": "kusuri",
+    "english": "medicine",
+    "pos": "noun",
+    "audio": "kusuri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 463,
+    "kana": "あるく",
+    "kanji": "歩く",
+    "romaji": "aruku",
+    "english": "to walk",
+    "pos": "verb",
+    "audio": "bu-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 464,
+    "kana": "にる",
+    "kanji": "似る",
+    "romaji": "niru",
+    "english": "to resemble",
+    "pos": "verb",
+    "audio": "si-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 465,
+    "kana": "そうぞう",
+    "kanji": "想像",
+    "romaji": "souzou",
+    "english": "imagination",
+    "pos": "noun",
+    "audio": "souzou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 466,
+    "kana": "だまる",
+    "kanji": "黙る",
+    "romaji": "damaru",
+    "english": "to shut up",
+    "pos": "verb",
+    "audio": "mo-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 467,
+    "kana": "ひかり",
+    "kanji": "光",
+    "romaji": "hikari",
+    "english": "a light",
+    "pos": "noun",
+    "audio": "hikari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 468,
+    "kana": "そしき",
+    "kanji": "組織",
+    "romaji": "soshiki",
+    "english": "organization",
+    "pos": "noun",
+    "audio": "soshiki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 469,
+    "kana": "わたし",
+    "romaji": "watashi",
+    "english": "I",
+    "pos": "pronoun",
+    "audio": "watasi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 470,
+    "kana": "べんご",
+    "kanji": "弁護",
+    "romaji": "bengo",
+    "english": "defense",
+    "pos": "noun",
+    "audio": "bengo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 471,
+    "kana": "ひらく",
+    "kanji": "開く",
+    "romaji": "hiraku",
+    "english": "to open",
+    "pos": "verb",
+    "audio": "kai-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 472,
+    "kana": "せんたく",
+    "kanji": "選択",
+    "romaji": "sentaku",
+    "english": "choice",
+    "pos": "noun",
+    "audio": "sentaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 473,
+    "kana": "かんぜん",
+    "kanji": "完全",
+    "romaji": "kanzen",
+    "english": "perfect",
+    "pos": "adjective",
+    "audio": "kanzen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 474,
+    "kana": "こたえる",
+    "kanji": "答える",
+    "romaji": "kotaeru",
+    "english": "to answer",
+    "pos": "verb",
+    "audio": "da-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 475,
+    "kana": "いかる",
+    "kanji": "怒る",
+    "romaji": "okoru",
+    "english": "to get angry",
+    "pos": "verb",
+    "audio": "nu-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 476,
+    "kana": "たいほする",
+    "kanji": "逮捕する",
+    "romaji": "taiho suru",
+    "english": "to arrest",
+    "pos": "verb",
+    "audio": "dai-bu-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 477,
+    "kana": "きのう",
+    "kanji": "昨日",
+    "romaji": "kinou",
+    "english": "yesterday",
+    "pos": "noun",
+    "audio": "kinou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 478,
+    "kana": "えいきょう",
+    "kanji": "影響",
+    "romaji": "eikyou",
+    "english": "influence",
+    "pos": "noun",
+    "audio": "eikyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 479,
+    "kana": "だい",
+    "kanji": "代",
+    "romaji": "dai",
+    "english": "teenager",
+    "pos": "noun",
+    "audio": "dai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 480,
+    "kana": "かなり",
+    "romaji": "kanari",
+    "english": "quite, fairly",
+    "pos": "adverb",
+    "audio": "kanari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 481,
+    "kana": "きろく",
+    "kanji": "記録",
+    "romaji": "kiroku",
+    "english": "record",
+    "pos": "noun",
+    "audio": "kiroku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 482,
+    "kana": "はかい",
+    "kanji": "破壊",
+    "romaji": "hakai",
+    "english": "destruction",
+    "pos": "noun",
+    "audio": "hakai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 483,
+    "kana": "うる",
+    "kanji": "売る",
+    "romaji": "uru",
+    "english": "to sell",
+    "pos": "verb",
+    "audio": "mai-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 484,
+    "kana": "きる",
+    "kanji": "着る",
+    "romaji": "kiru",
+    "english": "to wear",
+    "pos": "verb",
+    "audio": "zhao-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 485,
+    "kana": "ゆるす",
+    "kanji": "許す",
+    "romaji": "yurusu",
+    "english": "to forgive",
+    "pos": "verb",
+    "audio": "xu-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 486,
+    "kana": "はんざい",
+    "kanji": "犯罪",
+    "romaji": "hanzai",
+    "english": "crime",
+    "pos": "noun",
+    "audio": "hanzai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 487,
+    "kana": "ぬすむ",
+    "kanji": "盗む",
+    "romaji": "nusumu",
+    "english": "to steal",
+    "pos": "verb",
+    "audio": "dao-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 488,
+    "kana": "ち",
+    "kanji": "血",
+    "romaji": "chi",
+    "english": "blood",
+    "pos": "noun",
+    "audio": "chi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 489,
+    "kana": "senssens",
+    "kanji": "戦争",
+    "romaji": "sensō",
+    "english": "war",
+    "pos": "noun",
+    "audio": "senso.mp3",
+    "type": "word"
+  },
+  {
+    "id": 490,
+    "kana": "seikseik",
+    "kanji": "成功",
+    "romaji": "seikō",
+    "english": "success",
+    "pos": "noun",
+    "audio": "seiko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 491,
+    "kana": "りようする",
+    "kanji": "利用する",
+    "romaji": "riyō suru",
+    "english": "to use",
+    "pos": "verb",
+    "audio": "li-yong-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 492,
+    "kana": "むずかしい",
+    "kanji": "難しい",
+    "romaji": "muzukashii",
+    "english": "difficult",
+    "pos": "adjective",
+    "audio": "nan-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 493,
+    "kana": "かめら",
+    "romaji": "kamera",
+    "english": "camera",
+    "pos": "noun",
+    "audio": "kamera.mp3",
+    "type": "word"
+  },
+  {
+    "id": 494,
+    "kana": "ひみつ",
+    "kanji": "秘密",
+    "romaji": "himitsu",
+    "english": "secret",
+    "pos": "noun",
+    "audio": "himitsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 495,
+    "kana": "かぜ",
+    "kanji": "風",
+    "romaji": "kaze",
+    "english": "wind",
+    "pos": "noun",
+    "audio": "kaze.mp3",
+    "type": "word"
+  },
+  {
+    "id": 496,
+    "kana": "どあ",
+    "romaji": "doa",
+    "english": "door",
+    "pos": "noun",
+    "audio": "toa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 497,
+    "kana": "きづく",
+    "kanji": "気づく",
+    "romaji": "kizuku",
+    "english": "to notice",
+    "pos": "verb",
+    "audio": "qi-tuku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 498,
+    "kana": "hhkoku",
+    "kanji": "報告",
+    "romaji": "hōkoku",
+    "english": "report",
+    "pos": "noun",
+    "audio": "hokoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 499,
+    "kana": "きゃく",
+    "kanji": "客",
+    "romaji": "kyaku",
+    "english": "customer",
+    "pos": "noun",
+    "audio": "kyaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 500,
+    "kana": "あらわれる",
+    "kanji": "現れる",
+    "romaji": "arawareru",
+    "english": "to appear",
+    "pos": "verb",
+    "audio": "xian-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 501,
+    "kana": "ざんねん",
+    "kanji": "残念",
+    "romaji": "zannen",
+    "english": "disappointing",
+    "pos": "adjective",
+    "audio": "zannen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 502,
+    "kana": "さらに",
+    "romaji": "sarani",
+    "english": "moreover",
+    "pos": "adverb",
+    "audio": "sarani.mp3",
+    "type": "word"
+  },
+  {
+    "id": 503,
+    "kana": "れい",
+    "kanji": "例",
+    "romaji": "rei",
+    "english": "example",
+    "pos": "noun",
+    "audio": "rei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 504,
+    "kana": "katsudkatsud",
+    "kanji": "活動",
+    "romaji": "katsudō",
+    "english": "activity",
+    "pos": "noun",
+    "audio": "katsudo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 505,
+    "kana": "きおく",
+    "kanji": "記憶",
+    "romaji": "kioku",
+    "english": "memory",
+    "pos": "noun",
+    "audio": "kioku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 506,
+    "kana": "chirychiry",
+    "kanji": "治療",
+    "romaji": "chiryō",
+    "english": "treatment",
+    "pos": "noun",
+    "audio": "chiryo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 507,
+    "kana": "かこ",
+    "kanji": "過去",
+    "romaji": "kako",
+    "english": "past",
+    "pos": "noun",
+    "audio": "kako.mp3",
+    "type": "word"
+  },
+  {
+    "id": 508,
+    "kana": "あい",
+    "kanji": "愛",
+    "romaji": "ai",
+    "english": "love",
+    "pos": "noun",
+    "audio": "ai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 509,
+    "kana": "おかしい",
+    "romaji": "okashii",
+    "english": "strange",
+    "pos": "adjective",
+    "audio": "okasii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 510,
+    "kana": "させる",
+    "romaji": "saseru",
+    "english": "to let",
+    "pos": "verb",
+    "audio": "saseru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 511,
+    "kana": "しんじつ",
+    "kanji": "真実",
+    "romaji": "shinjitsu",
+    "english": "truth",
+    "pos": "noun",
+    "audio": "shinjitsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 512,
+    "kana": "すくない",
+    "kanji": "少ない",
+    "romaji": "sukunai",
+    "english": "few",
+    "pos": "adjective",
+    "audio": "shao-nai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 513,
+    "kana": "かち",
+    "kanji": "価値",
+    "romaji": "kachi",
+    "english": "value",
+    "pos": "noun",
+    "audio": "kachi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 514,
+    "kana": "ひと",
+    "romaji": "hito",
+    "english": "people",
+    "pos": "noun",
+    "audio": "hito.mp3",
+    "type": "word"
+  },
+  {
+    "id": 515,
+    "kana": "つかまえる",
+    "kanji": "捕まえる",
+    "romaji": "tsukamaeru",
+    "english": "to catch",
+    "pos": "verb",
+    "audio": "bu-maeru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 516,
+    "kana": "みとめる",
+    "kanji": "認める",
+    "romaji": "mitomeru",
+    "english": "to admit",
+    "pos": "verb",
+    "audio": "ren-meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 517,
+    "kana": "まこと",
+    "kanji": "真",
+    "romaji": "shin",
+    "english": "true",
+    "pos": "noun",
+    "audio": "shin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 518,
+    "kana": "おまえ",
+    "romaji": "omae",
+    "english": "you",
+    "pos": "pronoun",
+    "audio": "omae.mp3",
+    "type": "word"
+  },
+  {
+    "id": 519,
+    "kana": "ぐらい",
+    "romaji": "gurai",
+    "english": "about",
+    "pos": "adverb",
+    "audio": "kurai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 520,
+    "kana": "げんじつ",
+    "kanji": "現実",
+    "romaji": "genjitsu",
+    "english": "reality",
+    "pos": "noun",
+    "audio": "genjitsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 521,
+    "kana": "もくてき",
+    "kanji": "目的",
+    "romaji": "mokuteki",
+    "english": "the purpose",
+    "pos": "noun",
+    "audio": "mokuteki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 522,
+    "kana": "kkka",
+    "kanji": "効果",
+    "romaji": "kōka",
+    "english": "effect",
+    "pos": "noun",
+    "audio": "koka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 523,
+    "kana": "やく",
+    "kanji": "役",
+    "romaji": "yaku",
+    "english": "role",
+    "pos": "noun",
+    "audio": "yaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 524,
+    "kana": "ない",
+    "kanji": "内",
+    "romaji": "uchi",
+    "english": "inside",
+    "pos": "noun",
+    "audio": "uchi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 525,
+    "kana": "せいぶつ",
+    "kanji": "生物",
+    "romaji": "seibutsu",
+    "english": "living thing",
+    "pos": "noun",
+    "audio": "seibutsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 526,
+    "kana": "えねるぎー",
+    "romaji": "enerugī",
+    "english": "energy",
+    "pos": "noun",
+    "audio": "eneruki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 527,
+    "kana": "daitdaitrydaitry",
+    "kanji": "大統領",
+    "romaji": "daitōryō",
+    "english": "president",
+    "pos": "noun",
+    "audio": "daitoryo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 528,
+    "kana": "もとめる",
+    "kanji": "求める",
+    "romaji": "motomeru",
+    "english": "to demand",
+    "pos": "verb",
+    "audio": "qiu-meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 529,
+    "kana": "まち",
+    "kanji": "町",
+    "romaji": "machi",
+    "english": "town",
+    "pos": "noun",
+    "audio": "machi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 530,
+    "kana": "かならず",
+    "kanji": "必ず",
+    "romaji": "kanarazu",
+    "english": "surely",
+    "pos": "adverb",
+    "audio": "bi-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 531,
+    "kana": "たぶん",
+    "romaji": "tabun",
+    "english": "perhaps",
+    "pos": "adverb",
+    "audio": "tahun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 532,
+    "kana": "いぬ",
+    "kanji": "犬",
+    "romaji": "inu",
+    "english": "dog",
+    "pos": "noun",
+    "audio": "inu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 533,
+    "kana": "れべる",
+    "romaji": "reberu",
+    "english": "level",
+    "pos": "noun",
+    "audio": "reheru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 534,
+    "kana": "hh",
+    "kanji": "法",
+    "romaji": "hō",
+    "english": "law",
+    "pos": "noun",
+    "audio": "ho.mp3",
+    "type": "word"
+  },
+  {
+    "id": 535,
+    "kana": "さっき",
+    "romaji": "sakki",
+    "english": "some time ago",
+    "pos": "adverb",
+    "audio": "satuki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 536,
+    "kana": "へんか",
+    "kanji": "変化",
+    "romaji": "henka",
+    "english": "change",
+    "pos": "noun",
+    "audio": "henka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 537,
+    "kana": "ちかく",
+    "kanji": "近く",
+    "romaji": "chikaku",
+    "english": "near",
+    "pos": "noun",
+    "audio": "jin-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 538,
+    "kana": "じじつ",
+    "kanji": "事実",
+    "romaji": "jijitsu",
+    "english": "fact",
+    "pos": "noun",
+    "audio": "jijitsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 539,
+    "kana": "だんせい",
+    "kanji": "男性",
+    "romaji": "dansei",
+    "english": "male",
+    "pos": "noun",
+    "audio": "dansei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 540,
+    "kana": "nnryoku",
+    "kanji": "能力",
+    "romaji": "nōryoku",
+    "english": "ability",
+    "pos": "noun",
+    "audio": "noryoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 541,
+    "kana": "あさ",
+    "kanji": "朝",
+    "romaji": "asa",
+    "english": "morning",
+    "pos": "noun",
+    "audio": "asa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 542,
+    "kana": "くむ",
+    "kanji": "組む",
+    "romaji": "kumu",
+    "english": "to assemble",
+    "pos": "verb",
+    "audio": "zu-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 543,
+    "kana": "じこ",
+    "kanji": "事故",
+    "romaji": "jiko",
+    "english": "accident",
+    "pos": "noun",
+    "audio": "jiko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 544,
+    "kana": "わかい",
+    "kanji": "若い",
+    "romaji": "wakai",
+    "english": "young",
+    "pos": "adjective",
+    "audio": "ruo-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 545,
+    "kana": "ddbutsu",
+    "kanji": "動物",
+    "romaji": "dōbutsu",
+    "english": "animal",
+    "pos": "noun",
+    "audio": "dobutsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 546,
+    "kana": "はしる",
+    "kanji": "走る",
+    "romaji": "hashiru",
+    "english": "to run",
+    "pos": "verb",
+    "audio": "zou-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 547,
+    "kana": "まちがう",
+    "kanji": "間違う",
+    "romaji": "machigau",
+    "english": "to make a mistake",
+    "pos": "verb",
+    "audio": "jian-wei-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 548,
+    "kana": "sschi",
+    "kanji": "装置",
+    "romaji": "sōchi",
+    "english": "device",
+    "pos": "noun",
+    "audio": "sochi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 549,
+    "kana": "せいしん",
+    "kanji": "精神",
+    "romaji": "seishin",
+    "english": "spirit, mind",
+    "pos": "noun",
+    "audio": "seishin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 550,
+    "kana": "すすむ",
+    "kanji": "進む",
+    "romaji": "susumu",
+    "english": "to move on",
+    "pos": "verb",
+    "audio": "jin-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 551,
+    "kana": "hikhik",
+    "kanji": "飛行",
+    "romaji": "hikō",
+    "english": "flight",
+    "pos": "noun",
+    "audio": "hiko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 552,
+    "kana": "ぜんぜん",
+    "kanji": "全然",
+    "romaji": "zenzen",
+    "english": "not at all",
+    "pos": "adverb",
+    "audio": "zenzen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 553,
+    "kana": "なおす",
+    "kanji": "直す",
+    "romaji": "naosu",
+    "english": "to fix",
+    "pos": "verb",
+    "audio": "zhi-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 554,
+    "kana": "いがい",
+    "kanji": "以外",
+    "romaji": "igai",
+    "english": "other than",
+    "pos": "noun",
+    "audio": "igai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 555,
+    "kana": "はる",
+    "kanji": "張る",
+    "romaji": "haru",
+    "english": "to stretch",
+    "pos": "verb",
+    "audio": "zhang-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 556,
+    "kana": "こたえ",
+    "kanji": "答え",
+    "romaji": "kotae",
+    "english": "answer",
+    "pos": "noun",
+    "audio": "da-e.mp3",
+    "type": "word"
+  },
+  {
+    "id": 557,
+    "kana": "うつくしい",
+    "kanji": "美しい",
+    "romaji": "utsukushii",
+    "english": "beautiful",
+    "pos": "adjective",
+    "audio": "mei-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 558,
+    "kana": "つく",
+    "kanji": "突く",
+    "romaji": "tsuku",
+    "english": "to poke",
+    "pos": "verb",
+    "audio": "tu-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 559,
+    "kana": "やがる",
+    "romaji": "yagaru",
+    "english": "",
+    "pos": "verb",
+    "audio": "yakaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 560,
+    "kana": "とおり",
+    "romaji": "tōri",
+    "english": "street",
+    "pos": "noun",
+    "audio": "toori.mp3",
+    "type": "word"
+  },
+  {
+    "id": 561,
+    "kana": "たいせつ",
+    "kanji": "大切",
+    "romaji": "taisetsu",
+    "english": "important",
+    "pos": "adjective",
+    "audio": "taisetsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 562,
+    "kana": "しぜん",
+    "kanji": "自然",
+    "romaji": "shizen",
+    "english": "nature",
+    "pos": "noun",
+    "audio": "shizen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 563,
+    "kana": "とも",
+    "kanji": "共",
+    "romaji": "tomoni",
+    "english": "both",
+    "pos": "noun",
+    "audio": "tomoni.mp3",
+    "type": "word"
+  },
+  {
+    "id": 564,
+    "kana": "うみ",
+    "kanji": "海",
+    "romaji": "umi",
+    "english": "ocean",
+    "pos": "noun",
+    "audio": "umi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 565,
+    "kana": "む",
+    "kanji": "無",
+    "romaji": "mu",
+    "english": "nothing",
+    "pos": "noun",
+    "audio": "mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 566,
+    "kana": "すがた",
+    "kanji": "姿",
+    "romaji": "sugata",
+    "english": "figure",
+    "pos": "noun",
+    "audio": "sugata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 567,
+    "kana": "とくべつ",
+    "kanji": "特別",
+    "romaji": "tokubetsu",
+    "english": "special",
+    "pos": "adjective",
+    "audio": "tokubetsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 568,
+    "kana": "しめす",
+    "kanji": "示す",
+    "romaji": "shimesu",
+    "english": "to show",
+    "pos": "verb",
+    "audio": "shi-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 569,
+    "kana": "いしゃ",
+    "kanji": "医者",
+    "romaji": "isha",
+    "english": "doctor",
+    "pos": "noun",
+    "audio": "isha.mp3",
+    "type": "word"
+  },
+  {
+    "id": 570,
+    "kana": "てつだう",
+    "kanji": "手伝う",
+    "romaji": "tetsudau",
+    "english": "to help",
+    "pos": "verb",
+    "audio": "shou-chuan-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 571,
+    "kana": "うつ",
+    "kanji": "打つ",
+    "romaji": "utsu",
+    "english": "to strike",
+    "pos": "verb",
+    "audio": "da-tu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 572,
+    "kana": "たがい",
+    "kanji": "互い",
+    "romaji": "tagai",
+    "english": "each other",
+    "pos": "noun",
+    "audio": "hu-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 573,
+    "kana": "かき",
+    "kanji": "書",
+    "romaji": "ka",
+    "english": "book",
+    "pos": "noun",
+    "audio": "ka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 574,
+    "kana": "しっぱい",
+    "kanji": "失敗",
+    "romaji": "shippai",
+    "english": "failure",
+    "pos": "noun",
+    "audio": "shippai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 575,
+    "kana": "めいれい",
+    "kanji": "命令",
+    "romaji": "meirei",
+    "english": "order",
+    "pos": "noun",
+    "audio": "meirei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 576,
+    "kana": "こんかい",
+    "kanji": "今回",
+    "romaji": "konkai",
+    "english": "this time",
+    "pos": "noun",
+    "audio": "konkai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 577,
+    "kana": "かつ",
+    "kanji": "勝つ",
+    "romaji": "katsu",
+    "english": "to win",
+    "pos": "verb",
+    "audio": "sheng-tu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 578,
+    "kana": "ち",
+    "kanji": "地",
+    "romaji": "chi",
+    "english": "earth",
+    "pos": "noun",
+    "audio": "chi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 579,
+    "kana": "つみ",
+    "kanji": "罪",
+    "romaji": "tsumi",
+    "english": "sin",
+    "pos": "noun",
+    "audio": "tsumi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 580,
+    "kana": "けいざい",
+    "kanji": "経済",
+    "romaji": "keizai",
+    "english": "economy",
+    "pos": "noun",
+    "audio": "keizai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 581,
+    "kana": "けいかん",
+    "kanji": "警官",
+    "romaji": "keikan",
+    "english": "police officer",
+    "pos": "noun",
+    "audio": "keikan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 582,
+    "kana": "とまる",
+    "kanji": "止まる",
+    "romaji": "tomaru",
+    "english": "to stop",
+    "pos": "verb",
+    "audio": "zhi-maru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 583,
+    "kana": "ちがい",
+    "kanji": "違い",
+    "romaji": "chigai",
+    "english": "difference",
+    "pos": "noun",
+    "audio": "wei-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 584,
+    "kana": "など",
+    "kanji": "等",
+    "romaji": "tou",
+    "english": "etc",
+    "pos": "adverb",
+    "audio": "tou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 585,
+    "kana": "たとえば",
+    "kanji": "例えば",
+    "romaji": "tatoeba",
+    "english": "for example",
+    "pos": "adverb",
+    "audio": "li-eha.mp3",
+    "type": "word"
+  },
+  {
+    "id": 586,
+    "kana": "まかせる",
+    "kanji": "任せる",
+    "romaji": "makaseru",
+    "english": "to entrust",
+    "pos": "verb",
+    "audio": "ren-seru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 587,
+    "kana": "じょうだん",
+    "kanji": "冗談",
+    "romaji": "joudan",
+    "english": "joke",
+    "pos": "noun",
+    "audio": "joudan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 588,
+    "kana": "ちゃんす",
+    "romaji": "chansu",
+    "english": "chance",
+    "pos": "noun",
+    "audio": "tiyansu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 589,
+    "kana": "なり",
+    "romaji": "nari",
+    "english": "to become",
+    "pos": "verb",
+    "audio": "nari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 590,
+    "kana": "せん",
+    "kanji": "線",
+    "romaji": "sen",
+    "english": "line",
+    "pos": "noun",
+    "audio": "sen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 591,
+    "kana": "おんなのこ",
+    "kanji": "女の子",
+    "romaji": "onna no ko",
+    "english": "girl",
+    "pos": "noun",
+    "audio": "nu-nozi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 592,
+    "kana": "かたち",
+    "kanji": "形",
+    "romaji": "katachi",
+    "english": "shape",
+    "pos": "noun",
+    "audio": "katachi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 593,
+    "kana": "かんきょう",
+    "kanji": "環境",
+    "romaji": "kankyou",
+    "english": "environment",
+    "pos": "noun",
+    "audio": "kankyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 594,
+    "kana": "きぶん",
+    "kanji": "気分",
+    "romaji": "kibun",
+    "english": "feeling",
+    "pos": "noun",
+    "audio": "kibun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 595,
+    "kana": "せいと",
+    "kanji": "生徒",
+    "romaji": "seito",
+    "english": "student",
+    "pos": "noun",
+    "audio": "seito.mp3",
+    "type": "word"
+  },
+  {
+    "id": 596,
+    "kana": "かんし",
+    "kanji": "監視",
+    "romaji": "kanshi",
+    "english": "surveillance",
+    "pos": "noun",
+    "audio": "kanshi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 597,
+    "kana": "あそこ",
+    "romaji": "asoko",
+    "english": "that place",
+    "pos": "pronoun",
+    "audio": "asoko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 598,
+    "kana": "まわる",
+    "kanji": "回る",
+    "romaji": "mawaru",
+    "english": "to turn",
+    "pos": "verb",
+    "audio": "hui-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 599,
+    "kana": "しょうかいする",
+    "kanji": "紹介する",
+    "romaji": "shoukai suru",
+    "english": "to introduce",
+    "pos": "verb",
+    "audio": "shao-jie-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 600,
+    "kana": "さま",
+    "romaji": "sama",
+    "english": "looks",
+    "pos": "noun",
+    "audio": "sama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 601,
+    "kana": "いどうする",
+    "kanji": "移動する",
+    "romaji": "idou suru",
+    "english": "to move",
+    "pos": "verb",
+    "audio": "yi-dong-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 602,
+    "kana": "かべ",
+    "kanji": "壁",
+    "romaji": "kabe",
+    "english": "wall",
+    "pos": "noun",
+    "audio": "kabe.mp3",
+    "type": "word"
+  },
+  {
+    "id": 603,
+    "kana": "こまる",
+    "kanji": "困る",
+    "romaji": "komaru",
+    "english": "to have trouble with",
+    "pos": "verb",
+    "audio": "kun-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 604,
+    "kana": "しゅじゅつ",
+    "kanji": "手術",
+    "romaji": "shujutsu",
+    "english": "surgery",
+    "pos": "noun",
+    "audio": "shujutsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 605,
+    "kana": "ゆいいつ",
+    "kanji": "唯一",
+    "romaji": "yuiitsu",
+    "english": "only",
+    "pos": "noun",
+    "audio": "yuiitsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 606,
+    "kana": "うしろ",
+    "kanji": "後ろ",
+    "romaji": "ushiro",
+    "english": "behind",
+    "pos": "noun",
+    "audio": "hou-ro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 607,
+    "kana": "いもうと",
+    "kanji": "妹",
+    "romaji": "imouto",
+    "english": "younger sister",
+    "pos": "noun",
+    "audio": "imouto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 608,
+    "kana": "じっけん",
+    "kanji": "実験",
+    "romaji": "jikken",
+    "english": "experiment",
+    "pos": "noun",
+    "audio": "jikken.mp3",
+    "type": "word"
+  },
+  {
+    "id": 609,
+    "kana": "まいにち",
+    "kanji": "毎日",
+    "romaji": "mainichi",
+    "english": "every day",
+    "pos": "adverb",
+    "audio": "mainichi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 610,
+    "kana": "ようい",
+    "kanji": "用意",
+    "romaji": "youi",
+    "english": "preparation",
+    "pos": "noun",
+    "audio": "youi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 611,
+    "kana": "とし",
+    "kanji": "都市",
+    "romaji": "toshi",
+    "english": "city",
+    "pos": "noun",
+    "audio": "toshi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 612,
+    "kana": "かぎ",
+    "kanji": "鍵",
+    "romaji": "kagi",
+    "english": "key",
+    "pos": "noun",
+    "audio": "kagi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 613,
+    "kana": "かいはつ",
+    "kanji": "開発",
+    "romaji": "kaihatsu",
+    "english": "development",
+    "pos": "noun",
+    "audio": "kaihatsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 614,
+    "kana": "おかげ",
+    "romaji": "okage",
+    "english": "thanks to you",
+    "pos": "noun",
+    "audio": "okake.mp3",
+    "type": "word"
+  },
+  {
+    "id": 615,
+    "kana": "てれび",
+    "romaji": "terebi",
+    "english": "tv set",
+    "pos": "noun",
+    "audio": "terehi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 616,
+    "kana": "くう",
+    "kanji": "食う",
+    "romaji": "kuu",
+    "english": "to eat",
+    "pos": "verb",
+    "audio": "shi-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 617,
+    "kana": "たね",
+    "kanji": "種",
+    "romaji": "tane",
+    "english": "seed",
+    "pos": "noun",
+    "audio": "tane.mp3",
+    "type": "word"
+  },
+  {
+    "id": 618,
+    "kana": "げんば",
+    "kanji": "現場",
+    "romaji": "genba",
+    "english": "on-site",
+    "pos": "noun",
+    "audio": "genba.mp3",
+    "type": "word"
+  },
+  {
+    "id": 619,
+    "kana": "いちぶ",
+    "kanji": "一部",
+    "romaji": "ichibu",
+    "english": "part",
+    "pos": "noun",
+    "audio": "ichibu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 620,
+    "kana": "ばんごう",
+    "kanji": "番号",
+    "romaji": "bango",
+    "english": "number",
+    "pos": "noun",
+    "audio": "bango.mp3",
+    "type": "word"
+  },
+  {
+    "id": 621,
+    "kana": "こども",
+    "kanji": "子ども",
+    "romaji": "kodomo",
+    "english": "child",
+    "pos": "noun",
+    "audio": "zi-tomo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 622,
+    "kana": "み",
+    "kanji": "身",
+    "romaji": "mi",
+    "english": "body",
+    "pos": "noun",
+    "audio": "mi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 623,
+    "kana": "さいぼう",
+    "kanji": "細胞",
+    "romaji": "saibou",
+    "english": "cell",
+    "pos": "noun",
+    "audio": "saibou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 624,
+    "kana": "うんてん",
+    "kanji": "運転",
+    "romaji": "unten",
+    "english": "driving",
+    "pos": "noun",
+    "audio": "unten.mp3",
+    "type": "word"
+  },
+  {
+    "id": 625,
+    "kana": "つづく",
+    "kanji": "続く",
+    "romaji": "tsuzuku",
+    "english": "to continue",
+    "pos": "verb",
+    "audio": "sok-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 626,
+    "kana": "いぜん",
+    "kanji": "以前",
+    "romaji": "izen",
+    "english": "before",
+    "pos": "noun",
+    "audio": "izen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 627,
+    "kana": "しゅぎ",
+    "kanji": "主義",
+    "romaji": "shugi",
+    "english": "principle, doctrine",
+    "pos": "noun",
+    "audio": "shugi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 628,
+    "kana": "しま",
+    "kanji": "島",
+    "romaji": "shima",
+    "english": "island",
+    "pos": "noun",
+    "audio": "shima.mp3",
+    "type": "word"
+  },
+  {
+    "id": 629,
+    "kana": "ふく",
+    "kanji": "服",
+    "romaji": "fuku",
+    "english": "clothes",
+    "pos": "noun",
+    "audio": "fuku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 630,
+    "kana": "うれしい",
+    "kanji": "嬉しい",
+    "romaji": "ureshii",
+    "english": "happy",
+    "pos": "adjective",
+    "audio": "xi-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 631,
+    "kana": "よろしく",
+    "romaji": "yoroshiku",
+    "english": "nice to meet you",
+    "pos": "adverb",
+    "audio": "yorosiku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 632,
+    "kana": "まい",
+    "kanji": "枚",
+    "romaji": "mai",
+    "english": "sheet",
+    "pos": "noun",
+    "audio": "mai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 633,
+    "kana": "さんか",
+    "kanji": "参加",
+    "romaji": "sanka",
+    "english": "participation",
+    "pos": "noun",
+    "audio": "sanka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 634,
+    "kana": "たすけ",
+    "kanji": "助け",
+    "romaji": "tasuke",
+    "english": "help",
+    "pos": "noun",
+    "audio": "zhu-ke.mp3",
+    "type": "word"
+  },
+  {
+    "id": 635,
+    "kana": "しんよう",
+    "kanji": "信用",
+    "romaji": "shin'you",
+    "english": "credit",
+    "pos": "noun",
+    "audio": "shin-you.mp3",
+    "type": "word"
+  },
+  {
+    "id": 636,
+    "kana": "さいばん",
+    "kanji": "裁判",
+    "romaji": "saiban",
+    "english": "trial",
+    "pos": "noun",
+    "audio": "saiban.mp3",
+    "type": "word"
+  },
+  {
+    "id": 637,
+    "kana": "ご",
+    "kanji": "語",
+    "romaji": "go",
+    "english": "a word",
+    "pos": "noun",
+    "audio": "go.mp3",
+    "type": "word"
+  },
+  {
+    "id": 638,
+    "kana": "とくに",
+    "kanji": "特に",
+    "romaji": "toku ni",
+    "english": "especially",
+    "pos": "adverb",
+    "audio": "te-ni.mp3",
+    "type": "word"
+  },
+  {
+    "id": 639,
+    "kana": "おっと",
+    "kanji": "夫",
+    "romaji": "otto",
+    "english": "husband",
+    "pos": "noun",
+    "audio": "otto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 640,
+    "kana": "うばう",
+    "kanji": "奪う",
+    "romaji": "ubau",
+    "english": "to take away",
+    "pos": "verb",
+    "audio": "duo-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 641,
+    "kana": "しき",
+    "kanji": "式",
+    "romaji": "shiki",
+    "english": "formula",
+    "pos": "noun",
+    "audio": "shiki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 642,
+    "kana": "もんすたー",
+    "romaji": "monsutaa",
+    "english": "monster",
+    "pos": "noun",
+    "audio": "monsuta.mp3",
+    "type": "word"
+  },
+  {
+    "id": 643,
+    "kana": "こじん",
+    "kanji": "個人",
+    "romaji": "kojin",
+    "english": "individual",
+    "pos": "noun",
+    "audio": "kojin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 644,
+    "kana": "なく",
+    "kanji": "泣く",
+    "romaji": "naku",
+    "english": "to cry",
+    "pos": "verb",
+    "audio": "qi-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 645,
+    "kana": "しゃちょう",
+    "kanji": "社長",
+    "romaji": "shachou",
+    "english": "president",
+    "pos": "noun",
+    "audio": "shachou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 646,
+    "kana": "げんいん",
+    "kanji": "原因",
+    "romaji": "gen'in",
+    "english": "cause",
+    "pos": "noun",
+    "audio": "gen-in.mp3",
+    "type": "word"
+  },
+  {
+    "id": 647,
+    "kana": "おとうと",
+    "kanji": "弟",
+    "romaji": "otouto",
+    "english": "younger brother",
+    "pos": "noun",
+    "audio": "otouto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 648,
+    "kana": "しんらい",
+    "kanji": "信頼",
+    "romaji": "shinrai",
+    "english": "trust",
+    "pos": "noun",
+    "audio": "shinrai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 649,
+    "kana": "どっち",
+    "romaji": "docchi",
+    "english": "which",
+    "pos": "pronoun",
+    "audio": "totuti.mp3",
+    "type": "word"
+  },
+  {
+    "id": 650,
+    "kana": "そいつ",
+    "romaji": "soitsu",
+    "english": "that one",
+    "pos": "noun",
+    "audio": "soitu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 651,
+    "kana": "ぶき",
+    "kanji": "武器",
+    "romaji": "buki",
+    "english": "weapon",
+    "pos": "noun",
+    "audio": "buki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 652,
+    "kana": "おんがく",
+    "kanji": "音楽",
+    "romaji": "ongaku",
+    "english": "music",
+    "pos": "noun",
+    "audio": "ongaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 653,
+    "kana": "すむ",
+    "kanji": "済む",
+    "romaji": "sumu",
+    "english": "to finish",
+    "pos": "verb",
+    "audio": "ji-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 654,
+    "kana": "けす",
+    "kanji": "消す",
+    "romaji": "kesu",
+    "english": "to erase",
+    "pos": "verb",
+    "audio": "xiao-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 655,
+    "kana": "ちーさい",
+    "kanji": "小さい",
+    "romaji": "chiisai",
+    "english": "small",
+    "pos": "adjective",
+    "audio": "xiao-sai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 656,
+    "kana": "きらい",
+    "kanji": "嫌い",
+    "romaji": "kirai",
+    "english": "dislike",
+    "pos": "noun",
+    "audio": "xian-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 657,
+    "kana": "もうしわけ",
+    "kanji": "申し訳",
+    "romaji": "moushiwake",
+    "english": "apology, excuse",
+    "pos": "noun",
+    "audio": "shen-siyi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 658,
+    "kana": "かかわる",
+    "kanji": "関わる",
+    "romaji": "kakawaru",
+    "english": "to be involved",
+    "pos": "verb",
+    "audio": "guan-waru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 659,
+    "kana": "やま",
+    "kanji": "山",
+    "romaji": "yama",
+    "english": "mountain",
+    "pos": "noun",
+    "audio": "yama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 660,
+    "kana": "まるで",
+    "romaji": "marude",
+    "english": "as if",
+    "pos": "adverb",
+    "audio": "marute.mp3",
+    "type": "word"
+  },
+  {
+    "id": 661,
+    "kana": "ぶぶん",
+    "kanji": "部分",
+    "romaji": "bubun",
+    "english": "part",
+    "pos": "noun",
+    "audio": "bubun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 662,
+    "kana": "しっかり",
+    "romaji": "shikkari",
+    "english": "tightly",
+    "pos": "adverb",
+    "audio": "situkari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 663,
+    "kana": "りょうしん",
+    "kanji": "両親",
+    "romaji": "ryoushin",
+    "english": "parents",
+    "pos": "noun",
+    "audio": "ryoushin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 664,
+    "kana": "ほご",
+    "kanji": "保護",
+    "romaji": "hogo",
+    "english": "protection",
+    "pos": "noun",
+    "audio": "hogo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 665,
+    "kana": "せんぱい",
+    "kanji": "先輩",
+    "romaji": "senpai",
+    "english": "senior",
+    "pos": "noun",
+    "audio": "senpai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 666,
+    "kana": "しゅう",
+    "kanji": "州",
+    "romaji": "shuu",
+    "english": "state",
+    "pos": "noun",
+    "audio": "shuu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 667,
+    "kana": "たいよう",
+    "kanji": "太陽",
+    "romaji": "taiyou",
+    "english": "sun",
+    "pos": "noun",
+    "audio": "taiyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 668,
+    "kana": "おす",
+    "kanji": "押す",
+    "romaji": "osu",
+    "english": "to push",
+    "pos": "verb",
+    "audio": "ya-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 669,
+    "kana": "きぼう",
+    "kanji": "希望",
+    "romaji": "kibou",
+    "english": "hope",
+    "pos": "noun",
+    "audio": "kibou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 670,
+    "kana": "ぐん",
+    "kanji": "軍",
+    "romaji": "gun",
+    "english": "army",
+    "pos": "noun",
+    "audio": "gun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 671,
+    "kana": "はんのう",
+    "kanji": "反応",
+    "romaji": "hannou",
+    "english": "reaction",
+    "pos": "noun",
+    "audio": "hannou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 672,
+    "kana": "きづく",
+    "kanji": "気付く",
+    "romaji": "kizuku",
+    "english": "to notice",
+    "pos": "verb",
+    "audio": "qi-fu-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 673,
+    "kana": "きまる",
+    "kanji": "決まる",
+    "romaji": "kimeru",
+    "english": "to be decided",
+    "pos": "verb",
+    "audio": "jue-maru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 674,
+    "kana": "じんぶつ",
+    "kanji": "人物",
+    "romaji": "jinbutsu",
+    "english": "person",
+    "pos": "noun",
+    "audio": "jinbutsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 675,
+    "kana": "かす",
+    "kanji": "貸す",
+    "romaji": "kasu",
+    "english": "to lend",
+    "pos": "verb",
+    "audio": "dai-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 676,
+    "kana": "じんるい",
+    "kanji": "人類",
+    "romaji": "jinrui",
+    "english": "mankind",
+    "pos": "noun",
+    "audio": "jinrui.mp3",
+    "type": "word"
+  },
+  {
+    "id": 677,
+    "kana": "せいちょう",
+    "kanji": "成長",
+    "romaji": "seichou",
+    "english": "growth",
+    "pos": "noun",
+    "audio": "seichou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 678,
+    "kana": "じゃま",
+    "kanji": "邪魔",
+    "romaji": "jama",
+    "english": "obstacle",
+    "pos": "noun",
+    "audio": "jama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 679,
+    "kana": "まじ",
+    "romaji": "maji",
+    "english": "really",
+    "pos": "adjective",
+    "audio": "masi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 680,
+    "kana": "ぜんたい",
+    "kanji": "全体",
+    "romaji": "zentai",
+    "english": "whole",
+    "pos": "noun",
+    "audio": "zentai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 681,
+    "kana": "わらう",
+    "kanji": "笑う",
+    "romaji": "warau",
+    "english": "to smile",
+    "pos": "verb",
+    "audio": "xiao-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 682,
+    "kana": "えがく",
+    "kanji": "描く",
+    "romaji": "kaku",
+    "english": "to draw",
+    "pos": "verb",
+    "audio": "miao-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 683,
+    "kana": "ほんもの",
+    "kanji": "本物",
+    "romaji": "honmono",
+    "english": "genuine",
+    "pos": "noun",
+    "audio": "honmono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 684,
+    "kana": "せいじ",
+    "kanji": "政治",
+    "romaji": "seiji",
+    "english": "politics",
+    "pos": "noun",
+    "audio": "seiji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 685,
+    "kana": "だめ",
+    "kanji": "駄目",
+    "romaji": "dame",
+    "english": "no good",
+    "pos": "adjective",
+    "audio": "dame.mp3",
+    "type": "word"
+  },
+  {
+    "id": 686,
+    "kana": "いしき",
+    "kanji": "意識",
+    "romaji": "ishiki",
+    "english": "consciousness",
+    "pos": "noun",
+    "audio": "ishiki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 687,
+    "kana": "き",
+    "kanji": "木",
+    "romaji": "ki",
+    "english": "wood",
+    "pos": "noun",
+    "audio": "ki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 688,
+    "kana": "ほんき",
+    "kanji": "本気",
+    "romaji": "honki",
+    "english": "seriously",
+    "pos": "adjective",
+    "audio": "honki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 689,
+    "kana": "かぎり",
+    "kanji": "限り",
+    "romaji": "kagiri",
+    "english": "as long as",
+    "pos": "noun",
+    "audio": "xian-ri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 690,
+    "kana": "はこぶ",
+    "kanji": "運ぶ",
+    "romaji": "hakobu",
+    "english": "to carry",
+    "pos": "verb",
+    "audio": "yun-hu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 691,
+    "kana": "いりょう",
+    "kanji": "医療",
+    "romaji": "iryou",
+    "english": "medical care",
+    "pos": "noun",
+    "audio": "iryou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 692,
+    "kana": "はな",
+    "kanji": "花",
+    "romaji": "hana",
+    "english": "flower",
+    "pos": "noun",
+    "audio": "hana.mp3",
+    "type": "word"
+  },
+  {
+    "id": 693,
+    "kana": "ぬける",
+    "kanji": "抜ける",
+    "romaji": "nukeru",
+    "english": "to get out",
+    "pos": "verb",
+    "audio": "ba-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 694,
+    "kana": "びでお",
+    "romaji": "bideo",
+    "english": "video",
+    "pos": "noun",
+    "audio": "hiteo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 695,
+    "kana": "こうこう",
+    "kanji": "高校",
+    "romaji": "koukou",
+    "english": "high school",
+    "pos": "noun",
+    "audio": "koukou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 696,
+    "kana": "おとす",
+    "kanji": "落とす",
+    "romaji": "otosu",
+    "english": "to drop",
+    "pos": "verb",
+    "audio": "luo-tosu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 697,
+    "kana": "きたい",
+    "kanji": "期待",
+    "romaji": "kidai",
+    "english": "expectations",
+    "pos": "noun",
+    "audio": "kidai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 698,
+    "kana": "いでん",
+    "kanji": "遺伝",
+    "romaji": "iden",
+    "english": "genetics",
+    "pos": "noun",
+    "audio": "iden.mp3",
+    "type": "word"
+  },
+  {
+    "id": 699,
+    "kana": "めーる",
+    "romaji": "meeru",
+    "english": "email",
+    "pos": "noun",
+    "audio": "meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 700,
+    "kana": "きょういく",
+    "kanji": "教育",
+    "romaji": "kyouiku",
+    "english": "education",
+    "pos": "noun",
+    "audio": "kyouiku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 701,
+    "kana": "あそぶ",
+    "kanji": "遊ぶ",
+    "romaji": "asobu",
+    "english": "to play",
+    "pos": "verb",
+    "audio": "you-hu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 702,
+    "kana": "かんり",
+    "kanji": "管理",
+    "romaji": "kanri",
+    "english": "management",
+    "pos": "noun",
+    "audio": "kanri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 703,
+    "kana": "ちゅうい",
+    "kanji": "注意",
+    "romaji": "chuui",
+    "english": "note",
+    "pos": "noun",
+    "audio": "chuui.mp3",
+    "type": "word"
+  },
+  {
+    "id": 704,
+    "kana": "ぶじ",
+    "kanji": "無事",
+    "romaji": "buji",
+    "english": "safely",
+    "pos": "adjective",
+    "audio": "buji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 705,
+    "kana": "すごす",
+    "kanji": "過ごす",
+    "romaji": "sugosu",
+    "english": "to spend",
+    "pos": "verb",
+    "audio": "guo-kosu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 706,
+    "kana": "よてい",
+    "kanji": "予定",
+    "romaji": "yotei",
+    "english": "schedule",
+    "pos": "noun",
+    "audio": "yotei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 707,
+    "kana": "おりる",
+    "kanji": "降りる",
+    "romaji": "oriru",
+    "english": "to get off",
+    "pos": "verb",
+    "audio": "jiang-riru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 708,
+    "kana": "どらごん",
+    "romaji": "doragon",
+    "english": "dragon",
+    "pos": "noun",
+    "audio": "torakon.mp3",
+    "type": "word"
+  },
+  {
+    "id": 709,
+    "kana": "つかえる",
+    "kanji": "使える",
+    "romaji": "tsukaeru",
+    "english": "to be usable",
+    "pos": "verb",
+    "audio": "shi-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 710,
+    "kana": "とりひき",
+    "kanji": "取引",
+    "romaji": "torihiki",
+    "english": "transaction",
+    "pos": "noun",
+    "audio": "torihiki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 711,
+    "kana": "しょうじき",
+    "kanji": "正直",
+    "romaji": "shoujiki",
+    "english": "honesty",
+    "pos": "adjective",
+    "audio": "shoujiki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 712,
+    "kana": "びょう",
+    "kanji": "秒",
+    "romaji": "byou",
+    "english": "seconds",
+    "pos": "noun",
+    "audio": "byou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 713,
+    "kana": "どちら",
+    "romaji": "dochira",
+    "english": "which",
+    "pos": "pronoun",
+    "audio": "totira.mp3",
+    "type": "word"
+  },
+  {
+    "id": 714,
+    "kana": "ふめい",
+    "kanji": "不明",
+    "romaji": "fumei",
+    "english": "not clear",
+    "pos": "noun",
+    "audio": "fumei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 715,
+    "kana": "ぎせい",
+    "kanji": "犠牲",
+    "romaji": "gisei",
+    "english": "sacrifice",
+    "pos": "noun",
+    "audio": "gisei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 716,
+    "kana": "たった",
+    "romaji": "tatta",
+    "english": "only",
+    "pos": "adverb",
+    "audio": "tatuta.mp3",
+    "type": "word"
+  },
+  {
+    "id": 717,
+    "kana": "きず",
+    "kanji": "傷",
+    "romaji": "kizu",
+    "english": "scratch",
+    "pos": "noun",
+    "audio": "kizu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 718,
+    "kana": "たてる",
+    "kanji": "立てる",
+    "romaji": "tateru",
+    "english": "to stand up",
+    "pos": "verb",
+    "audio": "li-teru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 719,
+    "kana": "ごう",
+    "kanji": "号",
+    "romaji": "gou",
+    "english": "issue",
+    "pos": "noun",
+    "audio": "gou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 720,
+    "kana": "あつめる",
+    "kanji": "集める",
+    "romaji": "atsumeru",
+    "english": "to collect",
+    "pos": "verb",
+    "audio": "ji-meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 721,
+    "kana": "れきし",
+    "kanji": "歴史",
+    "romaji": "rekishi",
+    "english": "history",
+    "pos": "noun",
+    "audio": "rekishi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 722,
+    "kana": "けっして",
+    "kanji": "決して",
+    "romaji": "kesshite",
+    "english": "never",
+    "pos": "adverb",
+    "audio": "jue-site.mp3",
+    "type": "word"
+  },
+  {
+    "id": 723,
+    "kana": "ひん",
+    "kanji": "品",
+    "romaji": "shina",
+    "english": "goods",
+    "pos": "noun",
+    "audio": "shina.mp3",
+    "type": "word"
+  },
+  {
+    "id": 724,
+    "kana": "けっきょく",
+    "kanji": "結局",
+    "romaji": "kekkyoku",
+    "english": "in the end",
+    "pos": "adverb",
+    "audio": "kekkyoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 725,
+    "kana": "ほし",
+    "kanji": "星",
+    "romaji": "hoshi",
+    "english": "star",
+    "pos": "noun",
+    "audio": "hoshi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 726,
+    "kana": "おや",
+    "kanji": "親",
+    "romaji": "oya",
+    "english": "parent",
+    "pos": "noun",
+    "audio": "oya.mp3",
+    "type": "word"
+  },
+  {
+    "id": 727,
+    "kana": "たのしむ",
+    "kanji": "楽しむ",
+    "romaji": "tanoshimu",
+    "english": "to enjoy",
+    "pos": "verb",
+    "audio": "le-simu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 728,
+    "kana": "ぎんこう",
+    "kanji": "銀行",
+    "romaji": "gin kou",
+    "english": "bank",
+    "pos": "noun",
+    "audio": "gin-kou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 729,
+    "kana": "とうぜん",
+    "kanji": "当然",
+    "romaji": "tou zen",
+    "english": "of course",
+    "pos": "adjective",
+    "audio": "tou-zen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 730,
+    "kana": "とつぜん",
+    "kanji": "突然",
+    "romaji": "totsu zen",
+    "english": "suddenly",
+    "pos": "adverb",
+    "audio": "totsu-zen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 731,
+    "kana": "かんじょう",
+    "kanji": "感情",
+    "romaji": "kan jou",
+    "english": "emotions",
+    "pos": "noun",
+    "audio": "kan-jou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 732,
+    "kana": "しょうめい",
+    "kanji": "証明",
+    "romaji": "shou mei",
+    "english": "proof",
+    "pos": "noun",
+    "audio": "shou-mei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 733,
+    "kana": "りょうり",
+    "kanji": "料理",
+    "romaji": "ryou ri",
+    "english": "cooking, cuisine",
+    "pos": "noun",
+    "audio": "ryou-ri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 734,
+    "kana": "ぼす",
+    "romaji": "bo su",
+    "english": "boss",
+    "pos": "noun",
+    "audio": "hosu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 735,
+    "kana": "おもえる",
+    "kanji": "思える",
+    "romaji": "omoeru",
+    "english": "to seem",
+    "pos": "verb",
+    "audio": "si-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 736,
+    "kana": "なくなる",
+    "kanji": "亡くなる",
+    "romaji": "naku naru",
+    "english": "to die",
+    "pos": "verb",
+    "audio": "wang-kunaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 737,
+    "kana": "したがう",
+    "kanji": "従う",
+    "romaji": "shitagau",
+    "english": "to follow",
+    "pos": "verb",
+    "audio": "cong-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 738,
+    "kana": "ちょうど",
+    "romaji": "chou do",
+    "english": "just",
+    "pos": "adverb",
+    "audio": "tiyouto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 739,
+    "kana": "かん",
+    "kanji": "館",
+    "romaji": "kan",
+    "english": "hall",
+    "pos": "noun",
+    "audio": "kan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 740,
+    "kana": "むだ",
+    "kanji": "無駄",
+    "romaji": "muda",
+    "english": "waste",
+    "pos": "adjective",
+    "audio": "muda.mp3",
+    "type": "word"
+  },
+  {
+    "id": 741,
+    "kana": "ていきょうする",
+    "kanji": "提供する",
+    "romaji": "teikyou suru",
+    "english": "to provide",
+    "pos": "verb",
+    "audio": "ti-gong-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 742,
+    "kana": "みみ",
+    "kanji": "耳",
+    "romaji": "mimi",
+    "english": "ear",
+    "pos": "noun",
+    "audio": "mimi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 743,
+    "kana": "まける",
+    "kanji": "負ける",
+    "romaji": "makeru",
+    "english": "to lose",
+    "pos": "verb",
+    "audio": "fu-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 744,
+    "kana": "あきらか",
+    "kanji": "明らか",
+    "romaji": "akiraka",
+    "english": "clear",
+    "pos": "adjective",
+    "audio": "ming-raka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 745,
+    "kana": "まほう",
+    "kanji": "魔法",
+    "romaji": "mahou",
+    "english": "magic",
+    "pos": "noun",
+    "audio": "mahou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 746,
+    "kana": "うで",
+    "kanji": "腕",
+    "romaji": "ude",
+    "english": "arm",
+    "pos": "noun",
+    "audio": "ude.mp3",
+    "type": "word"
+  },
+  {
+    "id": 747,
+    "kana": "たぶん",
+    "kanji": "多分",
+    "romaji": "tabun",
+    "english": "perhaps",
+    "pos": "adverb",
+    "audio": "tabun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 748,
+    "kana": "かわり",
+    "kanji": "代わり",
+    "romaji": "kawari",
+    "english": "substitute",
+    "pos": "noun",
+    "audio": "dai-wari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 749,
+    "kana": "ろぼっと",
+    "romaji": "robo tto",
+    "english": "robot",
+    "pos": "noun",
+    "audio": "rohotuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 750,
+    "kana": "shshnen",
+    "kanji": "少年",
+    "romaji": "shōnen",
+    "english": "boy",
+    "pos": "noun",
+    "audio": "shonen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 751,
+    "kana": "ふるい",
+    "kanji": "古い",
+    "romaji": "furui",
+    "english": "old",
+    "pos": "adjective",
+    "audio": "gu-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 752,
+    "kana": "あいであ",
+    "romaji": "aidea",
+    "english": "idea",
+    "pos": "noun",
+    "audio": "aitea.mp3",
+    "type": "word"
+  },
+  {
+    "id": 753,
+    "kana": "すてき",
+    "kanji": "素敵",
+    "romaji": "suteki",
+    "english": "nice",
+    "pos": "adjective",
+    "audio": "suteki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 754,
+    "kana": "けっこう",
+    "kanji": "結構",
+    "romaji": "kekkou",
+    "english": "fine",
+    "pos": "adverb",
+    "audio": "kekkou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 755,
+    "kana": "あたし",
+    "romaji": "a ta shi",
+    "english": "I",
+    "pos": "pronoun",
+    "audio": "atasi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 756,
+    "kana": "ばくはつ",
+    "kanji": "爆発",
+    "romaji": "baku hatsu",
+    "english": "explosion",
+    "pos": "noun",
+    "audio": "baku-hatsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 757,
+    "kana": "ちいき",
+    "kanji": "地域",
+    "romaji": "chi iki",
+    "english": "region",
+    "pos": "noun",
+    "audio": "chi-iki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 758,
+    "kana": "めっせーじ",
+    "romaji": "messe ji",
+    "english": "message",
+    "pos": "noun",
+    "audio": "metusesi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 759,
+    "kana": "あらゆる",
+    "romaji": "ara yuru",
+    "english": "every",
+    "pos": "adnominal",
+    "audio": "arayuru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 760,
+    "kana": "おそらく",
+    "romaji": "o so ra ku",
+    "english": "probably",
+    "pos": "adverb",
+    "audio": "osoraku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 761,
+    "kana": "あわせる",
+    "kanji": "合わせる",
+    "romaji": "a wa seru",
+    "english": "to match",
+    "pos": "verb",
+    "audio": "he-waseru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 762,
+    "kana": "あに",
+    "kanji": "兄",
+    "romaji": "ani",
+    "english": "older brother",
+    "pos": "noun",
+    "audio": "ani.mp3",
+    "type": "word"
+  },
+  {
+    "id": 763,
+    "kana": "れんちゅう",
+    "kanji": "連中",
+    "romaji": "ren chuu",
+    "english": "guys",
+    "pos": "noun",
+    "audio": "ren-chuu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 764,
+    "kana": "かんじる",
+    "kanji": "感じる",
+    "romaji": "kanjiru",
+    "english": "to feel",
+    "pos": "verb",
+    "audio": "gan-siru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 765,
+    "kana": "でざいん",
+    "romaji": "de zai n",
+    "english": "design",
+    "pos": "noun",
+    "audio": "tesain.mp3",
+    "type": "word"
+  },
+  {
+    "id": 766,
+    "kana": "しゅじん",
+    "kanji": "主人",
+    "romaji": "shu jin",
+    "english": "master",
+    "pos": "noun",
+    "audio": "shu-jin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 767,
+    "kana": "びる",
+    "romaji": "biru",
+    "english": "building",
+    "pos": "noun",
+    "audio": "hiru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 768,
+    "kana": "しゅんかん",
+    "kanji": "瞬間",
+    "romaji": "shunkan",
+    "english": "moment",
+    "pos": "noun",
+    "audio": "shunkan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 769,
+    "kana": "きずつける",
+    "kanji": "傷つける",
+    "romaji": "kizutsukeru",
+    "english": "to hurt",
+    "pos": "verb",
+    "audio": "shang-tukeru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 770,
+    "kana": "とじる",
+    "kanji": "閉じる",
+    "romaji": "tojiru",
+    "english": "to close",
+    "pos": "verb",
+    "audio": "bi-siru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 771,
+    "kana": "かくれる",
+    "kanji": "隠れる",
+    "romaji": "kakureru",
+    "english": "to hide",
+    "pos": "verb",
+    "audio": "yin-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 772,
+    "kana": "そら",
+    "kanji": "空",
+    "romaji": "sora",
+    "english": "sky",
+    "pos": "noun",
+    "audio": "sora.mp3",
+    "type": "word"
+  },
+  {
+    "id": 773,
+    "kana": "けんこう",
+    "kanji": "健康",
+    "romaji": "kenkou",
+    "english": "health",
+    "pos": "noun",
+    "audio": "kenkou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 774,
+    "kana": "いくら",
+    "romaji": "ikura",
+    "english": "how much",
+    "pos": "adverb",
+    "audio": "ikura.mp3",
+    "type": "word"
+  },
+  {
+    "id": 775,
+    "kana": "きぎょう",
+    "kanji": "企業",
+    "romaji": "kigyou",
+    "english": "company",
+    "pos": "noun",
+    "audio": "kigyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 776,
+    "kana": "いろいろ",
+    "romaji": "iroiro",
+    "english": "various",
+    "pos": "noun",
+    "audio": "iroiro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 777,
+    "kana": "せんもん",
+    "kanji": "専門",
+    "romaji": "senmon",
+    "english": "specialty",
+    "pos": "noun",
+    "audio": "senmon.mp3",
+    "type": "word"
+  },
+  {
+    "id": 778,
+    "kana": "かん",
+    "kanji": "感",
+    "romaji": "kan",
+    "english": "feeling",
+    "pos": "noun",
+    "audio": "kan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 779,
+    "kana": "きのう",
+    "kanji": "機能",
+    "romaji": "kinou",
+    "english": "function",
+    "pos": "noun",
+    "audio": "kinou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 780,
+    "kana": "たたかい",
+    "kanji": "戦い",
+    "romaji": "tatakai",
+    "english": "fight",
+    "pos": "noun",
+    "audio": "zhan-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 781,
+    "kana": "うそ",
+    "romaji": "uso",
+    "english": "lie",
+    "pos": "noun",
+    "audio": "uso.mp3",
+    "type": "word"
+  },
+  {
+    "id": 782,
+    "kana": "おくさん",
+    "kanji": "奥さん",
+    "romaji": "okusan",
+    "english": "wife",
+    "pos": "noun",
+    "audio": "ao-san.mp3",
+    "type": "word"
+  },
+  {
+    "id": 783,
+    "kana": "せいめい",
+    "kanji": "生命",
+    "romaji": "seimei",
+    "english": "life",
+    "pos": "noun",
+    "audio": "seimei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 784,
+    "kana": "いっぱい",
+    "romaji": "ippai",
+    "english": "full",
+    "pos": "adverb",
+    "audio": "ituhai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 785,
+    "kana": "えん",
+    "kanji": "円",
+    "romaji": "en",
+    "english": "circle",
+    "pos": "noun",
+    "audio": "en.mp3",
+    "type": "word"
+  },
+  {
+    "id": 786,
+    "kana": "えいぞう",
+    "kanji": "映像",
+    "romaji": "eizou",
+    "english": "picture",
+    "pos": "noun",
+    "audio": "eizou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 787,
+    "kana": "りすと",
+    "romaji": "risuto",
+    "english": "list",
+    "pos": "noun",
+    "audio": "risuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 788,
+    "kana": "おとな",
+    "kanji": "大人",
+    "romaji": "otona",
+    "english": "adult",
+    "pos": "noun",
+    "audio": "otona.mp3",
+    "type": "word"
+  },
+  {
+    "id": 789,
+    "kana": "いそがしい",
+    "kanji": "忙しい",
+    "romaji": "isogashii",
+    "english": "busy",
+    "pos": "adjective",
+    "audio": "mang-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 790,
+    "kana": "きょうだい",
+    "kanji": "兄弟",
+    "romaji": "kyoudai",
+    "english": "brother",
+    "pos": "noun",
+    "audio": "kyoudai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 791,
+    "kana": "かりる",
+    "kanji": "借りる",
+    "romaji": "kariru",
+    "english": "to borrow",
+    "pos": "verb",
+    "audio": "jie-riru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 792,
+    "kana": "うごき",
+    "kanji": "動き",
+    "romaji": "ugoki",
+    "english": "movement",
+    "pos": "noun",
+    "audio": "dong-ki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 793,
+    "kana": "さいあく",
+    "kanji": "最悪",
+    "romaji": "saiaku",
+    "english": "worst",
+    "pos": "adjective",
+    "audio": "saiaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 794,
+    "kana": "あかちゃん",
+    "kanji": "赤ちゃん",
+    "romaji": "akachan",
+    "english": "baby",
+    "pos": "noun",
+    "audio": "chi-tiyan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 795,
+    "kana": "むこう",
+    "kanji": "向こう",
+    "romaji": "mukou",
+    "english": "beyond",
+    "pos": "noun",
+    "audio": "xiang-kou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 796,
+    "kana": "いる",
+    "kanji": "要る",
+    "romaji": "iru",
+    "english": "to need",
+    "pos": "verb",
+    "audio": "yao-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 797,
+    "kana": "かんぺき",
+    "kanji": "完璧",
+    "romaji": "kanpeki",
+    "english": "perfection",
+    "pos": "adjective",
+    "audio": "kanpeki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 798,
+    "kana": "きかい",
+    "kanji": "機会",
+    "romaji": "kikai",
+    "english": "opportunity",
+    "pos": "noun",
+    "audio": "kikai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 799,
+    "kana": "はんたい",
+    "kanji": "反対",
+    "romaji": "hantai",
+    "english": "opposition",
+    "pos": "noun",
+    "audio": "hantai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 800,
+    "kana": "にんむ",
+    "kanji": "任務",
+    "romaji": "ninmu",
+    "english": "mission",
+    "pos": "noun",
+    "audio": "ninmu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 801,
+    "kana": "よろこぶ",
+    "kanji": "喜ぶ",
+    "romaji": "yorokobu",
+    "english": "to be happy",
+    "pos": "verb",
+    "audio": "xi-hu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 802,
+    "kana": "てすと",
+    "romaji": "tesuto",
+    "english": "test",
+    "pos": "noun",
+    "audio": "tesuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 803,
+    "kana": "しずか",
+    "kanji": "静か",
+    "romaji": "shizuka",
+    "english": "quiet",
+    "pos": "adjective",
+    "audio": "jing-ka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 804,
+    "kana": "じょう",
+    "kanji": "嬢",
+    "romaji": "jou",
+    "english": "miss",
+    "pos": "noun",
+    "audio": "jou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 805,
+    "kana": "むける",
+    "kanji": "向ける",
+    "romaji": "mukeru",
+    "english": "to direct",
+    "pos": "verb",
+    "audio": "xiang-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 806,
+    "kana": "しんぞう",
+    "kanji": "心臓",
+    "romaji": "shinzou",
+    "english": "heart",
+    "pos": "noun",
+    "audio": "shinzou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 807,
+    "kana": "けいび",
+    "kanji": "警備",
+    "romaji": "keibi",
+    "english": "security",
+    "pos": "noun",
+    "audio": "keibi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 808,
+    "kana": "だいすき",
+    "kanji": "大好き",
+    "romaji": "daisuki",
+    "english": "really like",
+    "pos": "adjective",
+    "audio": "da-hao-ki.mp3",
+    "type": "word"
+  },
+  {
+    "id": 809,
+    "kana": "ばい",
+    "kanji": "倍",
+    "romaji": "bai",
+    "english": "times",
+    "pos": "noun",
+    "audio": "bai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 810,
+    "kana": "しはい",
+    "kanji": "支配",
+    "romaji": "shihai",
+    "english": "control",
+    "pos": "noun",
+    "audio": "shihai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 811,
+    "kana": "さくひん",
+    "kanji": "作品",
+    "romaji": "sakuhin",
+    "english": "the work",
+    "pos": "noun",
+    "audio": "sakuhin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 812,
+    "kana": "とうす",
+    "kanji": "通す",
+    "romaji": "toosu",
+    "english": "to pass",
+    "pos": "verb",
+    "audio": "tong-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 813,
+    "kana": "ものがたり",
+    "kanji": "物語",
+    "romaji": "monogatari",
+    "english": "story",
+    "pos": "noun",
+    "audio": "monogatari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 814,
+    "kana": "ぜん",
+    "kanji": "全",
+    "romaji": "zen",
+    "english": "all",
+    "pos": "noun",
+    "audio": "zen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 815,
+    "kana": "ふくざつ",
+    "kanji": "複雑",
+    "romaji": "fukuzatsu",
+    "english": "complicated",
+    "pos": "adjective",
+    "audio": "fukuzatsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 816,
+    "kana": "うまい",
+    "kanji": "上手い",
+    "romaji": "umai",
+    "english": "good",
+    "pos": "adjective",
+    "audio": "shang-shou-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 817,
+    "kana": "こ",
+    "kanji": "個",
+    "romaji": "ko",
+    "english": "individual",
+    "pos": "counter",
+    "audio": "ko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 818,
+    "kana": "じこ",
+    "kanji": "自己",
+    "romaji": "jiko",
+    "english": "self",
+    "pos": "noun",
+    "audio": "jiko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 819,
+    "kana": "し",
+    "kanji": "師",
+    "romaji": "shi",
+    "english": "teacher",
+    "pos": "noun",
+    "audio": "shi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 820,
+    "kana": "さがす",
+    "kanji": "捜す",
+    "romaji": "sagasu",
+    "english": "to search",
+    "pos": "verb",
+    "audio": "sou-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 821,
+    "kana": "ぷろぐらむ",
+    "romaji": "puroguramu",
+    "english": "program",
+    "pos": "noun",
+    "audio": "hurokuramu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 822,
+    "kana": "ほてる",
+    "romaji": "hoteru",
+    "english": "hotel",
+    "pos": "noun",
+    "audio": "hoteru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 823,
+    "kana": "うつわ",
+    "kanji": "器",
+    "romaji": "utsuwa",
+    "english": "vessel",
+    "pos": "noun",
+    "audio": "utsuwa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 824,
+    "kana": "まいく",
+    "romaji": "maiku",
+    "english": "microphone",
+    "pos": "noun",
+    "audio": "maiku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 825,
+    "kana": "のこり",
+    "kanji": "残り",
+    "romaji": "nokori",
+    "english": "rest",
+    "pos": "noun",
+    "audio": "can-ri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 826,
+    "kana": "にゅーす",
+    "romaji": "nyuusu",
+    "english": "news",
+    "pos": "noun",
+    "audio": "niyusu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 827,
+    "kana": "ゆっくり",
+    "romaji": "yukkuri",
+    "english": "slowly",
+    "pos": "adverb",
+    "audio": "yutukuri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 828,
+    "kana": "わが",
+    "kanji": "我が",
+    "romaji": "waga",
+    "english": "my",
+    "pos": "pronoun",
+    "audio": "wo-ka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 829,
+    "kana": "しょうじょ",
+    "kanji": "少女",
+    "romaji": "shoujo",
+    "english": "girl",
+    "pos": "noun",
+    "audio": "shoujo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 830,
+    "kana": "たんとう",
+    "kanji": "担当",
+    "romaji": "tantou",
+    "english": "in charge",
+    "pos": "noun",
+    "audio": "tantou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 831,
+    "kana": "しんじる",
+    "kanji": "信じる",
+    "romaji": "shinjiru",
+    "english": "to believe",
+    "pos": "verb",
+    "audio": "xin-siru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 832,
+    "kana": "おそう",
+    "kanji": "襲う",
+    "romaji": "osou",
+    "english": "to attack",
+    "pos": "verb",
+    "audio": "xi-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 833,
+    "kana": "ふる",
+    "kanji": "振る",
+    "romaji": "furu",
+    "english": "to shake",
+    "pos": "verb",
+    "audio": "zhen-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 834,
+    "kana": "がわ",
+    "kanji": "側",
+    "romaji": "soba",
+    "english": "side",
+    "pos": "noun",
+    "audio": "soba.mp3",
+    "type": "word"
+  },
+  {
+    "id": 835,
+    "kana": "しんけい",
+    "kanji": "神経",
+    "romaji": "shinkei",
+    "english": "nerve, sensitivity",
+    "pos": "noun",
+    "audio": "shinkei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 836,
+    "kana": "しようする",
+    "kanji": "使用する",
+    "romaji": "shiyousuru",
+    "english": "to use",
+    "pos": "verb",
+    "audio": "shi-yong-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 837,
+    "kana": "くび",
+    "kanji": "首",
+    "romaji": "kubi",
+    "english": "neck",
+    "pos": "noun",
+    "audio": "kubi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 838,
+    "kana": "やっと",
+    "romaji": "yatto",
+    "english": "at last",
+    "pos": "adverb",
+    "audio": "yatuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 839,
+    "kana": "やさしい",
+    "kanji": "優しい",
+    "romaji": "yasashii",
+    "english": "kind",
+    "pos": "adjective",
+    "audio": "you-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 840,
+    "kana": "はんだん",
+    "kanji": "判断",
+    "romaji": "handan",
+    "english": "judgment",
+    "pos": "noun",
+    "audio": "handan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 841,
+    "kana": "いろいろ",
+    "kanji": "色々",
+    "romaji": "iroiro",
+    "english": "various",
+    "pos": "adverb",
+    "audio": "iroiro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 842,
+    "kana": "しえん",
+    "kanji": "支援",
+    "romaji": "shien",
+    "english": "support",
+    "pos": "noun",
+    "audio": "shien.mp3",
+    "type": "word"
+  },
+  {
+    "id": 843,
+    "kana": "きゅう",
+    "kanji": "急",
+    "romaji": "kyuu",
+    "english": "sudden",
+    "pos": "adjective",
+    "audio": "kyuu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 844,
+    "kana": "あり",
+    "kanji": "有",
+    "romaji": "ari",
+    "english": "possession, existence",
+    "pos": "noun",
+    "audio": "ari.mp3",
+    "type": "word"
+  },
+  {
+    "id": 845,
+    "kana": "むく",
+    "kanji": "向く",
+    "romaji": "muku",
+    "english": "to turn towards",
+    "pos": "verb",
+    "audio": "xiang-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 846,
+    "kana": "し",
+    "kanji": "氏",
+    "romaji": "shi",
+    "english": "Mr.",
+    "pos": "noun",
+    "audio": "shi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 847,
+    "kana": "そっち",
+    "romaji": "socchi",
+    "english": "that way",
+    "pos": "pronoun",
+    "audio": "sotuti.mp3",
+    "type": "word"
+  },
+  {
+    "id": 848,
+    "kana": "ぱーてぃー",
+    "romaji": "paatii",
+    "english": "party",
+    "pos": "noun",
+    "audio": "hatei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 849,
+    "kana": "はんぶん",
+    "kanji": "半分",
+    "romaji": "hanbun",
+    "english": "half",
+    "pos": "noun",
+    "audio": "hanbun.mp3",
+    "type": "word"
+  },
+  {
+    "id": 850,
+    "kana": "まさに",
+    "romaji": "masani",
+    "english": "exactly",
+    "pos": "adverb",
+    "audio": "masani.mp3",
+    "type": "word"
+  },
+  {
+    "id": 851,
+    "kana": "ためす",
+    "kanji": "試す",
+    "romaji": "tamesu",
+    "english": "to try",
+    "pos": "verb",
+    "audio": "shi-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 852,
+    "kana": "ばか",
+    "kanji": "馬鹿",
+    "romaji": "baka",
+    "english": "fool",
+    "pos": "noun",
+    "audio": "baka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 853,
+    "kana": "あたる",
+    "kanji": "当たる",
+    "romaji": "ataru",
+    "english": "to hit",
+    "pos": "verb",
+    "audio": "dang-taru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 854,
+    "kana": "ぬく",
+    "kanji": "抜く",
+    "romaji": "nuku",
+    "english": "to pull out",
+    "pos": "verb",
+    "audio": "ba-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 855,
+    "kana": "まわり",
+    "kanji": "周り",
+    "romaji": "mawari",
+    "english": "around",
+    "pos": "noun",
+    "audio": "zhou-ri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 856,
+    "kana": "いっぽう",
+    "kanji": "一方",
+    "romaji": "ippou",
+    "english": "one side, on the one hand",
+    "pos": "noun",
+    "audio": "ippou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 857,
+    "kana": "たび",
+    "kanji": "旅",
+    "romaji": "tabi",
+    "english": "journey",
+    "pos": "noun",
+    "audio": "tabi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 858,
+    "kana": "ようす",
+    "kanji": "様子",
+    "romaji": "yousu",
+    "english": "state",
+    "pos": "noun",
+    "audio": "yousu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 859,
+    "kana": "うむ",
+    "kanji": "生む",
+    "romaji": "umu",
+    "english": "to produce",
+    "pos": "verb",
+    "audio": "sheng-mu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 860,
+    "kana": "え",
+    "kanji": "絵",
+    "romaji": "e",
+    "english": "picture",
+    "pos": "noun",
+    "audio": "e.mp3",
+    "type": "word"
+  },
+  {
+    "id": 861,
+    "kana": "しょうかん",
+    "kanji": "召喚",
+    "romaji": "shoukan",
+    "english": "summon",
+    "pos": "noun",
+    "audio": "shoukan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 862,
+    "kana": "すでに",
+    "romaji": "sude ni",
+    "english": "already",
+    "pos": "adverb",
+    "audio": "suteni.mp3",
+    "type": "word"
+  },
+  {
+    "id": 863,
+    "kana": "ちかい",
+    "kanji": "近い",
+    "romaji": "chikai",
+    "english": "close",
+    "pos": "adjective",
+    "audio": "jin-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 864,
+    "kana": "おもい",
+    "kanji": "思い",
+    "romaji": "omoi",
+    "english": "thought",
+    "pos": "noun",
+    "audio": "si-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 865,
+    "kana": "きほん",
+    "kanji": "基本",
+    "romaji": "kihon",
+    "english": "basic",
+    "pos": "noun",
+    "audio": "kihon.mp3",
+    "type": "word"
+  },
+  {
+    "id": 866,
+    "kana": "おやじ",
+    "kanji": "親父",
+    "romaji": "oyaji",
+    "english": "father",
+    "pos": "noun",
+    "audio": "oyaji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 867,
+    "kana": "たてもの",
+    "kanji": "建物",
+    "romaji": "tatemono",
+    "english": "building",
+    "pos": "noun",
+    "audio": "tatemono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 868,
+    "kana": "たんじょう",
+    "kanji": "誕生",
+    "romaji": "tanjou",
+    "english": "birth",
+    "pos": "noun",
+    "audio": "tanjou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 869,
+    "kana": "けんさ",
+    "kanji": "検査",
+    "romaji": "kensa",
+    "english": "inspection",
+    "pos": "noun",
+    "audio": "kensa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 870,
+    "kana": "しょくじ",
+    "kanji": "食事",
+    "romaji": "shokuji",
+    "english": "meal",
+    "pos": "noun",
+    "audio": "shokuji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 871,
+    "kana": "とうる",
+    "kanji": "通る",
+    "romaji": "tooru",
+    "english": "to pass through",
+    "pos": "verb",
+    "audio": "tong-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 872,
+    "kana": "がくせい",
+    "kanji": "学生",
+    "romaji": "gakusei",
+    "english": "student",
+    "pos": "noun",
+    "audio": "gakusei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 873,
+    "kana": "わらい",
+    "kanji": "笑",
+    "romaji": "warai",
+    "english": "a laugh, lol",
+    "pos": "noun",
+    "audio": "warai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 874,
+    "kana": "きょうふ",
+    "kanji": "恐怖",
+    "romaji": "kyoufu",
+    "english": "fear",
+    "pos": "noun",
+    "audio": "kyoufu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 875,
+    "kana": "さくせん",
+    "kanji": "作戦",
+    "romaji": "sakusen",
+    "english": "strategy",
+    "pos": "noun",
+    "audio": "sakusen.mp3",
+    "type": "word"
+  },
+  {
+    "id": 876,
+    "kana": "もり",
+    "kanji": "森",
+    "romaji": "mori",
+    "english": "forest",
+    "pos": "noun",
+    "audio": "mori.mp3",
+    "type": "word"
+  },
+  {
+    "id": 877,
+    "kana": "ほうこう",
+    "kanji": "方向",
+    "romaji": "houkou",
+    "english": "direction",
+    "pos": "noun",
+    "audio": "houkou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 878,
+    "kana": "いけん",
+    "kanji": "意見",
+    "romaji": "iken",
+    "english": "opinion",
+    "pos": "noun",
+    "audio": "iken.mp3",
+    "type": "word"
+  },
+  {
+    "id": 879,
+    "kana": "さがる",
+    "kanji": "下がる",
+    "romaji": "sagaru",
+    "english": "to go down",
+    "pos": "verb",
+    "audio": "xia-karu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 880,
+    "kana": "ねこ",
+    "kanji": "猫",
+    "romaji": "neko",
+    "english": "cat",
+    "pos": "noun",
+    "audio": "neko.mp3",
+    "type": "word"
+  },
+  {
+    "id": 881,
+    "kana": "ねらう",
+    "kanji": "狙う",
+    "romaji": "nerau",
+    "english": "to aim",
+    "pos": "verb",
+    "audio": "ju-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 882,
+    "kana": "あくま",
+    "kanji": "悪魔",
+    "romaji": "akuma",
+    "english": "devil",
+    "pos": "noun",
+    "audio": "akuma.mp3",
+    "type": "word"
+  },
+  {
+    "id": 883,
+    "kana": "ほね",
+    "kanji": "骨",
+    "romaji": "hone",
+    "english": "bone",
+    "pos": "noun",
+    "audio": "hone.mp3",
+    "type": "word"
+  },
+  {
+    "id": 884,
+    "kana": "ぐるーぷ",
+    "romaji": "guruupu",
+    "english": "group",
+    "pos": "noun",
+    "audio": "kuruhu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 885,
+    "kana": "きょうじゅ",
+    "kanji": "教授",
+    "romaji": "kyouju",
+    "english": "professor",
+    "pos": "noun",
+    "audio": "kyouju.mp3",
+    "type": "word"
+  },
+  {
+    "id": 886,
+    "kana": "さくや",
+    "kanji": "昨夜",
+    "romaji": "sakuya",
+    "english": "last night",
+    "pos": "noun",
+    "audio": "sakuya.mp3",
+    "type": "word"
+  },
+  {
+    "id": 887,
+    "kana": "ぷろじぇくと",
+    "romaji": "purojekuto",
+    "english": "project",
+    "pos": "noun",
+    "audio": "hurosiekuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 888,
+    "kana": "ぼうりょく",
+    "kanji": "暴力",
+    "romaji": "bouryoku",
+    "english": "violence",
+    "pos": "noun",
+    "audio": "bouryoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 889,
+    "kana": "べんきょうする",
+    "kanji": "勉強する",
+    "romaji": "benkyou suru",
+    "english": "to study",
+    "pos": "verb",
+    "audio": "mian-qiang-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 890,
+    "kana": "せわ",
+    "kanji": "世話",
+    "romaji": "sewa",
+    "english": "care",
+    "pos": "noun",
+    "audio": "sewa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 891,
+    "kana": "さいだい",
+    "kanji": "最大",
+    "romaji": "saidai",
+    "english": "maximum",
+    "pos": "noun",
+    "audio": "saidai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 892,
+    "kana": "い",
+    "kanji": "医",
+    "romaji": "i",
+    "english": "medicine",
+    "pos": "noun",
+    "audio": "i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 893,
+    "kana": "し",
+    "kanji": "市",
+    "romaji": "shi",
+    "english": "city",
+    "pos": "noun",
+    "audio": "shi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 894,
+    "kana": "もうす",
+    "kanji": "申す",
+    "romaji": "mousu",
+    "english": "to say",
+    "pos": "verb",
+    "audio": "shen-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 895,
+    "kana": "たましい",
+    "kanji": "魂",
+    "romaji": "tamashii",
+    "english": "soul",
+    "pos": "noun",
+    "audio": "tamashii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 896,
+    "kana": "りょう",
+    "kanji": "量",
+    "romaji": "ryou",
+    "english": "amount",
+    "pos": "noun",
+    "audio": "ryou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 897,
+    "kana": "さいしゅう",
+    "kanji": "最終",
+    "romaji": "saishuu",
+    "english": "final",
+    "pos": "noun",
+    "audio": "saishuu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 898,
+    "kana": "しゅうちゅうする",
+    "kanji": "集中する",
+    "romaji": "shuuchuu suru",
+    "english": "to concentrate",
+    "pos": "verb",
+    "audio": "ji-zhong-suru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 899,
+    "kana": "ぶんか",
+    "kanji": "文化",
+    "romaji": "bunka",
+    "english": "culture",
+    "pos": "noun",
+    "audio": "bunka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 900,
+    "kana": "しみん",
+    "kanji": "市民",
+    "romaji": "shimin",
+    "english": "citizen",
+    "pos": "noun",
+    "audio": "shimin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 901,
+    "kana": "ぶらっく",
+    "romaji": "burakku",
+    "english": "black",
+    "pos": "noun",
+    "audio": "huratuku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 902,
+    "kana": "ふる",
+    "kanji": "触る",
+    "romaji": "sawaru",
+    "english": "to touch",
+    "pos": "verb",
+    "audio": "hong-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 903,
+    "kana": "どうよう",
+    "kanji": "同様",
+    "romaji": "douyou",
+    "english": "similar",
+    "pos": "adjective",
+    "audio": "douyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 904,
+    "kana": "ふれる",
+    "kanji": "触れる",
+    "romaji": "fureru",
+    "english": "to touch",
+    "pos": "verb",
+    "audio": "hong-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 905,
+    "kana": "こえる",
+    "kanji": "越える",
+    "romaji": "koe",
+    "english": "to surpass",
+    "pos": "verb",
+    "audio": "yue-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 906,
+    "kana": "しかも",
+    "romaji": "shikamo",
+    "english": "moreover",
+    "pos": "conjunction",
+    "audio": "sikamo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 907,
+    "kana": "はなす",
+    "kanji": "離す",
+    "romaji": "hanasu",
+    "english": "to separate",
+    "pos": "verb",
+    "audio": "li-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 908,
+    "kana": "あらた",
+    "kanji": "新た",
+    "romaji": "arata",
+    "english": "new",
+    "pos": "adjective",
+    "audio": "xin-ta.mp3",
+    "type": "word"
+  },
+  {
+    "id": 909,
+    "kana": "さけ",
+    "kanji": "酒",
+    "romaji": "sake",
+    "english": "liquor",
+    "pos": "noun",
+    "audio": "sake.mp3",
+    "type": "word"
+  },
+  {
+    "id": 910,
+    "kana": "よう",
+    "kanji": "要",
+    "romaji": "kaname",
+    "english": "essential",
+    "pos": "noun",
+    "audio": "kaname.mp3",
+    "type": "word"
+  },
+  {
+    "id": 911,
+    "kana": "ざい",
+    "kanji": "在",
+    "romaji": "zai",
+    "english": "present",
+    "pos": "noun",
+    "audio": "zai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 912,
+    "kana": "おくれる",
+    "kanji": "遅れる",
+    "romaji": "okureru",
+    "english": "to be late",
+    "pos": "verb",
+    "audio": "chi-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 913,
+    "kana": "しょう",
+    "kanji": "小",
+    "romaji": "chiisai",
+    "english": "small",
+    "pos": "noun",
+    "audio": "chiisai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 914,
+    "kana": "こーど",
+    "romaji": "kodo",
+    "english": "code",
+    "pos": "noun",
+    "audio": "koto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 915,
+    "kana": "むかえる",
+    "kanji": "迎える",
+    "romaji": "mukaeru",
+    "english": "to welcome",
+    "pos": "verb",
+    "audio": "ying-eru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 916,
+    "kana": "けいやく",
+    "kanji": "契約",
+    "romaji": "keiyaku",
+    "english": "contract",
+    "pos": "noun",
+    "audio": "keiyaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 917,
+    "kana": "きょく",
+    "kanji": "局",
+    "romaji": "kyoku",
+    "english": "bureau",
+    "pos": "noun",
+    "audio": "kyoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 918,
+    "kana": "ごらん",
+    "kanji": "ご覧",
+    "romaji": "goran",
+    "english": "take a look",
+    "pos": "noun",
+    "audio": "kolan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 919,
+    "kana": "かなしい",
+    "kanji": "悲しい",
+    "romaji": "kanashii",
+    "english": "sad",
+    "pos": "adjective",
+    "audio": "bei-sii.mp3",
+    "type": "word"
+  },
+  {
+    "id": 920,
+    "kana": "くらす",
+    "kanji": "暮らす",
+    "romaji": "kurasu",
+    "english": "to live",
+    "pos": "verb",
+    "audio": "mu-rasu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 921,
+    "kana": "しばらく",
+    "romaji": "shibaraku",
+    "english": "for a while",
+    "pos": "adverb",
+    "audio": "siharaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 922,
+    "kana": "うごかす",
+    "kanji": "動かす",
+    "romaji": "ugokasu",
+    "english": "to move",
+    "pos": "verb",
+    "audio": "dong-kasu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 923,
+    "kana": "なぐる",
+    "kanji": "殴る",
+    "romaji": "naguru",
+    "english": "to hit",
+    "pos": "verb",
+    "audio": "ou-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 924,
+    "kana": "しょー",
+    "romaji": "sho",
+    "english": "show",
+    "pos": "noun",
+    "audio": "siyo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 925,
+    "kana": "ねっと",
+    "romaji": "netto",
+    "english": "net",
+    "pos": "noun",
+    "audio": "netuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 926,
+    "kana": "はっきり",
+    "romaji": "hakkiri",
+    "english": "clearly",
+    "pos": "adverb",
+    "audio": "hatukiri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 927,
+    "kana": "とれる",
+    "kanji": "取れる",
+    "romaji": "toreru",
+    "english": "to can be taken",
+    "pos": "verb",
+    "audio": "qu-reru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 928,
+    "kana": "みな",
+    "romaji": "mina",
+    "english": "everyone",
+    "pos": "noun",
+    "audio": "mina.mp3",
+    "type": "word"
+  },
+  {
+    "id": 929,
+    "kana": "りょうかい",
+    "kanji": "了解",
+    "romaji": "ryokai",
+    "english": "an understanding",
+    "pos": "noun",
+    "audio": "ryokai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 930,
+    "kana": "はこ",
+    "kanji": "箱",
+    "romaji": "hako",
+    "english": "box",
+    "pos": "noun",
+    "audio": "hako.mp3",
+    "type": "word"
+  },
+  {
+    "id": 931,
+    "kana": "きょか",
+    "kanji": "許可",
+    "romaji": "kyoka",
+    "english": "permission",
+    "pos": "noun",
+    "audio": "kyoka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 932,
+    "kana": "あきらめる",
+    "kanji": "諦める",
+    "romaji": "akirameru",
+    "english": "to give up",
+    "pos": "verb",
+    "audio": "di-meru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 933,
+    "kana": "いっしょう",
+    "kanji": "一生",
+    "romaji": "issho",
+    "english": "lifetime",
+    "pos": "noun",
+    "audio": "issho.mp3",
+    "type": "word"
+  },
+  {
+    "id": 934,
+    "kana": "うんめい",
+    "kanji": "運命",
+    "romaji": "unmei",
+    "english": "destiny",
+    "pos": "noun",
+    "audio": "unmei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 935,
+    "kana": "もでる",
+    "romaji": "moderu",
+    "english": "model",
+    "pos": "noun",
+    "audio": "moteru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 936,
+    "kana": "ようぎ",
+    "kanji": "容疑",
+    "romaji": "yogu",
+    "english": "suspicion",
+    "pos": "noun",
+    "audio": "yogu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 937,
+    "kana": "こーひー",
+    "romaji": "ko-hi-",
+    "english": "coffee",
+    "pos": "noun",
+    "audio": "kohi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 938,
+    "kana": "うんどう",
+    "kanji": "運動",
+    "romaji": "undou",
+    "english": "motion",
+    "pos": "noun",
+    "audio": "undou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 939,
+    "kana": "きぼ",
+    "kanji": "規模",
+    "romaji": "kibo",
+    "english": "scale",
+    "pos": "noun",
+    "audio": "kibo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 940,
+    "kana": "とくてい",
+    "kanji": "特定",
+    "romaji": "tettei",
+    "english": "identification",
+    "pos": "noun",
+    "audio": "tettei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 941,
+    "kana": "こい",
+    "kanji": "恋",
+    "romaji": "koi",
+    "english": "love",
+    "pos": "noun",
+    "audio": "koi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 942,
+    "kana": "ひ",
+    "kanji": "火",
+    "romaji": "hi",
+    "english": "fire",
+    "pos": "noun",
+    "audio": "hi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 943,
+    "kana": "ねむる",
+    "kanji": "眠る",
+    "romaji": "nemuru",
+    "english": "to sleep",
+    "pos": "verb",
+    "audio": "mian-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 944,
+    "kana": "しきん",
+    "kanji": "資金",
+    "romaji": "shikin",
+    "english": "funds",
+    "pos": "noun",
+    "audio": "shikin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 945,
+    "kana": "かける",
+    "kanji": "掛ける",
+    "romaji": "kakeru",
+    "english": "to hang",
+    "pos": "verb",
+    "audio": "gua-keru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 946,
+    "kana": "かいぎ",
+    "kanji": "会議",
+    "romaji": "kaigi",
+    "english": "meeting",
+    "pos": "noun",
+    "audio": "kaigi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 947,
+    "kana": "きょ",
+    "kanji": "居",
+    "romaji": "iru",
+    "english": "residence",
+    "pos": "noun",
+    "audio": "iru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 948,
+    "kana": "かたる",
+    "kanji": "語る",
+    "romaji": "kataru",
+    "english": "to talk",
+    "pos": "verb",
+    "audio": "yu-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 949,
+    "kana": "とくしゅ",
+    "kanji": "特殊",
+    "romaji": "tokushu",
+    "english": "special",
+    "pos": "adjective",
+    "audio": "tokushu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 950,
+    "kana": "あね",
+    "kanji": "姉",
+    "romaji": "ane",
+    "english": "sister",
+    "pos": "noun",
+    "audio": "ane.mp3",
+    "type": "word"
+  },
+  {
+    "id": 951,
+    "kana": "けんり",
+    "kanji": "権利",
+    "romaji": "kenri",
+    "english": "right",
+    "pos": "noun",
+    "audio": "kenri.mp3",
+    "type": "word"
+  },
+  {
+    "id": 952,
+    "kana": "ふく",
+    "kanji": "吹く",
+    "romaji": "fuku",
+    "english": "to blow",
+    "pos": "verb",
+    "audio": "chui-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 953,
+    "kana": "あやまる",
+    "kanji": "謝る",
+    "romaji": "ayamaru",
+    "english": "to apologize",
+    "pos": "verb",
+    "audio": "xie-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 954,
+    "kana": "しん",
+    "kanji": "新",
+    "romaji": "shin",
+    "english": "new",
+    "pos": "noun",
+    "audio": "shin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 955,
+    "kana": "なくなる",
+    "romaji": "nakunaru",
+    "english": "to disappear",
+    "pos": "verb",
+    "audio": "nakunaru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 956,
+    "kana": "なにもの",
+    "kanji": "何者",
+    "romaji": "nanimono",
+    "english": "who",
+    "pos": "pronoun",
+    "audio": "nanimono.mp3",
+    "type": "word"
+  },
+  {
+    "id": 957,
+    "kana": "じむ",
+    "kanji": "事務",
+    "romaji": "jimu",
+    "english": "office work",
+    "pos": "noun",
+    "audio": "jimu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 958,
+    "kana": "はやい",
+    "kanji": "速い",
+    "romaji": "hayai",
+    "english": "fast",
+    "pos": "adjective",
+    "audio": "su-i.mp3",
+    "type": "word"
+  },
+  {
+    "id": 959,
+    "kana": "せいかく",
+    "kanji": "正確",
+    "romaji": "seikaku",
+    "english": "correct",
+    "pos": "adjective",
+    "audio": "seikaku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 960,
+    "kana": "ぎもん",
+    "kanji": "疑問",
+    "romaji": "gimon",
+    "english": "doubt",
+    "pos": "noun",
+    "audio": "gimon.mp3",
+    "type": "word"
+  },
+  {
+    "id": 961,
+    "kana": "ぽいんと",
+    "romaji": "pointo",
+    "english": "point",
+    "pos": "noun",
+    "audio": "hointo.mp3",
+    "type": "word"
+  },
+  {
+    "id": 962,
+    "kana": "うた",
+    "kanji": "歌",
+    "romaji": "uta",
+    "english": "song",
+    "pos": "noun",
+    "audio": "uta.mp3",
+    "type": "word"
+  },
+  {
+    "id": 963,
+    "kana": "ぶっしつ",
+    "kanji": "物質",
+    "romaji": "butsushitsu",
+    "english": "material",
+    "pos": "noun",
+    "audio": "butsushitsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 964,
+    "kana": "きょく",
+    "kanji": "曲",
+    "romaji": "kyoku",
+    "english": "song",
+    "pos": "noun",
+    "audio": "kyoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 965,
+    "kana": "てがみ",
+    "kanji": "手紙",
+    "romaji": "tegami",
+    "english": "letter",
+    "pos": "noun",
+    "audio": "tegami.mp3",
+    "type": "word"
+  },
+  {
+    "id": 966,
+    "kana": "くんれん",
+    "kanji": "訓練",
+    "romaji": "kunren",
+    "english": "training",
+    "pos": "noun",
+    "audio": "kunren.mp3",
+    "type": "word"
+  },
+  {
+    "id": 967,
+    "kana": "くるう",
+    "kanji": "狂う",
+    "romaji": "kuruu",
+    "english": "to go crazy",
+    "pos": "verb",
+    "audio": "kuang-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 968,
+    "kana": "じごく",
+    "kanji": "地獄",
+    "romaji": "jigoku",
+    "english": "hell",
+    "pos": "noun",
+    "audio": "jigoku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 969,
+    "kana": "もくひょう",
+    "kanji": "目標",
+    "romaji": "mokuhyou",
+    "english": "the goal",
+    "pos": "noun",
+    "audio": "mokuhyou.mp3",
+    "type": "word"
+  },
+  {
+    "id": 970,
+    "kana": "きさま",
+    "kanji": "貴様",
+    "romaji": "kisama",
+    "english": "you",
+    "pos": "pronoun",
+    "audio": "kisama.mp3",
+    "type": "word"
+  },
+  {
+    "id": 971,
+    "kana": "いらい",
+    "kanji": "以来",
+    "romaji": "irai",
+    "english": "since then",
+    "pos": "noun",
+    "audio": "irai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 972,
+    "kana": "れっど",
+    "romaji": "reddo",
+    "english": "red",
+    "pos": "noun",
+    "audio": "retuto.mp3",
+    "type": "word"
+  },
+  {
+    "id": 973,
+    "kana": "しょうがい",
+    "kanji": "障害",
+    "romaji": "shougai",
+    "english": "hindrance",
+    "pos": "noun",
+    "audio": "shougai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 974,
+    "kana": "わたる",
+    "kanji": "渡る",
+    "romaji": "wataru",
+    "english": "to cross",
+    "pos": "verb",
+    "audio": "du-ru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 975,
+    "kana": "けさ",
+    "kanji": "今朝",
+    "romaji": "kesa",
+    "english": "this morning",
+    "pos": "adverb",
+    "audio": "kesa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 976,
+    "kana": "ぶか",
+    "kanji": "部下",
+    "romaji": "buka",
+    "english": "subordinate",
+    "pos": "noun",
+    "audio": "buka.mp3",
+    "type": "word"
+  },
+  {
+    "id": 977,
+    "kana": "たおす",
+    "kanji": "倒す",
+    "romaji": "taosu",
+    "english": "to knock down",
+    "pos": "verb",
+    "audio": "dao-su.mp3",
+    "type": "word"
+  },
+  {
+    "id": 978,
+    "kana": "どうじ",
+    "kanji": "同時",
+    "romaji": "douji",
+    "english": "simultaneous",
+    "pos": "noun",
+    "audio": "douji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 979,
+    "kana": "わくせい",
+    "kanji": "惑星",
+    "romaji": "wakusei",
+    "english": "planet",
+    "pos": "noun",
+    "audio": "wakusei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 980,
+    "kana": "ちょうし",
+    "kanji": "調子",
+    "romaji": "choushi",
+    "english": "condition",
+    "pos": "noun",
+    "audio": "choushi.mp3",
+    "type": "word"
+  },
+  {
+    "id": 981,
+    "kana": "とうじ",
+    "kanji": "当時",
+    "romaji": "touji",
+    "english": "at that time",
+    "pos": "noun",
+    "audio": "touji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 982,
+    "kana": "ろっく",
+    "romaji": "rokku",
+    "english": "rock",
+    "pos": "noun",
+    "audio": "rotuku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 983,
+    "kana": "たくさん",
+    "kanji": "沢山",
+    "romaji": "takusan",
+    "english": "lot",
+    "pos": "adjective",
+    "audio": "takusan.mp3",
+    "type": "word"
+  },
+  {
+    "id": 984,
+    "kana": "とどく",
+    "kanji": "届く",
+    "romaji": "todoku",
+    "english": "to reach",
+    "pos": "verb",
+    "audio": "jie-ku.mp3",
+    "type": "word"
+  },
+  {
+    "id": 985,
+    "kana": "たすかる",
+    "kanji": "助かる",
+    "romaji": "tasukaru",
+    "english": "to be saved",
+    "pos": "verb",
+    "audio": "zhu-karu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 986,
+    "kana": "うたう",
+    "kanji": "歌う",
+    "romaji": "utau",
+    "english": "to sing",
+    "pos": "verb",
+    "audio": "ge-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 987,
+    "kana": "あつまる",
+    "kanji": "集まる",
+    "romaji": "atsumaru",
+    "english": "to get together",
+    "pos": "verb",
+    "audio": "ji-maru.mp3",
+    "type": "word"
+  },
+  {
+    "id": 988,
+    "kana": "あんしん",
+    "kanji": "安心",
+    "romaji": "anshin",
+    "english": "peace of mind",
+    "pos": "noun",
+    "audio": "anshin.mp3",
+    "type": "word"
+  },
+  {
+    "id": 989,
+    "kana": "うたがう",
+    "kanji": "疑う",
+    "romaji": "utagau",
+    "english": "to doubt",
+    "pos": "verb",
+    "audio": "yi-u.mp3",
+    "type": "word"
+  },
+  {
+    "id": 990,
+    "kana": "ゆうめい",
+    "kanji": "有名",
+    "romaji": "yuumei",
+    "english": "famous",
+    "pos": "adjective",
+    "audio": "yuumei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 991,
+    "kana": "もじ",
+    "kanji": "文字",
+    "romaji": "moji",
+    "english": "letter",
+    "pos": "noun",
+    "audio": "moji.mp3",
+    "type": "word"
+  },
+  {
+    "id": 992,
+    "kana": "そろそろ",
+    "romaji": "sorosoro",
+    "english": "gradually",
+    "pos": "adverb",
+    "audio": "sorosoro.mp3",
+    "type": "word"
+  },
+  {
+    "id": 993,
+    "kana": "かがみ",
+    "kanji": "鏡",
+    "romaji": "kagami",
+    "english": "mirror",
+    "pos": "noun",
+    "audio": "kagami.mp3",
+    "type": "word"
+  },
+  {
+    "id": 994,
+    "kana": "かた",
+    "kanji": "型",
+    "romaji": "kata",
+    "english": "mold",
+    "pos": "noun",
+    "audio": "kata.mp3",
+    "type": "word"
+  },
+  {
+    "id": 995,
+    "kana": "へいわ",
+    "kanji": "平和",
+    "romaji": "heiwa",
+    "english": "peace",
+    "pos": "noun",
+    "audio": "heiwa.mp3",
+    "type": "word"
+  },
+  {
+    "id": 996,
+    "kana": "けってい",
+    "kanji": "決定",
+    "romaji": "kettei",
+    "english": "decision",
+    "pos": "noun",
+    "audio": "kettei.mp3",
+    "type": "word"
+  },
+  {
+    "id": 997,
+    "kana": "ちょくせつ",
+    "kanji": "直接",
+    "romaji": "chokusetsu",
+    "english": "directly",
+    "pos": "adjective",
+    "audio": "chokusetsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 998,
+    "kana": "きょだい",
+    "kanji": "巨大",
+    "romaji": "kyodai",
+    "english": "huge",
+    "pos": "adjective",
+    "audio": "kyodai.mp3",
+    "type": "word"
+  },
+  {
+    "id": 999,
+    "kana": "しせつ",
+    "kanji": "施設",
+    "romaji": "shisetsu",
+    "english": "facility",
+    "pos": "noun",
+    "audio": "shisetsu.mp3",
+    "type": "word"
+  },
+  {
+    "id": 1000,
+    "kana": "ばん",
+    "kanji": "晩",
+    "romaji": "ban",
+    "english": "night",
+    "pos": "noun",
+    "audio": "ban.mp3",
+    "type": "word"
+  }
+]

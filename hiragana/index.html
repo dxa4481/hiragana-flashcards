@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiragana Flashcards</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== Site title (fixed, top-left) ===== -->
+<header id="site-title"><h1>Hiragana&nbsp;Flashcards</h1></header>
+
+<div id="container">
+  <!-- ============ Flash-card stage ============ -->
+  <main id="stage" tabindex="0">
+    <div id="kana">あ</div>
+    <div id="romaji" class="hidden">a</div>
+
+    <!-- grading buttons (hidden until a card is revealed) -->
+    <div id="answer-buttons" class="hidden">
+      <button id="right-btn"  class="ans-btn correct">✔&nbsp;I&nbsp;was&nbsp;right</button>
+      <button id="wrong-btn"  class="ans-btn wrong">✖&nbsp;I&nbsp;was&nbsp;wrong</button>
+    </div>
+
+    <!-- optional skip -->
+    <button id="next-btn">Next&nbsp;➡</button>
+
+    <audio id="player" preload="auto"></audio>
+  </main>
+
+  <!-- ============== Legend pane =============== -->
+  <aside id="legend">
+    <table id="legend-table">
+      <colgroup>
+        <col style="width:26px">
+        <col span="5" style="width:18%">
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th>
+        </tr>
+      </thead>
+      <tbody id="legend-body"></tbody>
+    </table>
+  </aside>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+

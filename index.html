@@ -1,51 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hiragana Flashcards</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn Japanese – Home</title>
+  <!-- Tailwind (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="min-h-screen bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 flex items-center justify-center p-6">
+  <main class="bg-white rounded-2xl shadow-xl p-10 w-full max-w-md text-center space-y-8">
+    <header>
+      <h1 class="text-3xl font-extrabold tracking-wider text-gray-800 mb-4">Learn Japanese</h1>
+      <p class="text-gray-600">Choose what you want to practice today:</p>
+    </header>
 
-<!-- ===== Site title (fixed, top-left) ===== -->
-<header id="site-title"><h1>Hiragana&nbsp;Flashcards</h1></header>
+    <div class="flex flex-col gap-6">
+      <!-- Hiragana app -->
+      <a href="./hiragana/index.html" class="block bg-emerald-500 hover:bg-emerald-600 text-blue text-lg font-semibold py-4 rounded-xl shadow transition-all duration-150">
+        ✨ Hiragana Trainer
+      </a>
 
-<div id="container">
-  <!-- ============ Flash-card stage ============ -->
-  <main id="stage" tabindex="0">
-    <div id="kana">あ</div>
-    <div id="romaji" class="hidden">a</div>
-
-    <!-- grading buttons (hidden until a card is revealed) -->
-    <div id="answer-buttons" class="hidden">
-      <button id="right-btn"  class="ans-btn correct">✔&nbsp;I&nbsp;was&nbsp;right</button>
-      <button id="wrong-btn"  class="ans-btn wrong">✖&nbsp;I&nbsp;was&nbsp;wrong</button>
+      <!-- Vocab app -->
+      <a href="./vocab/index.html" class="block bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold py-4 rounded-xl shadow transition-all duration-150">
+        🈶 Vocabulary Flashcards
+      </a>
     </div>
 
-    <!-- optional skip -->
-    <button id="next-btn">Next&nbsp;➡</button>
-
-    <audio id="player" preload="auto"></audio>
   </main>
-
-  <!-- ============== Legend pane =============== -->
-  <aside id="legend">
-    <table id="legend-table">
-      <colgroup>
-        <col style="width:26px">
-        <col span="5" style="width:18%">
-      </colgroup>
-      <thead>
-        <tr class="header">
-          <th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th>
-        </tr>
-      </thead>
-      <tbody id="legend-body"></tbody>
-    </table>
-  </aside>
-</div>
-
-<script src="app.js"></script>
 </body>
 </html>
-
