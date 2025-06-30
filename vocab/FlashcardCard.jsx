@@ -1,13 +1,12 @@
-// FlashcardCard.jsx – place controls next to what they control
+// FlashcardCard.jsx – auto‑reset toggles on card change
 // -----------------------------------------------------------------------------
-// • Word‑level controls live directly under the word.
-// • Sentence‑level controls sit inside the "Example sentence" block, right below
-//   the text/translation and directly above the optional image.
-// • Divider removed—the natural grouping now provides visual clarity.
+// • All per‑card toggles (Romaji, English, sentence English/image, gloss) now
+//   reset to hidden when a new flashcard arrives, so nothing carries over.
+// • Achieved with a useEffect that watches card.id.
 // -----------------------------------------------------------------------------
 
 (function (global) {
-  const { useState } = React;
+  const { useState, useEffect } = React;
 
   function FlashcardCard({
     card,
@@ -24,6 +23,14 @@
     const [showSentenceImage, setShowSentenceImage]     = useState(false);
     const [hoverIdx, setHoverIdx]                       = useState(null);
     const [clickedIdx, setClickedIdx]                   = useState(null);
+
+    // Reset all local toggles / highlights when the flashcard changes --------
+    useEffect(() => {
+      setShowSentenceEnglish(false);
+      setShowSentenceImage(false);
+      setHoverIdx(null);
+      setClickedIdx(null);
+    }, [card.id]);
 
     // ---------------- Helpers --------------------
     const playWordAudio = (idx) => {
