@@ -33,17 +33,17 @@
 
   // Japanese number mappings
   const japaneseNumbers = {
-    0: { hiragana: "ゼロ", romaji: "zero" },
-    1: { hiragana: "一", romaji: "ichi" },
-    2: { hiragana: "二", romaji: "ni" },
-    3: { hiragana: "三", romaji: "san" },
-    4: { hiragana: "四", romaji: "yon" },
-    5: { hiragana: "五", romaji: "go" },
-    6: { hiragana: "六", romaji: "roku" },
-    7: { hiragana: "七", romaji: "nana" },
-    8: { hiragana: "八", romaji: "hachi" },
-    9: { hiragana: "九", romaji: "kyuu" },
-    10: { hiragana: "十", romaji: "juu" }
+    0: { hiragana: "ぜろ", romaji: "zero" },
+    1: { hiragana: "いち", romaji: "ichi" },
+    2: { hiragana: "に", romaji: "ni" },
+    3: { hiragana: "さん", romaji: "san" },
+    4: { hiragana: "よん", romaji: "yon" },
+    5: { hiragana: "ご", romaji: "go" },
+    6: { hiragana: "ろく", romaji: "roku" },
+    7: { hiragana: "なな", romaji: "nana" },
+    8: { hiragana: "はち", romaji: "hachi" },
+    9: { hiragana: "きゅう", romaji: "kyuu" },
+    10: { hiragana: "じゅう", romaji: "juu" }
   };
 
   // Generate Japanese number text for larger numbers
@@ -58,9 +58,9 @@
       const ones = num % 10;
       
       if (ones === 0) {
-        return { hiragana: japaneseNumbers[tens].hiragana + "十", romaji: japaneseNumbers[tens].romaji + "juu" };
+        return { hiragana: japaneseNumbers[tens].hiragana + "じゅう", romaji: japaneseNumbers[tens].romaji + "juu" };
       } else {
-        return { hiragana: japaneseNumbers[tens].hiragana + "十" + japaneseNumbers[ones].hiragana, romaji: japaneseNumbers[tens].romaji + "juu" + japaneseNumbers[ones].romaji };
+        return { hiragana: japaneseNumbers[tens].hiragana + "じゅう" + japaneseNumbers[ones].hiragana, romaji: japaneseNumbers[tens].romaji + "juu" + japaneseNumbers[ones].romaji };
       }
     }
     
@@ -69,7 +69,7 @@
       const hundreds = Math.floor(num / 100);
       const remainder = num % 100;
       
-      let hiragana = japaneseNumbers[hundreds].hiragana + "百";
+      let hiragana = japaneseNumbers[hundreds].hiragana + "ひゃく";
       let romaji = japaneseNumbers[hundreds].romaji + "hyaku";
       
       if (remainder > 0) {
@@ -86,7 +86,7 @@
       const thousands = Math.floor(num / 1000);
       const remainder = num % 1000;
       
-      let hiragana = japaneseNumbers[thousands].hiragana + "千";
+      let hiragana = japaneseNumbers[thousands].hiragana + "せん";
       let romaji = japaneseNumbers[thousands].romaji + "sen";
       
       if (remainder > 0) {
@@ -100,7 +100,7 @@
     
     // For 10000
     if (num === 10000) {
-      return { hiragana: "一万", romaji: "ichiman" };
+      return { hiragana: "いちまん", romaji: "ichiman" };
     }
     
     return { hiragana: "?", romaji: "?" };
@@ -158,7 +158,8 @@
     currentNumber = num;
     const japanese = numberToJapanese(num);
     
-    numberDisplay.textContent = num;
+    // Hide the number display - user should only see hiragana
+    numberDisplay.textContent = "?";
     hiragana.textContent = japanese.hiragana;
     romaji.textContent = japanese.romaji;
     
@@ -176,6 +177,9 @@
   function checkAnswer() {
     const userAnswer = parseInt(numberInput.value);
     const isCorrect = userAnswer === currentNumber;
+    
+    // Show the correct number after user submits their answer
+    numberDisplay.textContent = currentNumber;
     
     if (isCorrect) {
       // Correct answer
