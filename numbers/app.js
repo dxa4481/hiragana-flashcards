@@ -26,10 +26,11 @@
   let currentRange = "0-10";
   let numberPool = [];
   let answeredCorrectly = [];
-  let answeredIncorrectly = [];
+  let answeredIncorrectly = []; // Will store objects with {number, lastSeen}
   let currentStreak = 0;
   let totalCorrect = 0;
   let totalIncorrect = 0;
+  let cycle = 0; // Track review cycles for spaced repetition
 
   // Japanese number mappings
   const japaneseNumbers = {
@@ -129,20 +130,31 @@
     // Reset progress for new range
     answeredCorrectly = [];
     answeredIncorrectly = [];
+    cycle = 0;
     updateStats();
   }
 
-  // Flashcard algorithm: prioritize incorrectly answered numbers
+  // Improved flashcard algorithm with spaced repetition
   function getNextNumber() {
-    // If there are incorrect answers, prioritize them
-    if (answeredIncorrectly.length > 0) {
-      // Take a random incorrect number
-      const randomIndex = Math.floor(Math.random() * answeredIncorrectly.length);
-      const number = answeredIncorrectly.splice(randomIndex, 1)[0];
-      return number;
+    // If there are incorrect answers that are due for review (after some cycles)
+    const dueIncorrect = answeredIncorrectly.filter(entry => {
+      // Simple spaced repetition: review incorrect cards after 3-5 cycles
+      return (cycle - entry.lastSeen) >= 3;
+    });
+    
+    if (dueIncorrect.length > 0) {
+      // Take a random incorrect number that's due
+      const randomIndex = Math.floor(Math.random() * dueIncorrect.length);
+      const entry = dueIncorrect[randomIndex];
+      // Remove from incorrect list temporarily
+      const index = answeredIncorrectly.indexOf(entry);
+      if (index > -1) {
+        answeredIncorrectly.splice(index, 1);
+      }
+      return entry.number;
     }
     
-    // If no incorrect answers, get a random number from the pool
+    // If no incorrect answers are due, get a random number from the pool
     if (numberPool.length > 0) {
       const randomIndex = Math.floor(Math.random() * numberPool.length);
       return numberPool[randomIndex];
@@ -170,6 +182,7 @@
     numberInput.value = "";
     feedback.classList.add("hidden");
     nextBtn.classList.add("hidden");
+    checkBtn.classList.remove("hidden"); // Show check button for new card
     numberInput.focus();
   }
 
@@ -181,6 +194,9 @@
     // Show the correct number after user submits their answer
     numberDisplay.textContent = currentNumber;
     
+    // Hide the check button after making a guess
+    checkBtn.classList.add("hidden");
+    
     if (isCorrect) {
       // Correct answer
       feedback.className = "correct";
@@ -189,7 +205,7 @@
       totalCorrect++;
       
       // Remove from incorrect list if it was there
-      const incorrectIndex = answeredIncorrectly.indexOf(currentNumber);
+      const incorrectIndex = answeredIncorrectly.findIndex(entry => entry.number === currentNumber);
       if (incorrectIndex > -1) {
         answeredIncorrectly.splice(incorrectIndex, 1);
       }
@@ -215,9 +231,14 @@
       currentStreak = 0;
       totalIncorrect++;
       
-      // Add to incorrect list
-      if (!answeredIncorrectly.includes(currentNumber)) {
-        answeredIncorrectly.push(currentNumber);
+      // Add to incorrect list with cycle tracking
+      const existingIndex = answeredIncorrectly.findIndex(entry => entry.number === currentNumber);
+      if (existingIndex === -1) {
+        // Add new incorrect entry
+        answeredIncorrectly.push({ number: currentNumber, lastSeen: cycle });
+      } else {
+        // Update the last seen cycle for existing incorrect entry
+        answeredIncorrectly[existingIndex].lastSeen = cycle;
       }
     }
     
@@ -254,6 +275,7 @@
   checkBtn.addEventListener("click", checkAnswer);
   
   nextBtn.addEventListener("click", () => {
+    cycle++; // Increment cycle for spaced repetition
     const nextNum = getNextNumber();
     displayNumber(nextNum);
   });
