@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese Numbers Learning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <!-- Header -->
+    <header id="header">
+      <h1>Japanese Numbers Learning</h1>
+      <div id="settings">
+        <label for="range-select">Number Range:</label>
+        <select id="range-select">
+          <option value="0-10">0-10</option>
+          <option value="0-100">0-100</option>
+          <option value="0-1000">0-1000</option>
+          <option value="0-10000">0-10,000</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Main flashcard stage -->
+    <main id="stage" tabindex="0">
+      <div id="card">
+        <div id="number-display">0</div>
+        <div id="hiragana" class="clickable">ゼロ</div>
+        <div id="romaji" class="hidden">zero</div>
+      </div>
+      
+      <div id="input-section">
+        <label for="number-input">Enter the number:</label>
+        <input type="number" id="number-input" min="0" max="10000" placeholder="Type number here...">
+        <button id="check-btn">Check Answer</button>
+      </div>
+      
+      <div id="feedback" class="hidden">
+        <div id="feedback-text"></div>
+        <div id="correct-answer" class="hidden"></div>
+      </div>
+      
+      <button id="next-btn" class="hidden">Next Number ➡</button>
+      <audio id="player" preload="auto"></audio>
+    </main>
+
+    <!-- Stats panel -->
+    <aside id="stats">
+      <h2>Progress</h2>
+      <div id="stats-content">
+        <div class="stat">
+          <span class="stat-label">Correct:</span>
+          <span id="correct-count">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Incorrect:</span>
+          <span id="incorrect-count">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Accuracy:</span>
+          <span id="accuracy">0%</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Streak:</span>
+          <span id="streak">0</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
