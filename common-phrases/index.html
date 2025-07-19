@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Japanese Common Phrases</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>body{background:#f3f4f6}</style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div id="root"></div>
+
+  <!-- UMD libraries -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://unpkg.com/howler/dist/howler.core.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- App scripts (App.jsx now self‑mounts) -->
+  <script type="text/babel" src="./sm2.js"></script>
+  <script type="text/babel" src="./useFlashcards.js"></script>
+  <script type="text/babel" src="./Scoreboard.jsx" data-presets="react"></script>
+  <script type="text/babel" src="./FlashcardCard.jsx" data-presets="react"></script>
+  <script type="text/babel" src="./App.jsx" data-presets="react"></script>
+  <script>
+    // Register service worker for offline functionality
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/common-phrases/sw.js')
+          .then((registration) => {
+            console.log('Common Phrases Service Worker registered successfully:', registration);
+            
+            // Check for updates
+            registration.addEventListener('updatefound', () => {
+              const newWorker = registration.installing;
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  console.log('New common phrases service worker available');
+                }
+              });
+            });
+          })
+          .catch((error) => {
+            console.error('Common Phrases Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
