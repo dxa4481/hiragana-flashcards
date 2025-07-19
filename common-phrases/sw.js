@@ -83,9 +83,12 @@ self.addEventListener('fetch', (event) => {
               // If not in cache, try to fetch and cache it
               return fetch(event.request)
                 .then((fetchResponse) => {
-                  if (fetchResponse.ok) {
+                  // Only cache if response is ok and not a partial response (206)
+                  if (fetchResponse.ok && fetchResponse.status !== 206) {
                     cache.put(event.request, fetchResponse.clone());
                     console.log('Cached new common phrases audio file:', url.pathname);
+                  } else if (fetchResponse.status === 206) {
+                    console.log('Skipping cache for partial response:', url.pathname);
                   }
                   return fetchResponse;
                 })
@@ -153,12 +156,16 @@ async function cacheAudioFiles() {
         batch.push(
           fetch(audioUrl)
             .then((response) => {
-              if (response.ok) {
+              // Only cache if response is ok and not a partial response (206)
+              if (response.ok && response.status !== 206) {
                 return audioCache.put(audioUrl, response.clone())
                   .then(() => {
                     totalCached++;
                     return true;
                   });
+              } else if (response.status === 206) {
+                console.log(`Skipping cache for partial response: ${audioFile}`);
+                return false;
               } else {
                 console.log(`Common phrases audio file ${audioFile} returned status:`, response.status);
                 return false;
