@@ -1,5 +1,5 @@
-const CACHE_NAME = 'vocab-words-app-v2';
-const AUDIO_CACHE_NAME = 'vocab-words-audio-v2';
+const CACHE_NAME = 'vocab-words-app-v3';
+const AUDIO_CACHE_NAME = 'vocab-words-audio-v3';
 const MAX_AUDIO_FILES = 1000;
 
 // Files to cache immediately
@@ -55,9 +55,8 @@ self.addEventListener('activate', (event) => {
       // Take control of all clients immediately
       self.clients.claim()
     ]).then(() => {
-      console.log('Vocab Words Service Worker activated, starting audio caching...');
-      // Start audio caching after activation
-      return cacheAudioFiles();
+      console.log('Vocab Words Service Worker activated');
+      // Audio caching will be triggered when app requests it
     }).catch((error) => {
       console.error('Error during vocab words service worker activation:', error);
     })
@@ -168,7 +167,7 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
-// Function to cache audio files in batches
+// Function to cache audio files in batches with progress reporting
 async function cacheAudioFiles() {
   try {
     console.log('Starting vocab words audio caching process...');
@@ -185,6 +184,7 @@ async function cacheAudioFiles() {
     
     const words = await wordsResponse.json();
     const audioFiles = words.slice(0, MAX_AUDIO_FILES).map(word => word.audio);
+    const totalFiles = audioFiles.length;
     
     for (let i = 0; i < audioFiles.length; i += batchSize) {
       const batch = [];
@@ -222,11 +222,28 @@ async function cacheAudioFiles() {
       const results = await Promise.all(batch);
       const batchCached = results.filter(Boolean).length;
       
-      console.log(`Vocab words batch ${Math.floor(i/batchSize) + 1}: Cached ${batchCached}/${batchSize} files`);
-      console.log(`Total vocab words cached so far: ${totalCached} files`);
+      const batchNum = Math.floor(i/batchSize) + 1;
+      const totalBatches = Math.ceil(totalFiles / batchSize);
+      const progressPercent = Math.round((totalCached / totalFiles) * 100);
       
-      // Longer delay between batches to be more conservative
-      await new Promise(resolve => setTimeout(resolve, 200));
+      console.log(`Vocab words batch ${batchNum}/${totalBatches}: Cached ${batchCached}/${batchSize} files`);
+      console.log(`Total vocab words cached so far: ${totalCached}/${totalFiles} (${progressPercent}%)`);
+      
+      // Send progress update to clients
+      const clients = await self.clients.matchAll();
+      clients.forEach(client => {
+        client.postMessage({
+          type: 'AUDIO_CACHE_PROGRESS',
+          totalCached: totalCached,
+          totalFiles: totalFiles,
+          progressPercent: progressPercent,
+          currentBatch: batchNum,
+          totalBatches: totalBatches
+        });
+      });
+      
+      // Shorter delay between batches since we're only caching 1000 files
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
     
     console.log(`Vocab words audio caching completed! Total files cached: ${totalCached}`);
