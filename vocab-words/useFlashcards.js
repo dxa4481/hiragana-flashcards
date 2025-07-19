@@ -4,7 +4,7 @@
 
   const STORAGE_PROGRESS = "jp-vocab-words-progress";
   const STORAGE_STATS    = "jp-vocab-words-stats";
-  const BATCH            = 20;
+  const BATCH            = 10;
 
   function useFlashcards() {
     const [cards, setCards]     = useState([]);

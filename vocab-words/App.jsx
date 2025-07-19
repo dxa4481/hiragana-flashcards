@@ -44,7 +44,7 @@
         <div className="text-sm flex items-center gap-1">
           <span>Words {wordUnlocked}/{wordTotal}</span>
           {wordUnlocked < wordTotal && (
-            <button onClick={addNewWords} className="bg-purple-500 text-white px-2 py-0.5 rounded text-xs">+20</button>
+            <button onClick={addNewWords} className="bg-purple-500 text-white px-2 py-0.5 rounded text-xs">+10</button>
           )}
           <button onClick={() => setShowWordList(v => !v)} className="bg-gray-200 px-2 py-0.5 rounded text-xs">
             {showWordList ? 'Hide' : 'List'}

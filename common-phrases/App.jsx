@@ -44,7 +44,7 @@
         <div className="text-sm flex items-center gap-1">
           <span>Phrases {phraseUnlocked}/{phraseTotal}</span>
           {phraseUnlocked < phraseTotal && (
-            <button onClick={addNewPhrases} className="bg-indigo-500 text-white px-2 py-0.5 rounded text-xs">+20</button>
+            <button onClick={addNewPhrases} className="bg-indigo-500 text-white px-2 py-0.5 rounded text-xs">+10</button>
           )}
           <button onClick={() => setShowPhraseList(v => !v)} className="bg-gray-200 px-2 py-0.5 rounded text-xs">
             {showPhraseList ? 'Hide' : 'List'}

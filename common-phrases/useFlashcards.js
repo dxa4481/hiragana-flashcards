@@ -4,7 +4,7 @@
 
   const STORAGE_PROGRESS = "jp-common-phrases-progress";
   const STORAGE_STATS    = "jp-common-phrases-stats";
-  const BATCH            = 20;
+  const BATCH            = 10;
 
   function useFlashcards() {
     const [cards, setCards]     = useState([]);
