@@ -4,9 +4,7 @@ const STATIC_CACHE_NAME = 'hiragana-static-v1';
 // Static assets to cache
 const STATIC_ASSETS = [
   './',
-  './index.html',
-  './app.js',
-  './style.css'
+  './index.html'
 ];
 
 // Skip waiting and activate immediately for mobile compatibility
