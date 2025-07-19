@@ -1,282 +1,159 @@
-const CACHE_NAME = 'vocab-words-app-v3';
-const AUDIO_CACHE_NAME = 'vocab-words-audio-v3';
-const MAX_AUDIO_FILES = 1000;
+const CACHE_NAME = 'vocab-words-v1';
+const STATIC_CACHE_NAME = 'vocab-words-static-v1';
 
-// Files to cache immediately
-const STATIC_FILES = [
-  '/vocab-words/',
-  '/vocab-words/index.html',
-  '/vocab-words/App.jsx',
-  '/vocab-words/useFlashcards.js',
-  '/vocab-words/FlashcardCard.jsx',
-  '/vocab-words/Scoreboard.jsx',
-  '/vocab-words/sm2.js',
-  '/vocab-words/data/words.json'
+// Static assets to cache
+const STATIC_ASSETS = [
+  './',
+  './index.html',
+  './App.jsx',
+  './style.css'
 ];
 
-// Install event - cache static files only
+// Skip waiting and activate immediately for mobile compatibility
 self.addEventListener('install', (event) => {
-  console.log('Vocab Words Service Worker installing...');
+  console.log('[SW] Installing service worker for vocab-words');
   
+  // Cache static assets
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Caching vocab words static files');
-        return cache.addAll(STATIC_FILES);
-      })
+    caches.open(STATIC_CACHE_NAME)
+      .then(cache => cache.addAll(STATIC_ASSETS))
       .then(() => {
-        console.log('Vocab words static files cached successfully');
-        // Skip waiting to activate immediately
-        return self.skipWaiting();
-      })
-      .catch((error) => {
-        console.error('Error during vocab words service worker install:', error);
+        console.log('[SW] Static assets cached');
+        self.skipWaiting(); // Activate immediately
       })
   );
 });
 
-// Activate event - clean up old caches and start audio caching
 self.addEventListener('activate', (event) => {
-  console.log('Vocab Words Service Worker activating...');
+  console.log('[SW] Activating service worker for vocab-words');
   
   event.waitUntil(
     Promise.all([
+      // Take control of all clients immediately
+      self.clients.claim(),
       // Clean up old caches
-      caches.keys().then((cacheNames) => {
+      caches.keys().then(cacheNames => {
         return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheName !== CACHE_NAME && cacheName !== AUDIO_CACHE_NAME) {
-              console.log('Deleting old vocab words cache:', cacheName);
+          cacheNames.map(cacheName => {
+            if (cacheName !== CACHE_NAME && cacheName !== STATIC_CACHE_NAME) {
+              console.log('[SW] Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
-      }),
-      // Take control of all clients immediately
-      self.clients.claim()
+      })
     ]).then(() => {
-      console.log('Vocab Words Service Worker activated');
-      // Audio caching will be triggered when app requests it
-    }).catch((error) => {
-      console.error('Error during vocab words service worker activation:', error);
+      console.log('[SW] Service worker activated and controlling clients');
     })
   );
 });
 
-// Fetch event - serve from cache when available
-self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
+// Message handler for starting audio caching
+self.addEventListener('message', (event) => {
+  console.log('[SW] Received message:', event.data);
   
-  // Handle audio files
-  if (url.pathname.startsWith('/vocab-words/public/audio/') && url.pathname.endsWith('.mp3')) {
-    event.respondWith(
-      caches.open(AUDIO_CACHE_NAME)
-        .then((cache) => {
-          return cache.match(event.request)
-            .then((response) => {
-              if (response) {
-                console.log('Serving vocab words audio from cache:', url.pathname);
-                // Clone the response to ensure it can be consumed multiple times
-                const clonedResponse = response.clone();
-                // Add headers for better mobile compatibility
-                const headers = new Headers(clonedResponse.headers);
-                headers.set('Accept-Ranges', 'bytes');
-                headers.set('Content-Type', 'audio/mpeg');
-                headers.set('Cache-Control', 'public, max-age=86400');
-                
-                return new Response(clonedResponse.body, {
-                  status: clonedResponse.status,
-                  statusText: clonedResponse.statusText,
-                  headers: headers
-                });
-              }
-              
-              // If not in cache, try to fetch and cache it
-              return fetch(event.request)
-                .then((fetchResponse) => {
-                  // Only cache if response is ok and not a partial response (206)
-                  if (fetchResponse.ok && fetchResponse.status !== 206) {
-                    // Clone for caching
-                    const responseToCache = fetchResponse.clone();
-                    cache.put(event.request, responseToCache);
-                    console.log('Cached new vocab words audio file:', url.pathname);
-                    
-                    // Add headers for better mobile compatibility
-                    const headers = new Headers(fetchResponse.headers);
-                    headers.set('Accept-Ranges', 'bytes');
-                    headers.set('Content-Type', 'audio/mpeg');
-                    headers.set('Cache-Control', 'public, max-age=86400');
-                    
-                    return new Response(fetchResponse.body, {
-                      status: fetchResponse.status,
-                      statusText: fetchResponse.statusText,
-                      headers: headers
-                    });
-                  } else if (fetchResponse.status === 206) {
-                    console.log('Skipping cache for partial response:', url.pathname);
-                    return fetchResponse;
-                  } else {
-                    console.log('Audio fetch failed with status:', fetchResponse.status);
-                    return fetchResponse;
-                  }
-                })
-                .catch((error) => {
-                  console.log('Failed to fetch vocab words audio file:', url.pathname, error);
-                  // Return a proper error response instead of text
-                  return new Response(null, { 
-                    status: 404, 
-                    statusText: 'Audio not available offline',
-                    headers: { 'Content-Type': 'audio/mpeg' }
-                  });
-                });
-            });
-        })
-        .catch((error) => {
-          console.error('Error in fetch handler for vocab words audio:', error);
-          return fetch(event.request).catch(() => {
-            return new Response(null, { 
-              status: 404, 
-              statusText: 'Audio not available',
-              headers: { 'Content-Type': 'audio/mpeg' }
-            });
-          });
-        })
-    );
-    return;
-  }
-  
-  // Handle other files
-  if (url.pathname.startsWith('/vocab-words/')) {
-    event.respondWith(
-      caches.open(CACHE_NAME)
-        .then((cache) => {
-          return cache.match(event.request)
-            .then((response) => {
-              if (response) {
-                return response;
-              }
-              return fetch(event.request);
-            });
-        })
-        .catch((error) => {
-          console.error('Error in fetch handler for vocab words static files:', error);
-          return fetch(event.request);
-        })
-    );
-    return;
+  if (event.data && event.data.type === 'START_AUDIO_CACHE') {
+    console.log('[SW] Starting audio caching process');
+    cacheAudioFiles();
   }
 });
 
-// Function to cache audio files in batches with progress reporting
+// Audio caching function
 async function cacheAudioFiles() {
   try {
-    console.log('Starting vocab words audio caching process...');
-    const audioCache = await caches.open(AUDIO_CACHE_NAME);
-    const batchSize = 25; // Reduced batch size for better reliability
-    let totalCached = 0;
+    const response = await fetch('./data.json');
+    const data = await response.json();
     
-    // Get the words data to know which audio files to cache
-    const wordsResponse = await fetch('/vocab-words/data/words.json');
-    if (!wordsResponse.ok) {
-      console.error('Failed to fetch words.json for audio caching');
-      return;
+    // Limit to first 1000 entries
+    const limitedData = data.slice(0, 1000);
+    console.log(`[SW] Caching ${limitedData.length} audio files`);
+    
+    const cache = await caches.open(CACHE_NAME);
+    const batchSize = 10;
+    let cached = 0;
+    
+    for (let i = 0; i < limitedData.length; i += batchSize) {
+      const batch = limitedData.slice(i, i + batchSize);
+      
+      await Promise.allSettled(
+        batch.map(async (item) => {
+          try {
+            await cache.add(`./audio/${item.id}.mp3`);
+            cached++;
+            
+            // Send progress update
+            const progress = Math.round((cached / limitedData.length) * 100);
+            sendProgressUpdate(progress, cached, limitedData.length);
+            
+          } catch (error) {
+            console.warn(`[SW] Failed to cache audio for ${item.id}:`, error);
+          }
+        })
+      );
+      
+      // Small delay between batches to avoid overwhelming
+      await new Promise(resolve => setTimeout(resolve, 50));
     }
     
-    const words = await wordsResponse.json();
-    const audioFiles = words.slice(0, MAX_AUDIO_FILES).map(word => word.audio);
-    const totalFiles = audioFiles.length;
-    
-    for (let i = 0; i < audioFiles.length; i += batchSize) {
-      const batch = [];
-      
-      for (let j = 0; j < batchSize && (i + j) < audioFiles.length; j++) {
-        const audioFile = audioFiles[i + j];
-        const audioUrl = `/vocab-words/public/audio/${audioFile}`;
-        
-        batch.push(
-          fetch(audioUrl)
-            .then((response) => {
-              // Only cache if response is ok and not a partial response (206)
-              if (response.ok && response.status !== 206) {
-                return audioCache.put(audioUrl, response.clone())
-                  .then(() => {
-                    totalCached++;
-                    return true;
-                  });
-              } else if (response.status === 206) {
-                console.log(`Skipping cache for partial response: ${audioFile}`);
-                return false;
-              } else {
-                console.log(`Vocab words audio file ${audioFile} returned status:`, response.status);
-                return false;
-              }
-            })
-            .catch((error) => {
-              console.log(`Failed to cache vocab words audio file ${audioFile}:`, error.message);
-              return false;
-            })
-        );
-      }
-      
-      // Wait for current batch to complete
-      const results = await Promise.all(batch);
-      const batchCached = results.filter(Boolean).length;
-      
-      const batchNum = Math.floor(i/batchSize) + 1;
-      const totalBatches = Math.ceil(totalFiles / batchSize);
-      const progressPercent = Math.round((totalCached / totalFiles) * 100);
-      
-      console.log(`Vocab words batch ${batchNum}/${totalBatches}: Cached ${batchCached}/${batchSize} files`);
-      console.log(`Total vocab words cached so far: ${totalCached}/${totalFiles} (${progressPercent}%)`);
-      
-      // Send progress update to clients
-      const clients = await self.clients.matchAll();
-      clients.forEach(client => {
-        client.postMessage({
-          type: 'AUDIO_CACHE_PROGRESS',
-          totalCached: totalCached,
-          totalFiles: totalFiles,
-          progressPercent: progressPercent,
-          currentBatch: batchNum,
-          totalBatches: totalBatches
-        });
-      });
-      
-      // Shorter delay between batches since we're only caching 1000 files
-      await new Promise(resolve => setTimeout(resolve, 100));
-    }
-    
-    console.log(`Vocab words audio caching completed! Total files cached: ${totalCached}`);
-    
-    // Notify clients about completion
-    const clients = await self.clients.matchAll();
-    clients.forEach(client => {
-      client.postMessage({
-        type: 'AUDIO_CACHE_COMPLETE',
-        totalCached: totalCached,
-        totalFiles: totalFiles
-      });
-    });
+    console.log(`[SW] Audio caching completed. Cached ${cached}/${limitedData.length} files`);
+    sendCacheComplete(cached, limitedData.length);
     
   } catch (error) {
-    console.error('Error in vocab words cacheAudioFiles:', error);
+    console.error('[SW] Audio caching failed:', error);
+    sendCacheError(error.message);
   }
 }
 
-// Message event for communication with main thread
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-  
-  if (event.data && event.data.type === 'GET_CACHE_STATUS') {
-    event.ports[0].postMessage({
-      type: 'CACHE_STATUS',
-      cacheName: AUDIO_CACHE_NAME
+// Send progress update to all clients
+function sendProgressUpdate(percent, cached, total) {
+  self.clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'AUDIO_CACHE_PROGRESS',
+        percent: percent,
+        cached: cached,
+        total: total
+      });
     });
-  }
-  
-  if (event.data && event.data.type === 'START_AUDIO_CACHE') {
-    cacheAudioFiles();
-  }
+  });
+}
+
+// Send cache completion message
+function sendCacheComplete(cached, total) {
+  self.clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'AUDIO_CACHE_COMPLETE',
+        cached: cached,
+        total: total
+      });
+    });
+  });
+}
+
+// Send cache error message
+function sendCacheError(error) {
+  self.clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'AUDIO_CACHE_ERROR',
+        error: error
+      });
+    });
+  });
+}
+
+// Fetch handler for serving cached content
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        return response || fetch(event.request);
+      })
+      .catch(() => {
+        // Fallback for failed requests
+        console.log('[SW] Fetch failed for:', event.request.url);
+        return new Response('Network error', { status: 503 });
+      })
+  );
 });
