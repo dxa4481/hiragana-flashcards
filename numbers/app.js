@@ -431,7 +431,7 @@
     console.log('Numbers learning app starting...');
     
     // Initialize the numbers learning interface
-    initializeApp();
+    init();
   });
 
   // Initialize the app
@@ -530,8 +530,8 @@
     if (!isOnline) {
       statusElement.textContent = serviceWorkerRegistration ? '🔴 Offline (Cached Audio)' : '🔴 Offline Mode';
       statusElement.className = 'offline-indicator offline';
-    } else if (audioCacheComplete) {
-      statusElement.textContent = `🟢 Audio Cached (${audioCacheProgress.cached}/${audioCacheProgress.total})`;
+    } else if (audioCacheStatus === 'complete') {
+      statusElement.textContent = `🟢 Audio Cached (${totalCached}/${totalFiles})`;
       statusElement.className = 'offline-indicator online';
     } else if (serviceWorkerRegistration && audioCacheProgress.total > 0) {
       statusElement.innerHTML = `

@@ -27,7 +27,7 @@
     // Register service worker for offline functionality
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/vocab-words/sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then((registration) => {
             console.log('Vocab Words Service Worker registered successfully:', registration);
             

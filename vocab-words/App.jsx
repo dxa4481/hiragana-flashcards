@@ -15,7 +15,7 @@
     const [audioCacheStatus, setAudioCacheStatus] = useState('preparing');
     const [totalCached, setTotalCached] = useState(0);
     const [totalFiles, setTotalFiles] = useState(0);
-    const [audioCacheComplete, setAudioCacheComplete] = useState(false);
+
 
     const [showRomaji, setShowRomaji] = useState(false);
     const [showEnglish, setShowEnglish] = useState(false);
@@ -100,17 +100,8 @@
     };
 
     useEffect(() => {
-      // Register service worker
+      // Listen for service worker messages (SW registered in HTML)
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js')
-          .then(registration => {
-            console.log('Service Worker registered:', registration);
-          })
-          .catch(error => {
-            console.error('Service Worker registration failed:', error);
-          });
-
-        // Listen for service worker messages
         navigator.serviceWorker.addEventListener('message', (event) => {
           console.log('Received SW message:', event.data);
           
@@ -124,24 +115,23 @@
             setTotalCached(event.data.cached);
             setTotalFiles(event.data.total);
             setAudioCacheStatus('complete');
-            setAudioCacheComplete(true);
           } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
             console.error('Audio caching error:', event.data.error);
             setAudioCacheStatus('error');
           }
         });
 
-        // Wait for service worker to take control before starting cache
-        if (navigator.serviceWorker.controller) {
-          // Service worker is already controlling, start caching
-          startAudioCaching();
-        } else {
-          // Wait for controllerchange event
-          navigator.serviceWorker.addEventListener('controllerchange', () => {
-            console.log('Service worker now controlling page');
+        // Wait for service worker to be ready before starting cache
+        navigator.serviceWorker.ready.then(() => {
+          if (navigator.serviceWorker.controller) {
             startAudioCaching();
-          });
-        }
+          } else {
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+              console.log('Service worker now controlling page');
+              startAudioCaching();
+            });
+          }
+        });
       }
     }, []);
 
