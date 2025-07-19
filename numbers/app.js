@@ -324,6 +324,17 @@
       navigator.serviceWorker.ready.then((registration) => {
         serviceWorkerRegistration = registration;
         updateOfflineStatus();
+        console.log('Service Worker ready:', registration);
+        
+        // Listen for messages from service worker
+        navigator.serviceWorker.addEventListener('message', (event) => {
+          if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+            console.log('Audio cache completed! Total cached:', event.data.totalCached);
+            updateOfflineStatus();
+          }
+        });
+      }).catch((error) => {
+        console.error('Service Worker registration failed:', error);
       });
     }
     
