@@ -265,6 +265,8 @@ async function cacheAudioFiles() {
 
 // Message event for communication with main thread
 self.addEventListener('message', (event) => {
+  console.log('Common phrases service worker received message:', event.data);
+  
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
@@ -277,6 +279,7 @@ self.addEventListener('message', (event) => {
   }
   
   if (event.data && event.data.type === 'START_AUDIO_CACHE') {
+    console.log('Starting common phrases audio caching...');
     cacheAudioFiles();
   }
 });

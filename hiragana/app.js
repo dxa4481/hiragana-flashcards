@@ -339,8 +339,32 @@
         });
 
         // Start audio caching when app opens
-        if (registration.active) {
-          registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
+        const startCaching = () => {
+          if (registration.active) {
+            console.log('Starting hiragana audio caching...');
+            registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
+          } else if (registration.installing) {
+            console.log('Service worker installing, waiting...');
+            registration.installing.addEventListener('statechange', () => {
+              if (registration.installing.state === 'activated') {
+                console.log('Service worker activated, starting caching...');
+                registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
+              }
+            });
+          } else if (registration.waiting) {
+            console.log('Service worker waiting, starting caching...');
+            registration.waiting.postMessage({ type: 'START_AUDIO_CACHE' });
+          } else {
+            console.log('No active service worker, retrying in 1 second...');
+            setTimeout(startCaching, 1000);
+          }
+        };
+        startCaching();
+
+        // Alternative approach: Use the controlling service worker
+        if (navigator.serviceWorker.controller) {
+          console.log('Found controlling service worker, sending message...');
+          navigator.serviceWorker.controller.postMessage({ type: 'START_AUDIO_CACHE' });
         }
       }).catch((error) => {
         console.error('Hiragana Service Worker registration failed:', error);
