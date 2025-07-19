@@ -16,6 +16,24 @@
     toggleEnglish,
     playAudio, // plays the main‑word audio (passed from parent)
   }) {
+    // Add fade-in animation styles
+    React.useEffect(() => {
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.5s ease-in-out forwards;
+        }
+      `;
+      document.head.appendChild(style);
+      
+      return () => {
+        document.head.removeChild(style);
+      };
+    }, []);
     if (!card) return null;
 
     // ---------------- Local state ----------------
@@ -23,6 +41,8 @@
     const [showSentenceImage, setShowSentenceImage]     = useState(false);
     const [hoverIdx, setHoverIdx]                       = useState(null);
     const [clickedIdx, setClickedIdx]                   = useState(null);
+    const [clickCounts, setClickCounts]                 = useState({});
+    const [showDefinitions, setShowDefinitions]         = useState({});
 
     // Reset all local toggles / highlights when the flashcard changes --------
     useEffect(() => {
@@ -30,6 +50,8 @@
       setShowSentenceImage(false);
       setHoverIdx(null);
       setClickedIdx(null);
+      setClickCounts({});
+      setShowDefinitions({});
     }, [card.id]);
 
     // ---------------- Helpers --------------------
@@ -57,6 +79,17 @@
       
       sound.play();
       setClickedIdx(idx);
+      
+      // Increment click count for this word
+      const newClickCount = (clickCounts[idx] || 0) + 1;
+      setClickCounts(prev => ({ ...prev, [idx]: newClickCount }));
+      
+      // If this is the 3rd click, show definition after 2 seconds
+      if (newClickCount === 3) {
+        setTimeout(() => {
+          setShowDefinitions(prev => ({ ...prev, [idx]: true }));
+        }, 2000);
+      }
     };
 
     const playSentenceAudio = () => {
@@ -138,14 +171,15 @@
                     onMouseLeave={() => setHoverIdx(null)}
                     onClick={() => playWordAudio(i)}
                     className={`cursor-pointer px-1 rounded transition-all ${hoverIdx === i ? 'bg-yellow-200' : isFocus ? 'text-indigo-600 font-semibold' : ''}`}
-                  >
-                    {w}
-                    {clickedIdx === i && (
-                      <span className="block text-xs text-gray-600">
-                        {card.jp_sentence_meaning?.[i] || ''}
-                      </span>
-                    )}
-                  </span>
+
+                                      >
+                      {w}
+                      {showDefinitions[i] && (
+                        <span className="block text-xs text-gray-600 opacity-0 animate-fade-in">
+                          {card.jp_sentence_meaning?.[i] || ''}
+                        </span>
+                      )}
+                    </span>
                 );
               })}
             </p>
