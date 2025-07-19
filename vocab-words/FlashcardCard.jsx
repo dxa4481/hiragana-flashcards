@@ -16,6 +16,24 @@
     toggleEnglish,
     playAudio, // plays the main‑word audio (passed from parent)
   }) {
+    // Add fade-in animation styles
+    React.useEffect(() => {
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.5s ease-in-out forwards;
+        }
+      `;
+      document.head.appendChild(style);
+      
+      return () => {
+        document.head.removeChild(style);
+      };
+    }, []);
     if (!card) return null;
 
     // ---------------- Local state ----------------
@@ -153,16 +171,11 @@
                     onMouseLeave={() => setHoverIdx(null)}
                     onClick={() => playWordAudio(i)}
                     className={`cursor-pointer px-1 rounded transition-all ${hoverIdx === i ? 'bg-yellow-200' : isFocus ? 'text-indigo-600 font-semibold' : ''}`}
-                    title={`Click count: ${clickCounts[i] || 0}/3`}
+
                                       >
                       {w}
-                      {(clickCounts[i] || 0) > 0 && (
-                        <span className="block text-xs text-blue-600 font-bold">
-                          ({clickCounts[i]}/3)
-                        </span>
-                      )}
                       {showDefinitions[i] && (
-                        <span className="block text-xs text-gray-600">
+                        <span className="block text-xs text-gray-600 opacity-0 animate-fade-in">
                           {card.jp_sentence_meaning?.[i] || ''}
                         </span>
                       )}
