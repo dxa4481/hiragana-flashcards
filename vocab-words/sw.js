@@ -253,7 +253,8 @@ async function cacheAudioFiles() {
     clients.forEach(client => {
       client.postMessage({
         type: 'AUDIO_CACHE_COMPLETE',
-        totalCached: totalCached
+        totalCached: totalCached,
+        totalFiles: totalFiles
       });
     });
     

@@ -1,5 +1,5 @@
-const CACHE_NAME = 'numbers-app-v2';
-const AUDIO_CACHE_NAME = 'numbers-audio-v2';
+const CACHE_NAME = 'numbers-app-v3';
+const AUDIO_CACHE_NAME = 'numbers-audio-v3';
 const MAX_AUDIO_FILES = 1000;
 
 // Files to cache immediately
@@ -51,9 +51,8 @@ self.addEventListener('activate', (event) => {
       // Take control of all clients immediately
       self.clients.claim()
     ]).then(() => {
-      console.log('Service Worker activated, starting audio caching...');
-      // Start audio caching after activation
-      return cacheAudioFiles();
+      console.log('Numbers Service Worker activated');
+      // Audio caching will be triggered when app requests it
     }).catch((error) => {
       console.error('Error during service worker activation:', error);
     })
@@ -164,13 +163,14 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
-// Function to cache audio files in batches
+// Function to cache audio files in batches with progress reporting
 async function cacheAudioFiles() {
   try {
-    console.log('Starting audio caching process...');
+    console.log('Starting numbers audio caching process...');
     const audioCache = await caches.open(AUDIO_CACHE_NAME);
     const batchSize = 25; // Reduced batch size for better reliability
     let totalCached = 0;
+    const totalFiles = MAX_AUDIO_FILES;
     
     for (let i = 0; i < MAX_AUDIO_FILES; i += batchSize) {
       const batch = [];
@@ -208,21 +208,39 @@ async function cacheAudioFiles() {
       const results = await Promise.all(batch);
       const batchCached = results.filter(Boolean).length;
       
-      console.log(`Batch ${Math.floor(i/batchSize) + 1}: Cached ${batchCached}/${batchSize} files (${i} to ${Math.min(i + batchSize - 1, MAX_AUDIO_FILES - 1)})`);
-      console.log(`Total cached so far: ${totalCached} files`);
+      const batchNum = Math.floor(i/batchSize) + 1;
+      const totalBatches = Math.ceil(totalFiles / batchSize);
+      const progressPercent = Math.round((totalCached / totalFiles) * 100);
       
-      // Longer delay between batches to be more conservative
-      await new Promise(resolve => setTimeout(resolve, 200));
+      console.log(`Numbers batch ${batchNum}/${totalBatches}: Cached ${batchCached}/${batchSize} files (${i} to ${Math.min(i + batchSize - 1, MAX_AUDIO_FILES - 1)})`);
+      console.log(`Total numbers cached so far: ${totalCached}/${totalFiles} (${progressPercent}%)`);
+      
+      // Send progress update to clients
+      const clients = await self.clients.matchAll();
+      clients.forEach(client => {
+        client.postMessage({
+          type: 'AUDIO_CACHE_PROGRESS',
+          totalCached: totalCached,
+          totalFiles: totalFiles,
+          progressPercent: progressPercent,
+          currentBatch: batchNum,
+          totalBatches: totalBatches
+        });
+      });
+      
+      // Shorter delay between batches since we're only caching 1000 files
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
     
-    console.log(`Audio caching completed! Total files cached: ${totalCached}`);
+    console.log(`Numbers audio caching completed! Total files cached: ${totalCached}`);
     
     // Notify clients about completion
     const clients = await self.clients.matchAll();
     clients.forEach(client => {
       client.postMessage({
         type: 'AUDIO_CACHE_COMPLETE',
-        totalCached: totalCached
+        totalCached: totalCached,
+        totalFiles: totalFiles
       });
     });
     

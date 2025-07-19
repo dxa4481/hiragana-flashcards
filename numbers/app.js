@@ -24,6 +24,8 @@
   // Offline status
   let isOnline = navigator.onLine;
   let serviceWorkerRegistration = null;
+  let audioCacheProgress = { percent: 0, cached: 0, total: 0 };
+  let audioCacheComplete = false;
 
   // App state
   let currentNumber = 0;
@@ -396,11 +398,29 @@
         
         // Listen for messages from service worker
         navigator.serviceWorker.addEventListener('message', (event) => {
-          if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
-            console.log('Audio cache completed! Total cached:', event.data.totalCached);
+          if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
+            audioCacheProgress = {
+              percent: event.data.progressPercent,
+              cached: event.data.totalCached,
+              total: event.data.totalFiles
+            };
+            updateOfflineStatus();
+          } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+            console.log('Numbers audio cache completed! Total cached:', event.data.totalCached);
+            audioCacheComplete = true;
+            audioCacheProgress = {
+              percent: 100,
+              cached: event.data.totalCached,
+              total: event.data.totalFiles
+            };
             updateOfflineStatus();
           }
         });
+
+        // Start audio caching when app opens
+        if (registration.active) {
+          registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
+        }
       }).catch((error) => {
         console.error('Service Worker registration failed:', error);
       });
@@ -418,11 +438,21 @@
     if (!isOnline) {
       statusElement.textContent = serviceWorkerRegistration ? '🔴 Offline (Cached Audio)' : '🔴 Offline Mode';
       statusElement.className = 'offline-indicator offline';
-    } else if (serviceWorkerRegistration) {
-      statusElement.textContent = '🟢 Audio Cached';
+    } else if (audioCacheComplete) {
+      statusElement.textContent = `🟢 Audio Cached (${audioCacheProgress.cached}/${audioCacheProgress.total})`;
+      statusElement.className = 'offline-indicator online';
+    } else if (serviceWorkerRegistration && audioCacheProgress.total > 0) {
+      statusElement.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span>🟡 Caching Audio ${audioCacheProgress.percent}%</span>
+          <div style="width: 60px; height: 6px; background-color: rgba(255,255,255,0.3); border-radius: 3px; overflow: hidden;">
+            <div style="height: 100%; background-color: #ffc107; transition: width 0.3s ease; width: ${audioCacheProgress.percent}%;"></div>
+          </div>
+        </div>
+      `;
       statusElement.className = 'offline-indicator online';
     } else {
-      statusElement.textContent = '🟡 Caching Audio...';
+      statusElement.textContent = '🟡 Preparing...';
       statusElement.className = 'offline-indicator online';
     }
   }

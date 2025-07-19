@@ -11,6 +11,8 @@
 
     const [isOnline, setIsOnline] = useState(navigator.onLine);
     const [serviceWorkerReady, setServiceWorkerReady] = useState(false);
+    const [audioCacheProgress, setAudioCacheProgress] = useState({ percent: 0, cached: 0, total: 0 });
+    const [audioCacheComplete, setAudioCacheComplete] = useState(false);
 
     const [showRomaji, setShowRomaji] = useState(false);
     const [showEnglish, setShowEnglish] = useState(false);
@@ -110,10 +112,27 @@
           
           // Listen for messages from service worker
           navigator.serviceWorker.addEventListener('message', (event) => {
-            if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+            if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
+              setAudioCacheProgress({
+                percent: event.data.progressPercent,
+                cached: event.data.totalCached,
+                total: event.data.totalFiles
+              });
+            } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
               console.log('Common phrases audio cache completed! Total cached:', event.data.totalCached);
+              setAudioCacheComplete(true);
+              setAudioCacheProgress({
+                percent: 100,
+                cached: event.data.totalCached,
+                total: event.data.totalFiles
+              });
             }
           });
+
+          // Start audio caching when app opens
+          if (registration.active) {
+            registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
+          }
         }).catch((error) => {
           console.error('Common Phrases Service Worker registration failed:', error);
         });
@@ -161,10 +180,20 @@
         <div className="text-sm">
           {!isOnline ? (
             <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">🔴 Offline{serviceWorkerReady ? ' (Cached Audio)' : ''}</span>
-          ) : serviceWorkerReady ? (
-            <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">🟢 Audio Cached</span>
+          ) : audioCacheComplete ? (
+            <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">🟢 Audio Cached ({audioCacheProgress.cached}/{audioCacheProgress.total})</span>
+          ) : serviceWorkerReady && audioCacheProgress.total > 0 ? (
+            <div className="flex items-center gap-2">
+              <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">🟡 Caching Audio {audioCacheProgress.percent}%</span>
+              <div className="w-20 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-yellow-500 transition-all duration-300"
+                  style={{ width: `${audioCacheProgress.percent}%` }}
+                ></div>
+              </div>
+            </div>
           ) : (
-            <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">🟡 Caching Audio...</span>
+            <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">🟡 Preparing...</span>
           )}
         </div>
       </div>
