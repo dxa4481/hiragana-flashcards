@@ -60,6 +60,9 @@ self.addEventListener('message', (event) => {
 async function cacheAudioFiles() {
   try {
     const response = await fetch('./numbers_data.js');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch numbers_data.js: ${response.status}`);
+    }
     const text = await response.text();
     
     // Extract numbers from the JavaScript file
@@ -69,6 +72,10 @@ async function cacheAudioFiles() {
     }
     
     const numbersData = eval(numbersMatch[1]);
+    
+    if (!Array.isArray(numbersData) || numbersData.length === 0) {
+      throw new Error('Numbers data is empty or invalid');
+    }
     
     // Limit to first 1000 entries
     const limitedData = numbersData.slice(0, 1000);
