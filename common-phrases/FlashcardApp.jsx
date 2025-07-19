@@ -95,7 +95,27 @@ function FlashcardApp() {
   const playAudio = () => {
     if (!current) return;
     const audioPath = `public/audio/${current.audio}`; // relative to current dir, works under sub‑folders
-    new Howl({ src: [audioPath], html5: true }).play();
+    
+    // Create Howl instance without html5 flag for better cache compatibility
+    const sound = new Howl({
+      src: [audioPath],
+      preload: true,
+      onloaderror: function(id, err) {
+        console.warn('Audio load error for', audioPath, err);
+        // Try alternative method if primary fails
+        try {
+          const audio = new Audio(audioPath);
+          audio.play().catch(e => console.warn('Audio playback failed:', e));
+        } catch (e) {
+          console.warn('Alternative audio playback failed:', e);
+        }
+      },
+      onload: function() {
+        console.log('Audio loaded successfully:', audioPath);
+      }
+    });
+    
+    sound.play();
   };
 
   // ---------------------- grading -----------------------------------------
