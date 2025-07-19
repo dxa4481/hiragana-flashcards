@@ -1,6 +1,6 @@
 // App.jsx – vocab words only
 (function (global) {
-  const { useState } = React;
+  const { useState, useEffect } = React;
 
   function FlashcardApp() {
     const {

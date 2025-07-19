@@ -1,6 +1,6 @@
 // App.jsx – common phrases only
 (function (global) {
-  const { useState } = React;
+  const { useState, useEffect } = React;
 
   function FlashcardApp() {
     const {
