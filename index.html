@@ -4,11 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Learn Japanese – Home</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TF8GGY1N0C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TF8GGY1N0C');
+  </script>
   <!-- Tailwind (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" type="image/png">
+  <style>
+    .github-fork-ribbon:before {
+      background-color: #333;
+    }
+    .github-fork-ribbon:after {
+      border: 1px solid #333;
+    }
+  </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 flex items-center justify-center p-6">
+  <!-- GitHub Fork Ribbon -->
+  <a class="github-fork-ribbon" href="https://github.com/dxa4481/hiragana-flashcards" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+  
   <main class="bg-white rounded-2xl shadow-xl p-10 w-full max-w-md text-center space-y-8">
     <header>
       <h1 class="text-3xl font-extrabold tracking-wider text-gray-800 mb-4">Learn Japanese</h1>
@@ -38,5 +58,8 @@
     </div>
 
   </main>
+  
+  <!-- GitHub Fork Ribbon CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
 </body>
 </html>
