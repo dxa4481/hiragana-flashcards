@@ -20,6 +20,10 @@
   const incorrectCount = document.getElementById("incorrect-count");
   const accuracy = document.getElementById("accuracy");
   const streak = document.getElementById("streak");
+  
+  // Offline status
+  let isOnline = navigator.onLine;
+  let serviceWorkerRegistration = null;
 
   // App state
   let currentNumber = 0;
@@ -297,6 +301,51 @@
     initializePool();
     const firstNumber = getNextNumber();
     displayNumber(firstNumber);
+    
+    // Set up offline status monitoring
+    setupOfflineMonitoring();
+  }
+  
+  // Set up offline status monitoring
+  function setupOfflineMonitoring() {
+    // Listen for online/offline events
+    window.addEventListener('online', () => {
+      isOnline = true;
+      updateOfflineStatus();
+    });
+    
+    window.addEventListener('offline', () => {
+      isOnline = false;
+      updateOfflineStatus();
+    });
+    
+    // Check service worker status
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((registration) => {
+        serviceWorkerRegistration = registration;
+        updateOfflineStatus();
+      });
+    }
+    
+    // Initial status update
+    updateOfflineStatus();
+  }
+  
+  // Update offline status display
+  function updateOfflineStatus() {
+    const statusElement = document.getElementById('offline-status');
+    if (!statusElement) return;
+    
+    if (!isOnline) {
+      statusElement.textContent = '🔴 Offline Mode';
+      statusElement.className = 'offline-indicator offline';
+    } else if (serviceWorkerRegistration) {
+      statusElement.textContent = '🟢 Online with Cache';
+      statusElement.className = 'offline-indicator online';
+    } else {
+      statusElement.textContent = '🟡 Online';
+      statusElement.className = 'offline-indicator online';
+    }
   }
 
   // Start the app
