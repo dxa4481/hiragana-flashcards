@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cache Storage Limits Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .result { padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    .info { background: #d1ecf1; color: #0c5460; }
+    button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    .log { background: #f8f9fa; padding: 10px; border-radius: 5px; max-height: 400px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <h1>Cache Storage Limits Test</h1>
+  
+  <div id="status" class="result info">Checking storage limits...</div>
+  
+  <div>
+    <button onclick="checkStorageQuota()">Check Storage Quota</button>
+    <button onclick="testCacheLimits()">Test Cache Limits</button>
+    <button onclick="estimateAudioCache()">Estimate Audio Cache</button>
+    <button onclick="clearTestCaches()">Clear Test Caches</button>
+  </div>
+  
+  <div id="log" class="log"></div>
+  
+  <script>
+    function log(message) {
+      const logDiv = document.getElementById('log');
+      const timestamp = new Date().toLocaleTimeString();
+      logDiv.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+      logDiv.scrollTop = logDiv.scrollHeight;
+      console.log(message);
+    }
+    
+    function updateStatus(message, type = 'info') {
+      const statusDiv = document.getElementById('status');
+      statusDiv.textContent = message;
+      statusDiv.className = `result ${type}`;
+    }
+    
+    async function checkStorageQuota() {
+      log('Checking storage quota...');
+      
+      if (!('storage' in navigator) || !('estimate' in navigator.storage)) {
+        log('Storage Quota API not supported');
+        updateStatus('Storage Quota API not supported', 'error');
+        return;
+      }
+      
+      try {
+        const estimate = await navigator.storage.estimate();
+        log(`Storage quota: ${formatBytes(estimate.quota)}`);
+        log(`Storage used: ${formatBytes(estimate.usage)}`);
+        log(`Storage available: ${formatBytes(estimate.quota - estimate.usage)}`);
+        log(`Usage percentage: ${((estimate.usage / estimate.quota) * 100).toFixed(2)}%`);
+        
+        updateStatus(`Quota: ${formatBytes(estimate.quota)} | Used: ${formatBytes(estimate.usage)}`, 'success');
+        
+        // Check if we have enough space for audio cache
+        const audioCacheSize = 16 * 1024 * 1024; // 16MB for 1000 audio files
+        if (estimate.quota - estimate.usage > audioCacheSize) {
+          log('✓ Sufficient space available for audio cache');
+        } else {
+          log('⚠ Insufficient space for audio cache');
+        }
+        
+      } catch (error) {
+        log(`Error checking storage quota: ${error.message}`);
+        updateStatus('Error checking storage quota', 'error');
+      }
+    }
+    
+    async function testCacheLimits() {
+      log('Testing cache limits...');
+      
+      try {
+        const testCache = await caches.open('test-cache');
+        let totalSize = 0;
+        let fileCount = 0;
+        
+        // Create test files of different sizes
+        const testSizes = [1024, 10240, 102400, 1024000]; // 1KB, 10KB, 100KB, 1MB
+        
+        for (const size of testSizes) {
+          try {
+            const testData = new ArrayBuffer(size);
+            const response = new Response(testData);
+            const url = `test-file-${size}.bin`;
+            
+            await testCache.put(url, response);
+            totalSize += size;
+            fileCount++;
+            
+            log(`✓ Cached file ${url} (${formatBytes(size)})`);
+            
+          } catch (error) {
+            log(`✗ Failed to cache ${formatBytes(size)} file: ${error.message}`);
+            break;
+          }
+        }
+        
+        log(`Total cached: ${fileCount} files, ${formatBytes(totalSize)}`);
+        
+        // Clean up test cache
+        await caches.delete('test-cache');
+        log('Test cache cleaned up');
+        
+      } catch (error) {
+        log(`Error testing cache limits: ${error.message}`);
+      }
+    }
+    
+    async function estimateAudioCache() {
+      log('Estimating audio cache size...');
+      
+      try {
+        // Check existing audio cache
+        const audioCache = await caches.open('numbers-audio-v1');
+        const keys = await audioCache.keys();
+        
+        if (keys.length > 0) {
+          let totalSize = 0;
+          let sampleCount = Math.min(10, keys.length);
+          
+          // Sample a few files to estimate total size
+          for (let i = 0; i < sampleCount; i++) {
+            const response = await audioCache.match(keys[i]);
+            if (response) {
+              const blob = await response.blob();
+              totalSize += blob.size;
+            }
+          }
+          
+          const averageSize = totalSize / sampleCount;
+          const estimatedTotal = averageSize * keys.length;
+          
+          log(`Sample size: ${sampleCount} files`);
+          log(`Average file size: ${formatBytes(averageSize)}`);
+          log(`Estimated total cache size: ${formatBytes(estimatedTotal)}`);
+          log(`Files cached: ${keys.length}`);
+          
+          updateStatus(`Audio cache: ~${formatBytes(estimatedTotal)} (${keys.length} files)`, 'success');
+          
+        } else {
+          log('No audio files cached yet');
+          updateStatus('No audio files cached', 'info');
+        }
+        
+      } catch (error) {
+        log(`Error estimating audio cache: ${error.message}`);
+      }
+    }
+    
+    async function clearTestCaches() {
+      log('Clearing test caches...');
+      
+      try {
+        const cacheNames = await caches.keys();
+        for (const cacheName of cacheNames) {
+          if (cacheName.includes('test')) {
+            await caches.delete(cacheName);
+            log(`Deleted test cache: ${cacheName}`);
+          }
+        }
+        updateStatus('Test caches cleared', 'success');
+      } catch (error) {
+        log(`Error clearing test caches: ${error.message}`);
+      }
+    }
+    
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+    
+    // Auto-check on load
+    window.addEventListener('load', () => {
+      log('Cache test page loaded');
+      checkStorageQuota();
+    });
+  </script>
+</body>
+</html>

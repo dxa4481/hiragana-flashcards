@@ -10,7 +10,7 @@ const STATIC_FILES = [
   '/numbers/app.js'
 ];
 
-// Install event - cache static files and start caching audio files
+// Install event - cache static files only
 self.addEventListener('install', (event) => {
   console.log('Service Worker installing...');
   
@@ -21,8 +21,9 @@ self.addEventListener('install', (event) => {
         return cache.addAll(STATIC_FILES);
       })
       .then(() => {
-        console.log('Starting audio file caching...');
-        return cacheAudioFiles();
+        console.log('Static files cached successfully');
+        // Skip waiting to activate immediately
+        return self.skipWaiting();
       })
       .catch((error) => {
         console.error('Error during service worker install:', error);
@@ -30,20 +31,31 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches
+// Activate event - clean up old caches and start audio caching
 self.addEventListener('activate', (event) => {
   console.log('Service Worker activating...');
   
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME && cacheName !== AUDIO_CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
+    Promise.all([
+      // Clean up old caches
+      caches.keys().then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== CACHE_NAME && cacheName !== AUDIO_CACHE_NAME) {
+              console.log('Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      }),
+      // Take control of all clients immediately
+      self.clients.claim()
+    ]).then(() => {
+      console.log('Service Worker activated, starting audio caching...');
+      // Start audio caching after activation
+      return cacheAudioFiles();
+    }).catch((error) => {
+      console.error('Error during service worker activation:', error);
     })
   );
 });
@@ -73,11 +85,15 @@ self.addEventListener('fetch', (event) => {
                   }
                   return fetchResponse;
                 })
-                .catch(() => {
-                  console.log('Failed to fetch audio file:', url.pathname);
+                .catch((error) => {
+                  console.log('Failed to fetch audio file:', url.pathname, error);
                   return new Response('Audio not available', { status: 404 });
                 });
             });
+        })
+        .catch((error) => {
+          console.error('Error in fetch handler for audio:', error);
+          return fetch(event.request);
         })
     );
     return;
@@ -96,6 +112,10 @@ self.addEventListener('fetch', (event) => {
               return fetch(event.request);
             });
         })
+        .catch((error) => {
+          console.error('Error in fetch handler for static files:', error);
+          return fetch(event.request);
+        })
     );
     return;
   }
@@ -103,39 +123,65 @@ self.addEventListener('fetch', (event) => {
 
 // Function to cache audio files in batches
 async function cacheAudioFiles() {
-  const audioCache = await caches.open(AUDIO_CACHE_NAME);
-  const batchSize = 50; // Cache 50 files at a time to avoid overwhelming the browser
-  
-  for (let i = 0; i < MAX_AUDIO_FILES; i += batchSize) {
-    const batch = [];
+  try {
+    console.log('Starting audio caching process...');
+    const audioCache = await caches.open(AUDIO_CACHE_NAME);
+    const batchSize = 25; // Reduced batch size for better reliability
+    let totalCached = 0;
     
-    for (let j = 0; j < batchSize && (i + j) < MAX_AUDIO_FILES; j++) {
-      const number = i + j;
-      const audioUrl = `/numbers/audio/${number}.mp3`;
-      batch.push(
-        fetch(audioUrl)
-          .then((response) => {
-            if (response.ok) {
-              return audioCache.put(audioUrl, response);
-            }
-            return Promise.resolve();
-          })
-          .catch((error) => {
-            console.log(`Failed to cache audio file ${number}.mp3:`, error);
-            return Promise.resolve();
-          })
-      );
+    for (let i = 0; i < MAX_AUDIO_FILES; i += batchSize) {
+      const batch = [];
+      
+      for (let j = 0; j < batchSize && (i + j) < MAX_AUDIO_FILES; j++) {
+        const number = i + j;
+        const audioUrl = `/numbers/audio/${number}.mp3`;
+        
+        batch.push(
+          fetch(audioUrl)
+            .then((response) => {
+              if (response.ok) {
+                return audioCache.put(audioUrl, response.clone())
+                  .then(() => {
+                    totalCached++;
+                    return true;
+                  });
+              } else {
+                console.log(`Audio file ${number}.mp3 returned status:`, response.status);
+                return false;
+              }
+            })
+            .catch((error) => {
+              console.log(`Failed to cache audio file ${number}.mp3:`, error.message);
+              return false;
+            })
+        );
+      }
+      
+      // Wait for current batch to complete
+      const results = await Promise.all(batch);
+      const batchCached = results.filter(Boolean).length;
+      
+      console.log(`Batch ${Math.floor(i/batchSize) + 1}: Cached ${batchCached}/${batchSize} files (${i} to ${Math.min(i + batchSize - 1, MAX_AUDIO_FILES - 1)})`);
+      console.log(`Total cached so far: ${totalCached} files`);
+      
+      // Longer delay between batches to be more conservative
+      await new Promise(resolve => setTimeout(resolve, 200));
     }
     
-    // Wait for current batch to complete before starting next batch
-    await Promise.all(batch);
-    console.log(`Cached audio files ${i} to ${Math.min(i + batchSize - 1, MAX_AUDIO_FILES - 1)}`);
+    console.log(`Audio caching completed! Total files cached: ${totalCached}`);
     
-    // Small delay between batches to avoid overwhelming the browser
-    await new Promise(resolve => setTimeout(resolve, 100));
+    // Notify clients about completion
+    const clients = await self.clients.matchAll();
+    clients.forEach(client => {
+      client.postMessage({
+        type: 'AUDIO_CACHE_COMPLETE',
+        totalCached: totalCached
+      });
+    });
+    
+  } catch (error) {
+    console.error('Error in cacheAudioFiles:', error);
   }
-  
-  console.log('Audio caching completed');
 }
 
 // Message event for communication with main thread
@@ -149,5 +195,9 @@ self.addEventListener('message', (event) => {
       type: 'CACHE_STATUS',
       cacheName: AUDIO_CACHE_NAME
     });
+  }
+  
+  if (event.data && event.data.type === 'START_AUDIO_CACHE') {
+    cacheAudioFiles();
   }
 });

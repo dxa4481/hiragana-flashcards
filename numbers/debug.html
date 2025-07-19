@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Worker Debug</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    .info { background: #d1ecf1; color: #0c5460; }
+    button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    .log { background: #f8f9fa; padding: 10px; border-radius: 5px; max-height: 300px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <h1>Service Worker Debug Tool</h1>
+  
+  <div id="status" class="status info">Checking service worker status...</div>
+  
+  <div>
+    <button onclick="checkServiceWorker()">Check Service Worker</button>
+    <button onclick="checkCaches()">Check Caches</button>
+    <button onclick="testAudioCache()">Test Audio Cache</button>
+    <button onclick="clearCaches()">Clear All Caches</button>
+    <button onclick="unregisterSW()">Unregister Service Worker</button>
+  </div>
+  
+  <div id="log" class="log"></div>
+  
+  <script>
+    function log(message) {
+      const logDiv = document.getElementById('log');
+      const timestamp = new Date().toLocaleTimeString();
+      logDiv.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+      logDiv.scrollTop = logDiv.scrollHeight;
+      console.log(message);
+    }
+    
+    function updateStatus(message, type = 'info') {
+      const statusDiv = document.getElementById('status');
+      statusDiv.textContent = message;
+      statusDiv.className = `status ${type}`;
+    }
+    
+    async function checkServiceWorker() {
+      log('Checking service worker status...');
+      
+      if (!('serviceWorker' in navigator)) {
+        updateStatus('Service Worker not supported', 'error');
+        log('Service Worker not supported in this browser');
+        return;
+      }
+      
+      try {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration) {
+          updateStatus(`Service Worker registered: ${registration.scope}`, 'success');
+          log(`Service Worker active: ${registration.active ? 'Yes' : 'No'}`);
+          log(`Service Worker waiting: ${registration.waiting ? 'Yes' : 'No'}`);
+          log(`Service Worker installing: ${registration.installing ? 'Yes' : 'No'}`);
+        } else {
+          updateStatus('No service worker registered', 'error');
+          log('No service worker found');
+        }
+      } catch (error) {
+        updateStatus('Error checking service worker', 'error');
+        log(`Error: ${error.message}`);
+      }
+    }
+    
+    async function checkCaches() {
+      log('Checking caches...');
+      
+      try {
+        const cacheNames = await caches.keys();
+        log(`Found ${cacheNames.length} caches: ${cacheNames.join(', ')}`);
+        
+        for (const cacheName of cacheNames) {
+          const cache = await caches.open(cacheName);
+          const keys = await cache.keys();
+          log(`Cache '${cacheName}': ${keys.length} items`);
+          
+          // Show first few items
+          const firstItems = keys.slice(0, 5);
+          firstItems.forEach(request => {
+            log(`  - ${request.url}`);
+          });
+          
+          if (keys.length > 5) {
+            log(`  ... and ${keys.length - 5} more items`);
+          }
+        }
+      } catch (error) {
+        log(`Error checking caches: ${error.message}`);
+      }
+    }
+    
+    async function testAudioCache() {
+      log('Testing audio cache...');
+      
+      try {
+        const audioCache = await caches.open('numbers-audio-v1');
+        const keys = await audioCache.keys();
+        log(`Audio cache has ${keys.length} items`);
+        
+        // Test a few specific audio files
+        const testNumbers = [0, 1, 10, 100, 999];
+        for (const num of testNumbers) {
+          const url = `/numbers/audio/${num}.mp3`;
+          const response = await audioCache.match(url);
+          if (response) {
+            log(`✓ Audio file ${num}.mp3 is cached`);
+          } else {
+            log(`✗ Audio file ${num}.mp3 is NOT cached`);
+          }
+        }
+      } catch (error) {
+        log(`Error testing audio cache: ${error.message}`);
+      }
+    }
+    
+    async function clearCaches() {
+      log('Clearing all caches...');
+      
+      try {
+        const cacheNames = await caches.keys();
+        for (const cacheName of cacheNames) {
+          await caches.delete(cacheName);
+          log(`Deleted cache: ${cacheName}`);
+        }
+        updateStatus('All caches cleared', 'success');
+      } catch (error) {
+        log(`Error clearing caches: ${error.message}`);
+      }
+    }
+    
+    async function unregisterSW() {
+      log('Unregistering service worker...');
+      
+      try {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration) {
+          await registration.unregister();
+          log('Service worker unregistered');
+          updateStatus('Service worker unregistered', 'info');
+        } else {
+          log('No service worker to unregister');
+        }
+      } catch (error) {
+        log(`Error unregistering service worker: ${error.message}`);
+      }
+    }
+    
+    // Auto-check on load
+    window.addEventListener('load', () => {
+      log('Debug page loaded');
+      checkServiceWorker();
+    });
+  </script>
+</body>
+</html>
