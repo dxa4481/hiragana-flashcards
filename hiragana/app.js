@@ -294,6 +294,8 @@
   /* ─── offline status monitoring ─── */
   let isOnline = navigator.onLine;
   let serviceWorkerRegistration = null;
+  let audioCacheProgress = { percent: 0, cached: 0, total: 0 };
+  let audioCacheComplete = false;
   
   // Set up offline status monitoring
   function setupOfflineMonitoring() {
@@ -317,11 +319,29 @@
         
         // Listen for messages from service worker
         navigator.serviceWorker.addEventListener('message', (event) => {
-          if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+          if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
+            audioCacheProgress = {
+              percent: event.data.progressPercent,
+              cached: event.data.totalCached,
+              total: event.data.totalFiles
+            };
+            updateOfflineStatus();
+          } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
             console.log('Hiragana audio cache completed! Total cached:', event.data.totalCached);
+            audioCacheComplete = true;
+            audioCacheProgress = {
+              percent: 100,
+              cached: event.data.totalCached,
+              total: event.data.totalFiles
+            };
             updateOfflineStatus();
           }
         });
+
+        // Start audio caching when app opens
+        if (registration.active) {
+          registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
+        }
       }).catch((error) => {
         console.error('Hiragana Service Worker registration failed:', error);
       });
@@ -354,17 +374,29 @@
     }
     
     if (!isOnline) {
-      statusElement.textContent = serviceWorkerRegistration ? '🔴 Offline (Cached Audio)' : '🔴 Offline Mode';
+      statusElement.innerHTML = serviceWorkerRegistration ? '🔴 Offline (Cached Audio)' : '🔴 Offline Mode';
       statusElement.style.backgroundColor = '#f8d7da';
       statusElement.style.color = '#721c24';
       statusElement.style.border = '1px solid #f5c6cb';
-    } else if (serviceWorkerRegistration) {
-      statusElement.textContent = '🟢 Audio Cached';
+    } else if (audioCacheComplete) {
+      statusElement.innerHTML = `🟢 Audio Cached (${audioCacheProgress.cached}/${audioCacheProgress.total})`;
       statusElement.style.backgroundColor = '#d4edda';
       statusElement.style.color = '#155724';
       statusElement.style.border = '1px solid #c3e6cb';
+    } else if (serviceWorkerRegistration && audioCacheProgress.total > 0) {
+      statusElement.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span>🟡 Caching Audio ${audioCacheProgress.percent}%</span>
+          <div style="width: 80px; height: 8px; background-color: rgba(255,255,255,0.3); border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; background-color: #ffc107; transition: width 0.3s ease; width: ${audioCacheProgress.percent}%;"></div>
+          </div>
+        </div>
+      `;
+      statusElement.style.backgroundColor = '#fff3cd';
+      statusElement.style.color = '#856404';
+      statusElement.style.border = '1px solid #ffeaa7';
     } else {
-      statusElement.textContent = '🟡 Caching Audio...';
+      statusElement.innerHTML = '🟡 Preparing...';
       statusElement.style.backgroundColor = '#fff3cd';
       statusElement.style.color = '#856404';
       statusElement.style.border = '1px solid #ffeaa7';

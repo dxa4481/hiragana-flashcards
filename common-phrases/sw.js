@@ -1,5 +1,5 @@
-const CACHE_NAME = 'common-phrases-app-v2';
-const AUDIO_CACHE_NAME = 'common-phrases-audio-v2';
+const CACHE_NAME = 'common-phrases-app-v3';
+const AUDIO_CACHE_NAME = 'common-phrases-audio-v3';
 const MAX_AUDIO_FILES = 1000;
 
 // Files to cache immediately
@@ -55,9 +55,8 @@ self.addEventListener('activate', (event) => {
       // Take control of all clients immediately
       self.clients.claim()
     ]).then(() => {
-      console.log('Common Phrases Service Worker activated, starting audio caching...');
-      // Start audio caching after activation
-      return cacheAudioFiles();
+      console.log('Common Phrases Service Worker activated');
+      // Audio caching will be triggered when app requests it
     }).catch((error) => {
       console.error('Error during common phrases service worker activation:', error);
     })
@@ -168,7 +167,7 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
-// Function to cache audio files in batches
+// Function to cache audio files in batches with progress reporting
 async function cacheAudioFiles() {
   try {
     console.log('Starting common phrases audio caching process...');
@@ -185,6 +184,7 @@ async function cacheAudioFiles() {
     
     const phrases = await phrasesResponse.json();
     const audioFiles = phrases.slice(0, MAX_AUDIO_FILES).map(phrase => phrase.audio);
+    const totalFiles = audioFiles.length;
     
     for (let i = 0; i < audioFiles.length; i += batchSize) {
       const batch = [];
@@ -222,11 +222,28 @@ async function cacheAudioFiles() {
       const results = await Promise.all(batch);
       const batchCached = results.filter(Boolean).length;
       
-      console.log(`Common phrases batch ${Math.floor(i/batchSize) + 1}: Cached ${batchCached}/${batchSize} files`);
-      console.log(`Total common phrases cached so far: ${totalCached} files`);
+      const batchNum = Math.floor(i/batchSize) + 1;
+      const totalBatches = Math.ceil(totalFiles / batchSize);
+      const progressPercent = Math.round((totalCached / totalFiles) * 100);
       
-      // Longer delay between batches to be more conservative
-      await new Promise(resolve => setTimeout(resolve, 200));
+      console.log(`Common phrases batch ${batchNum}/${totalBatches}: Cached ${batchCached}/${batchSize} files`);
+      console.log(`Total common phrases cached so far: ${totalCached}/${totalFiles} (${progressPercent}%)`);
+      
+      // Send progress update to clients
+      const clients = await self.clients.matchAll();
+      clients.forEach(client => {
+        client.postMessage({
+          type: 'AUDIO_CACHE_PROGRESS',
+          totalCached: totalCached,
+          totalFiles: totalFiles,
+          progressPercent: progressPercent,
+          currentBatch: batchNum,
+          totalBatches: totalBatches
+        });
+      });
+      
+      // Shorter delay between batches since we're only caching limited files
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
     
     console.log(`Common phrases audio caching completed! Total files cached: ${totalCached}`);
@@ -236,7 +253,8 @@ async function cacheAudioFiles() {
     clients.forEach(client => {
       client.postMessage({
         type: 'AUDIO_CACHE_COMPLETE',
-        totalCached: totalCached
+        totalCached: totalCached,
+        totalFiles: totalFiles
       });
     });
     
