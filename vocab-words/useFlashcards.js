@@ -2,8 +2,8 @@
 (function (global) {
   const { useState, useEffect, useCallback, useRef } = React;
 
-  const STORAGE_PROGRESS = "jp-vocab-words-progress";
-  const STORAGE_STATS    = "jp-vocab-words-stats";
+  const STORAGE_PROGRESS = "jp-vocab-words-progress-v2";
+  const STORAGE_STATS    = "jp-vocab-words-stats-v2";
   const BATCH            = 10;
 
   function useFlashcards() {

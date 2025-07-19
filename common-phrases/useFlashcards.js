@@ -2,8 +2,8 @@
 (function (global) {
   const { useState, useEffect, useCallback, useRef } = React;
 
-  const STORAGE_PROGRESS = "jp-common-phrases-progress";
-  const STORAGE_STATS    = "jp-common-phrases-stats";
+  const STORAGE_PROGRESS = "jp-common-phrases-progress-v2";
+  const STORAGE_STATS    = "jp-common-phrases-stats-v2";
   const BATCH            = 10;
 
   function useFlashcards() {
