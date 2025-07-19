@@ -3,16 +3,16 @@
   const { useState, useEffect } = React;
 
   function FlashcardApp() {
-    const {
-      current, grade, stats,
-      phraseTotal, phraseUnlocked, phrasesUnlockedArr,
-      addNewPhrases,
-    } = global.useFlashcards();
-
-    const [isOnline, setIsOnline] = useState(navigator.onLine);
-    const [serviceWorkerReady, setServiceWorkerReady] = useState(false);
-    const [audioCacheProgress, setAudioCacheProgress] = useState({ percent: 0, cached: 0, total: 0 });
-    const [audioCacheComplete, setAudioCacheComplete] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [phrases, setPhrases] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const [scores, setScores] = useState({});
+    const [studyQueue, setStudyQueue] = useState([]);
+    const [audioCacheProgress, setAudioCacheProgress] = useState(0);
+    const [audioCacheStatus, setAudioCacheStatus] = useState('preparing');
+    const [totalCached, setTotalCached] = useState(0);
+    const [totalFiles, setTotalFiles] = useState(0);
 
     const [showRomaji, setShowRomaji] = useState(false);
     const [showEnglish, setShowEnglish] = useState(false);
@@ -96,77 +96,63 @@
       setAudioPreloaded(false); // Reset preload state when moving to next card
     };
 
-    // Set up offline status monitoring
     useEffect(() => {
-      const handleOnline = () => setIsOnline(true);
-      const handleOffline = () => setIsOnline(false);
-      
-      window.addEventListener('online', handleOnline);
-      window.addEventListener('offline', handleOffline);
-      
-      // Check service worker status
+      // Register service worker
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.ready.then((registration) => {
-          setServiceWorkerReady(true);
-          console.log('Common Phrases Service Worker ready:', registration);
-          
-          // Listen for messages from service worker
-          navigator.serviceWorker.addEventListener('message', (event) => {
-            if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
-              setAudioCacheProgress({
-                percent: event.data.progressPercent,
-                cached: event.data.totalCached,
-                total: event.data.totalFiles
-              });
-            } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
-              console.log('Common phrases audio cache completed! Total cached:', event.data.totalCached);
-              setAudioCacheComplete(true);
-              setAudioCacheProgress({
-                percent: 100,
-                cached: event.data.totalCached,
-                total: event.data.totalFiles
-              });
-            }
+        navigator.serviceWorker.register('./sw.js')
+          .then(registration => {
+            console.log('Service Worker registered:', registration);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
           });
 
-          // Start audio caching when app opens
-          const startCaching = () => {
-            if (registration.active) {
-              console.log('Starting common phrases audio caching...');
-              registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
-            } else if (registration.installing) {
-              console.log('Service worker installing, waiting...');
-              registration.installing.addEventListener('statechange', () => {
-                if (registration.installing.state === 'activated') {
-                  console.log('Service worker activated, starting caching...');
-                  registration.active.postMessage({ type: 'START_AUDIO_CACHE' });
-                }
-              });
-            } else if (registration.waiting) {
-              console.log('Service worker waiting, starting caching...');
-              registration.waiting.postMessage({ type: 'START_AUDIO_CACHE' });
-            } else {
-              console.log('No active service worker, retrying in 1 second...');
-              setTimeout(startCaching, 1000);
-            }
-          };
-          startCaching();
-
-          // Alternative approach: Use the controlling service worker
-          if (navigator.serviceWorker.controller) {
-            console.log('Found controlling service worker, sending message...');
-            navigator.serviceWorker.controller.postMessage({ type: 'START_AUDIO_CACHE' });
+        // Listen for service worker messages
+        navigator.serviceWorker.addEventListener('message', (event) => {
+          console.log('Received SW message:', event.data);
+          
+          if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
+            setAudioCacheProgress(event.data.percent);
+            setTotalCached(event.data.cached);
+            setTotalFiles(event.data.total);
+            setAudioCacheStatus('caching');
+          } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+            setAudioCacheProgress(100);
+            setTotalCached(event.data.cached);
+            setTotalFiles(event.data.total);
+            setAudioCacheStatus('complete');
+          } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
+            console.error('Audio caching error:', event.data.error);
+            setAudioCacheStatus('error');
           }
-        }).catch((error) => {
-          console.error('Common Phrases Service Worker registration failed:', error);
         });
+
+        // Wait for service worker to take control before starting cache
+        if (navigator.serviceWorker.controller) {
+          // Service worker is already controlling, start caching
+          startAudioCaching();
+        } else {
+          // Wait for controllerchange event
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            console.log('Service worker now controlling page');
+            startAudioCaching();
+          });
+        }
       }
-      
-      return () => {
-        window.removeEventListener('online', handleOnline);
-        window.removeEventListener('offline', handleOffline);
-      };
+
+      loadPhrases();
     }, []);
+
+    const startAudioCaching = () => {
+      if (navigator.serviceWorker.controller) {
+        console.log('Starting audio caching...');
+        navigator.serviceWorker.controller.postMessage({
+          type: 'START_AUDIO_CACHE'
+        });
+      } else {
+        console.warn('No service worker controller available');
+      }
+    };
 
     // Preload audio when current phrase changes
     useEffect(() => {

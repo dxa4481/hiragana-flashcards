@@ -294,8 +294,10 @@
   /* ─── offline status monitoring ─── */
   let isOnline = navigator.onLine;
   let serviceWorkerRegistration = null;
-  let audioCacheProgress = { percent: 0, cached: 0, total: 0 };
-  let audioCacheComplete = false;
+  let audioCacheProgress = 0;
+  let audioCacheStatus = 'preparing';
+  let totalCached = 0;
+  let totalFiles = 0;
   
   // Set up offline status monitoring
   function setupOfflineMonitoring() {
@@ -320,20 +322,20 @@
         // Listen for messages from service worker
         navigator.serviceWorker.addEventListener('message', (event) => {
           if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
-            audioCacheProgress = {
-              percent: event.data.progressPercent,
-              cached: event.data.totalCached,
-              total: event.data.totalFiles
-            };
+            audioCacheProgress = event.data.percent;
+            totalCached = event.data.cached;
+            totalFiles = event.data.total;
+            audioCacheStatus = 'caching';
             updateOfflineStatus();
           } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
-            console.log('Hiragana audio cache completed! Total cached:', event.data.totalCached);
-            audioCacheComplete = true;
-            audioCacheProgress = {
-              percent: 100,
-              cached: event.data.totalCached,
-              total: event.data.totalFiles
-            };
+            audioCacheProgress = 100;
+            totalCached = event.data.cached;
+            totalFiles = event.data.total;
+            audioCacheStatus = 'complete';
+            updateOfflineStatus();
+          } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
+            console.error('Audio caching error:', event.data.error);
+            audioCacheStatus = 'error';
             updateOfflineStatus();
           }
         });
@@ -402,17 +404,17 @@
       statusElement.style.backgroundColor = '#f8d7da';
       statusElement.style.color = '#721c24';
       statusElement.style.border = '1px solid #f5c6cb';
-    } else if (audioCacheComplete) {
-      statusElement.innerHTML = `🟢 Audio Cached (${audioCacheProgress.cached}/${audioCacheProgress.total})`;
+    } else if (audioCacheStatus === 'complete') {
+      statusElement.innerHTML = `🟢 Audio Cached (${totalCached}/${totalFiles})`;
       statusElement.style.backgroundColor = '#d4edda';
       statusElement.style.color = '#155724';
       statusElement.style.border = '1px solid #c3e6cb';
-    } else if (serviceWorkerRegistration && audioCacheProgress.total > 0) {
+    } else if (serviceWorkerRegistration && audioCacheProgress > 0) {
       statusElement.innerHTML = `
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span>🟡 Caching Audio ${audioCacheProgress.percent}%</span>
+          <span>🟡 Caching Audio ${audioCacheProgress}%</span>
           <div style="width: 80px; height: 8px; background-color: rgba(255,255,255,0.3); border-radius: 4px; overflow: hidden;">
-            <div style="height: 100%; background-color: #ffc107; transition: width 0.3s ease; width: ${audioCacheProgress.percent}%;"></div>
+            <div style="height: 100%; background-color: #ffc107; transition: width 0.3s ease; width: ${audioCacheProgress}%;"></div>
           </div>
         </div>
       `;
@@ -430,4 +432,110 @@
   // Start offline monitoring
   setupOfflineMonitoring();
 })();
+
+// App state
+let audioCacheProgress = 0;
+let audioCacheStatus = 'preparing';
+let totalCached = 0;
+let totalFiles = 0;
+
+// Initialize app when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Hiragana learning app starting...');
+  
+  // Register service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(registration => {
+        console.log('Service Worker registered:', registration);
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+
+    // Listen for service worker messages
+    navigator.serviceWorker.addEventListener('message', (event) => {
+      console.log('Received SW message:', event.data);
+      
+      if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
+        audioCacheProgress = event.data.percent;
+        totalCached = event.data.cached;
+        totalFiles = event.data.total;
+        audioCacheStatus = 'caching';
+        updateProgressUI();
+      } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+        audioCacheProgress = 100;
+        totalCached = event.data.cached;
+        totalFiles = event.data.total;
+        audioCacheStatus = 'complete';
+        updateProgressUI();
+      } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
+        console.error('Audio caching error:', event.data.error);
+        audioCacheStatus = 'error';
+        updateProgressUI();
+      }
+    });
+
+    // Wait for service worker to take control before starting cache
+    if (navigator.serviceWorker.controller) {
+      // Service worker is already controlling, start caching
+      startAudioCaching();
+    } else {
+      // Wait for controllerchange event
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        console.log('Service worker now controlling page');
+        startAudioCaching();
+      });
+    }
+  }
+
+  // Initialize the hiragana learning interface
+  initializeApp();
+});
+
+function startAudioCaching() {
+  if (navigator.serviceWorker.controller) {
+    console.log('Starting audio caching...');
+    navigator.serviceWorker.controller.postMessage({
+      type: 'START_AUDIO_CACHE'
+    });
+  } else {
+    console.warn('No service worker controller available');
+  }
+}
+
+function updateProgressUI() {
+  const progressContainer = document.getElementById('progress-container');
+  const progressBar = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
+  
+  if (audioCacheStatus === 'preparing') {
+    progressContainer.style.display = 'block';
+    progressText.textContent = 'Preparing...';
+    progressBar.style.width = '0%';
+  } else if (audioCacheStatus === 'caching') {
+    progressContainer.style.display = 'block';
+    progressText.textContent = `Caching audio files: ${totalCached}/${totalFiles} (${audioCacheProgress}%)`;
+    progressBar.style.width = `${audioCacheProgress}%`;
+  } else if (audioCacheStatus === 'complete') {
+    progressContainer.style.display = 'block';
+    progressText.textContent = `Audio caching complete! ${totalCached} files cached.`;
+    progressBar.style.width = '100%';
+    
+    // Hide progress after 3 seconds
+    setTimeout(() => {
+      progressContainer.style.display = 'none';
+    }, 3000);
+  } else if (audioCacheStatus === 'error') {
+    progressContainer.style.display = 'block';
+    progressText.textContent = 'Audio caching failed. App will still work online.';
+    progressBar.style.width = '0%';
+    progressBar.style.backgroundColor = '#ff6b6b';
+    
+    // Hide progress after 5 seconds
+    setTimeout(() => {
+      progressContainer.style.display = 'none';
+    }, 5000);
+  }
+}
 
