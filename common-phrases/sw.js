@@ -61,7 +61,7 @@ self.addEventListener('message', (event) => {
 // Audio caching function
 async function cacheAudioFiles() {
   try {
-    const response = await fetch('./data.json');
+    const response = await fetch('./data/phrases.json');
     const data = await response.json();
     
     // Limit to first 1000 entries
@@ -78,7 +78,7 @@ async function cacheAudioFiles() {
       await Promise.allSettled(
         batch.map(async (item) => {
           try {
-            await cache.add(`./audio/${item.id}.mp3`);
+            await cache.add(`./public/audio/${item.audio}`);
             cached++;
             
             // Send progress update
@@ -86,7 +86,7 @@ async function cacheAudioFiles() {
             sendProgressUpdate(progress, cached, limitedData.length);
             
           } catch (error) {
-            console.warn(`[SW] Failed to cache audio for ${item.id}:`, error);
+            console.warn(`[SW] Failed to cache audio for ${item.audio}:`, error);
           }
         })
       );
