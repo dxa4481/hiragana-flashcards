@@ -205,6 +205,7 @@
       // Correct answer
       feedback.className = "correct";
       feedbackText.textContent = "✓ Correct!";
+      correctAnswer.classList.add("hidden"); // Hide correct answer for correct responses
       currentStreak++;
       totalCorrect++;
       
