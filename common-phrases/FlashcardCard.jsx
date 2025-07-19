@@ -35,13 +35,53 @@
     // ---------------- Helpers --------------------
     const playWordAudio = (idx) => {
       if (!card.word_audio?.[idx]) return;
-      new Howl({ src: [card.word_audio[idx]], html5: true }).play();
+      
+      const audioPath = card.word_audio[idx];
+      const sound = new Howl({
+        src: [audioPath],
+        preload: true,
+        onloaderror: function(id, err) {
+          console.warn('Word audio load error for', audioPath, err);
+          // Try alternative method if primary fails
+          try {
+            const audio = new Audio(audioPath);
+            audio.play().catch(e => console.warn('Word audio playback failed:', e));
+          } catch (e) {
+            console.warn('Alternative word audio playback failed:', e);
+          }
+        },
+        onload: function() {
+          console.log('Word audio loaded successfully:', audioPath);
+        }
+      });
+      
+      sound.play();
       setClickedIdx(idx);
     };
 
     const playSentenceAudio = () => {
       if (!card.sentence_audio) return;
-      new Howl({ src: [card.sentence_audio], html5: true }).play();
+      
+      const audioPath = card.sentence_audio;
+      const sound = new Howl({
+        src: [audioPath],
+        preload: true,
+        onloaderror: function(id, err) {
+          console.warn('Sentence audio load error for', audioPath, err);
+          // Try alternative method if primary fails
+          try {
+            const audio = new Audio(audioPath);
+            audio.play().catch(e => console.warn('Sentence audio playback failed:', e));
+          } catch (e) {
+            console.warn('Alternative sentence audio playback failed:', e);
+          }
+        },
+        onload: function() {
+          console.log('Sentence audio loaded successfully:', audioPath);
+        }
+      });
+      
+      sound.play();
     };
 
     // ---------------- UI -------------------------

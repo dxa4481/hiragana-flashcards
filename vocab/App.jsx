@@ -17,7 +17,35 @@
 
     const playAudio = () => {
       if (!current) return;
-      new Howl({ src: [`public/audio/${current.audio}`], html5: true }).play();
+      
+      // Try to play from cache first, then fallback to network
+      const audioPath = `public/audio/${current.audio}`;
+      
+      // Create Howl instance without html5 flag for better cache compatibility
+      const sound = new Howl({
+        src: [audioPath],
+        preload: true,
+        onloaderror: function(id, err) {
+          console.warn('Audio load error for', audioPath, err);
+          // Try alternative method if primary fails
+          this._tryAlternativePlayback(audioPath);
+        },
+        onload: function() {
+          console.log('Audio loaded successfully:', audioPath);
+        }
+      });
+      
+      sound._tryAlternativePlayback = (path) => {
+        // Fallback to HTML5 audio if Howl fails
+        try {
+          const audio = new Audio(path);
+          audio.play().catch(e => console.warn('Audio playback failed:', e));
+        } catch (e) {
+          console.warn('Alternative audio playback failed:', e);
+        }
+      };
+      
+      sound.play();
     };
 
     const resetAll = () => {

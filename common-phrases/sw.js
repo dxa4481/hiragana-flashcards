@@ -1,5 +1,5 @@
-const CACHE_NAME = 'common-phrases-app-v1';
-const AUDIO_CACHE_NAME = 'common-phrases-audio-v1';
+const CACHE_NAME = 'common-phrases-app-v2';
+const AUDIO_CACHE_NAME = 'common-phrases-audio-v2';
 const MAX_AUDIO_FILES = 1000;
 
 // Files to cache immediately
@@ -77,7 +77,19 @@ self.addEventListener('fetch', (event) => {
             .then((response) => {
               if (response) {
                 console.log('Serving common phrases audio from cache:', url.pathname);
-                return response;
+                // Clone the response to ensure it can be consumed multiple times
+                const clonedResponse = response.clone();
+                // Add headers for better mobile compatibility
+                const headers = new Headers(clonedResponse.headers);
+                headers.set('Accept-Ranges', 'bytes');
+                headers.set('Content-Type', 'audio/mpeg');
+                headers.set('Cache-Control', 'public, max-age=86400');
+                
+                return new Response(clonedResponse.body, {
+                  status: clonedResponse.status,
+                  statusText: clonedResponse.statusText,
+                  headers: headers
+                });
               }
               
               // If not in cache, try to fetch and cache it
@@ -85,22 +97,50 @@ self.addEventListener('fetch', (event) => {
                 .then((fetchResponse) => {
                   // Only cache if response is ok and not a partial response (206)
                   if (fetchResponse.ok && fetchResponse.status !== 206) {
-                    cache.put(event.request, fetchResponse.clone());
+                    // Clone for caching
+                    const responseToCache = fetchResponse.clone();
+                    cache.put(event.request, responseToCache);
                     console.log('Cached new common phrases audio file:', url.pathname);
+                    
+                    // Add headers for better mobile compatibility
+                    const headers = new Headers(fetchResponse.headers);
+                    headers.set('Accept-Ranges', 'bytes');
+                    headers.set('Content-Type', 'audio/mpeg');
+                    headers.set('Cache-Control', 'public, max-age=86400');
+                    
+                    return new Response(fetchResponse.body, {
+                      status: fetchResponse.status,
+                      statusText: fetchResponse.statusText,
+                      headers: headers
+                    });
                   } else if (fetchResponse.status === 206) {
                     console.log('Skipping cache for partial response:', url.pathname);
+                    return fetchResponse;
+                  } else {
+                    console.log('Audio fetch failed with status:', fetchResponse.status);
+                    return fetchResponse;
                   }
-                  return fetchResponse;
                 })
                 .catch((error) => {
                   console.log('Failed to fetch common phrases audio file:', url.pathname, error);
-                  return new Response('Audio not available', { status: 404 });
+                  // Return a proper error response instead of text
+                  return new Response(null, { 
+                    status: 404, 
+                    statusText: 'Audio not available offline',
+                    headers: { 'Content-Type': 'audio/mpeg' }
+                  });
                 });
             });
         })
         .catch((error) => {
           console.error('Error in fetch handler for common phrases audio:', error);
-          return fetch(event.request);
+          return fetch(event.request).catch(() => {
+            return new Response(null, { 
+              status: 404, 
+              statusText: 'Audio not available',
+              headers: { 'Content-Type': 'audio/mpeg' }
+            });
+          });
         })
     );
     return;

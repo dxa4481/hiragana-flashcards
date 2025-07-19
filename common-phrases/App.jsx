@@ -15,10 +15,71 @@
     const [showRomaji, setShowRomaji] = useState(false);
     const [showEnglish, setShowEnglish] = useState(false);
     const [showPhraseList, setShowPhraseList] = useState(false);
+    const [audioPreloaded, setAudioPreloaded] = useState(false);
+
+    // Mobile audio unlock - required for iOS Safari
+    const unlockAudioContext = () => {
+      if (typeof Howl !== 'undefined' && Howl.ctx && Howl.ctx.state === 'suspended') {
+        Howl.ctx.resume().then(() => {
+          console.log('Audio context resumed for mobile');
+        }).catch(err => {
+          console.warn('Failed to resume audio context:', err);
+        });
+      }
+    };
+
+    // Preload current audio file for mobile compatibility
+    const preloadCurrentAudio = () => {
+      if (!current || audioPreloaded) return;
+      
+      const audioPath = `public/audio/${current.audio}`;
+      const sound = new Howl({
+        src: [audioPath],
+        preload: true,
+        onload: function() {
+          console.log('Audio preloaded successfully:', audioPath);
+          setAudioPreloaded(true);
+        },
+        onloaderror: function(id, err) {
+          console.warn('Audio preload failed for', audioPath, err);
+        }
+      });
+    };
 
     const playAudio = () => {
       if (!current) return;
-      new Howl({ src: [`public/audio/${current.audio}`], html5: true }).play();
+      
+      // Unlock audio context for mobile browsers
+      unlockAudioContext();
+      
+      // Try to play from cache first, then fallback to network
+      const audioPath = `public/audio/${current.audio}`;
+      
+      // Create Howl instance without html5 flag for better cache compatibility
+      const sound = new Howl({
+        src: [audioPath],
+        preload: true,
+        onloaderror: function(id, err) {
+          console.warn('Audio load error for', audioPath, err);
+          // Try alternative method if primary fails
+          this._tryAlternativePlayback(audioPath);
+        },
+        onload: function() {
+          console.log('Audio loaded successfully:', audioPath);
+        }
+      });
+      
+      sound._tryAlternativePlayback = (path) => {
+        // Fallback to HTML5 audio if Howl fails
+        try {
+          const audio = new Audio(path);
+          audio.play().catch(e => console.warn('Audio playback failed:', e));
+        } catch (e) {
+          console.warn('Alternative audio playback failed:', e);
+        }
+      };
+      
+      sound.play();
     };
 
     const resetAll = () => {
@@ -30,6 +91,7 @@
       grade(isRight);
       setShowRomaji(false);
       setShowEnglish(false);
+      setAudioPreloaded(false); // Reset preload state when moving to next card
     };
 
     // Set up offline status monitoring
@@ -63,6 +125,16 @@
       };
     }, []);
 
+    // Preload audio when current phrase changes
+    useEffect(() => {
+      setAudioPreloaded(false);
+      // Delay preloading slightly to allow for card transition
+      const timer = setTimeout(() => {
+        preloadCurrentAudio();
+      }, 100);
+      return () => clearTimeout(timer);
+    }, [current]);
+
     if (current === undefined) return <p className="p-4">Loading…</p>;
 
     // ----------------- Top toolbar -----------------
@@ -88,11 +160,11 @@
         {/* Offline status */}
         <div className="text-sm">
           {!isOnline ? (
-            <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">🔴 Offline</span>
+            <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">🔴 Offline{serviceWorkerReady ? ' (Cached Audio)' : ''}</span>
           ) : serviceWorkerReady ? (
-            <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">🟢 Cached</span>
+            <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">🟢 Audio Cached</span>
           ) : (
-            <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">🟡 Online</span>
+            <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">🟡 Caching Audio...</span>
           )}
         </div>
       </div>
