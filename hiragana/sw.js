@@ -60,6 +60,9 @@ self.addEventListener('message', (event) => {
 async function cacheAudioFiles() {
   try {
     const response = await fetch('./hiragana_data.js');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch hiragana_data.js: ${response.status}`);
+    }
     const text = await response.text();
     
     // Extract hiragana characters from the JavaScript file
@@ -69,6 +72,10 @@ async function cacheAudioFiles() {
     }
     
     const hiraganaData = eval(hiraganaMatch[1]);
+    
+    if (!Array.isArray(hiraganaData) || hiraganaData.length === 0) {
+      throw new Error('Hiragana data is empty or invalid');
+    }
     
     // Limit to first 1000 entries
     const limitedData = hiraganaData.slice(0, 1000);

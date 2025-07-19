@@ -60,7 +60,14 @@ self.addEventListener('message', (event) => {
 async function cacheAudioFiles() {
   try {
     const response = await fetch('./data/words.json');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch words.json: ${response.status}`);
+    }
     const data = await response.json();
+    
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new Error('Words data is empty or invalid');
+    }
     
     // Limit to first 1000 entries
     const limitedData = data.slice(0, 1000);

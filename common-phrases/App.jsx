@@ -11,10 +11,11 @@
 
     const [isOnline, setIsOnline] = useState(navigator.onLine);
     const [serviceWorkerReady, setServiceWorkerReady] = useState(false);
-    const [audioCacheProgress, setAudioCacheProgress] = useState(0);
+    const [audioCacheProgress, setAudioCacheProgress] = useState({ percent: 0, cached: 0, total: 0 });
     const [audioCacheStatus, setAudioCacheStatus] = useState('preparing');
     const [totalCached, setTotalCached] = useState(0);
     const [totalFiles, setTotalFiles] = useState(0);
+    const [audioCacheComplete, setAudioCacheComplete] = useState(false);
 
 
     const [showRomaji, setShowRomaji] = useState(false);
@@ -100,21 +101,29 @@
     };
 
     useEffect(() => {
+      // Monitor online/offline status
+      const handleOnline = () => setIsOnline(true);
+      const handleOffline = () => setIsOnline(false);
+      
+      window.addEventListener('online', handleOnline);
+      window.addEventListener('offline', handleOffline);
+      
       // Listen for service worker messages (SW registered in HTML)
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.addEventListener('message', (event) => {
           console.log('Received SW message:', event.data);
           
           if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
-            setAudioCacheProgress(event.data.percent);
+            setAudioCacheProgress({ percent: event.data.percent, cached: event.data.cached, total: event.data.total });
             setTotalCached(event.data.cached);
             setTotalFiles(event.data.total);
             setAudioCacheStatus('caching');
           } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
-            setAudioCacheProgress(100);
+            setAudioCacheProgress({ percent: 100, cached: event.data.cached, total: event.data.total });
             setTotalCached(event.data.cached);
             setTotalFiles(event.data.total);
             setAudioCacheStatus('complete');
+            setAudioCacheComplete(true);
           } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
             console.error('Audio caching error:', event.data.error);
             setAudioCacheStatus('error');
@@ -123,16 +132,24 @@
 
         // Wait for service worker to be ready before starting cache
         navigator.serviceWorker.ready.then(() => {
+          setServiceWorkerReady(true);
           if (navigator.serviceWorker.controller) {
             startAudioCaching();
           } else {
             navigator.serviceWorker.addEventListener('controllerchange', () => {
               console.log('Service worker now controlling page');
+              setServiceWorkerReady(true);
               startAudioCaching();
             });
           }
         });
       }
+      
+      // Cleanup event listeners
+      return () => {
+        window.removeEventListener('online', handleOnline);
+        window.removeEventListener('offline', handleOffline);
+      };
     }, []);
 
     const startAudioCaching = () => {
