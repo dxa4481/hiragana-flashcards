@@ -1,5 +1,5 @@
-const CACHE_NAME = 'hiragana-app-v1';
-const AUDIO_CACHE_NAME = 'hiragana-audio-v1';
+const CACHE_NAME = 'hiragana-app-v2';
+const AUDIO_CACHE_NAME = 'hiragana-audio-v2';
 const MAX_AUDIO_FILES = 1000;
 
 // Files to cache immediately
@@ -73,7 +73,19 @@ self.addEventListener('fetch', (event) => {
             .then((response) => {
               if (response) {
                 console.log('Serving hiragana audio from cache:', url.pathname);
-                return response;
+                // Clone the response to ensure it can be consumed multiple times
+                const clonedResponse = response.clone();
+                // Add headers for better mobile compatibility
+                const headers = new Headers(clonedResponse.headers);
+                headers.set('Accept-Ranges', 'bytes');
+                headers.set('Content-Type', 'audio/mpeg');
+                headers.set('Cache-Control', 'public, max-age=86400');
+                
+                return new Response(clonedResponse.body, {
+                  status: clonedResponse.status,
+                  statusText: clonedResponse.statusText,
+                  headers: headers
+                });
               }
               
               // If not in cache, try to fetch and cache it
@@ -81,22 +93,50 @@ self.addEventListener('fetch', (event) => {
                 .then((fetchResponse) => {
                   // Only cache if response is ok and not a partial response (206)
                   if (fetchResponse.ok && fetchResponse.status !== 206) {
-                    cache.put(event.request, fetchResponse.clone());
+                    // Clone for caching
+                    const responseToCache = fetchResponse.clone();
+                    cache.put(event.request, responseToCache);
                     console.log('Cached new hiragana audio file:', url.pathname);
+                    
+                    // Add headers for better mobile compatibility
+                    const headers = new Headers(fetchResponse.headers);
+                    headers.set('Accept-Ranges', 'bytes');
+                    headers.set('Content-Type', 'audio/mpeg');
+                    headers.set('Cache-Control', 'public, max-age=86400');
+                    
+                    return new Response(fetchResponse.body, {
+                      status: fetchResponse.status,
+                      statusText: fetchResponse.statusText,
+                      headers: headers
+                    });
                   } else if (fetchResponse.status === 206) {
                     console.log('Skipping cache for partial response:', url.pathname);
+                    return fetchResponse;
+                  } else {
+                    console.log('Audio fetch failed with status:', fetchResponse.status);
+                    return fetchResponse;
                   }
-                  return fetchResponse;
                 })
                 .catch((error) => {
                   console.log('Failed to fetch hiragana audio file:', url.pathname, error);
-                  return new Response('Audio not available', { status: 404 });
+                  // Return a proper error response instead of text
+                  return new Response(null, { 
+                    status: 404, 
+                    statusText: 'Audio not available offline',
+                    headers: { 'Content-Type': 'audio/mpeg' }
+                  });
                 });
             });
         })
         .catch((error) => {
           console.error('Error in fetch handler for hiragana audio:', error);
-          return fetch(event.request);
+          return fetch(event.request).catch(() => {
+            return new Response(null, { 
+              status: 404, 
+              statusText: 'Audio not available',
+              headers: { 'Content-Type': 'audio/mpeg' }
+            });
+          });
         })
     );
     return;
@@ -132,26 +172,41 @@ async function cacheAudioFiles() {
     const batchSize = 25; // Reduced batch size for better reliability
     let totalCached = 0;
     
-    // Hiragana characters to cache (basic hiragana)
-    const hiraganaChars = [
-      'あ', 'い', 'う', 'え', 'お',
-      'か', 'き', 'く', 'け', 'こ',
-      'さ', 'し', 'す', 'せ', 'そ',
-      'た', 'ち', 'つ', 'て', 'と',
-      'な', 'に', 'ぬ', 'ね', 'の',
-      'は', 'ひ', 'ふ', 'へ', 'ほ',
-      'ま', 'み', 'む', 'め', 'も',
-      'や', 'ゆ', 'よ',
-      'ら', 'り', 'る', 'れ', 'ろ',
-      'わ', 'を', 'ん'
+    // Hiragana romaji pronunciations to cache (matching the app's audio files)
+    const romajiList = [
+      // Basic hiragana
+      'a', 'i', 'u', 'e', 'o',
+      'ka', 'ki', 'ku', 'ke', 'ko',
+      'sa', 'shi', 'su', 'se', 'so',
+      'ta', 'chi', 'tsu', 'te', 'to',
+      'na', 'ni', 'nu', 'ne', 'no',
+      'ha', 'hi', 'fu', 'he', 'ho',
+      'ma', 'mi', 'mu', 'me', 'mo',
+      'ya', 'yu', 'yo',
+      'ra', 'ri', 'ru', 're', 'ro',
+      'wa', 'wo', 'n',
+      // Dakuten / Handakuten
+      'ga', 'gi', 'gu', 'ge', 'go',
+      'za', 'ji', 'zu', 'ze', 'zo',
+      'da', 'de', 'do', // Note: ぢ and づ also pronounced as 'ji' and 'zu'
+      'ba', 'bi', 'bu', 'be', 'bo',
+      'pa', 'pi', 'pu', 'pe', 'po',
+      // Youon
+      'kya', 'kyu', 'kyo',
+      'sha', 'shu', 'sho',
+      'cha', 'chu', 'cho',
+      'nya', 'nyu', 'nyo',
+      'hya', 'hyu', 'hyo',
+      'mya', 'myu', 'myo',
+      'rya', 'ryu', 'ryo'
     ];
     
-    for (let i = 0; i < hiraganaChars.length; i += batchSize) {
+    for (let i = 0; i < romajiList.length; i += batchSize) {
       const batch = [];
       
-      for (let j = 0; j < batchSize && (i + j) < hiraganaChars.length; j++) {
-        const char = hiraganaChars[i + j];
-        const audioUrl = `/hiragana/audio/${char}.mp3`;
+      for (let j = 0; j < batchSize && (i + j) < romajiList.length; j++) {
+        const romaji = romajiList[i + j];
+        const audioUrl = `/hiragana/audio/${romaji}.mp3`;
         
         batch.push(
           fetch(audioUrl)
@@ -164,15 +219,15 @@ async function cacheAudioFiles() {
                     return true;
                   });
               } else if (response.status === 206) {
-                console.log(`Skipping cache for partial response: ${char}.mp3`);
+                console.log(`Skipping cache for partial response: ${romaji}.mp3`);
                 return false;
               } else {
-                console.log(`Hiragana audio file ${char}.mp3 returned status:`, response.status);
+                console.log(`Hiragana audio file ${romaji}.mp3 returned status:`, response.status);
                 return false;
               }
             })
             .catch((error) => {
-              console.log(`Failed to cache hiragana audio file ${char}.mp3:`, error.message);
+              console.log(`Failed to cache hiragana audio file ${romaji}.mp3:`, error.message);
               return false;
             })
         );
