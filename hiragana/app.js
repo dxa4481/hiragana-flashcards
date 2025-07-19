@@ -439,59 +439,51 @@ let audioCacheStatus = 'preparing';
 let totalCached = 0;
 let totalFiles = 0;
 
-// Initialize app when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Hiragana learning app starting...');
-  
-  // Register service worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js')
-      .then(registration => {
-        console.log('Service Worker registered:', registration);
-      })
-      .catch(error => {
-        console.error('Service Worker registration failed:', error);
-      });
-
-    // Listen for service worker messages
-    navigator.serviceWorker.addEventListener('message', (event) => {
-      console.log('Received SW message:', event.data);
-      
-      if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
-        audioCacheProgress = event.data.percent;
-        totalCached = event.data.cached;
-        totalFiles = event.data.total;
-        audioCacheStatus = 'caching';
-        updateProgressUI();
-      } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
-        audioCacheProgress = 100;
-        totalCached = event.data.cached;
-        totalFiles = event.data.total;
-        audioCacheStatus = 'complete';
-        updateProgressUI();
-      } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
-        console.error('Audio caching error:', event.data.error);
-        audioCacheStatus = 'error';
-        updateProgressUI();
-      }
+// Service worker registration for mobile compatibility
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+    .then(registration => {
+      console.log('Service Worker registered:', registration);
+    })
+    .catch(error => {
+      console.error('Service Worker registration failed:', error);
     });
 
-    // Wait for service worker to take control before starting cache
-    if (navigator.serviceWorker.controller) {
-      // Service worker is already controlling, start caching
-      startAudioCaching();
-    } else {
-      // Wait for controllerchange event
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        console.log('Service worker now controlling page');
-        startAudioCaching();
-      });
+  // Listen for service worker messages
+  navigator.serviceWorker.addEventListener('message', (event) => {
+    console.log('Received SW message:', event.data);
+    
+    if (event.data.type === 'AUDIO_CACHE_PROGRESS') {
+      audioCacheProgress = event.data.percent;
+      totalCached = event.data.cached;
+      totalFiles = event.data.total;
+      audioCacheStatus = 'caching';
+      updateOfflineStatus();
+    } else if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+      audioCacheProgress = 100;
+      totalCached = event.data.cached;
+      totalFiles = event.data.total;
+      audioCacheStatus = 'complete';
+      updateOfflineStatus();
+    } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
+      console.error('Audio caching error:', event.data.error);
+      audioCacheStatus = 'error';
+      updateOfflineStatus();
     }
-  }
+  });
 
-  // Initialize the hiragana learning interface
-  initializeApp();
-});
+  // Wait for service worker to take control before starting cache
+  if (navigator.serviceWorker.controller) {
+    // Service worker is already controlling, start caching
+    startAudioCaching();
+  } else {
+    // Wait for controllerchange event
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      console.log('Service worker now controlling page');
+      startAudioCaching();
+    });
+  }
+}
 
 function startAudioCaching() {
   if (navigator.serviceWorker.controller) {
@@ -501,41 +493,6 @@ function startAudioCaching() {
     });
   } else {
     console.warn('No service worker controller available');
-  }
-}
-
-function updateProgressUI() {
-  const progressContainer = document.getElementById('progress-container');
-  const progressBar = document.getElementById('progress-bar');
-  const progressText = document.getElementById('progress-text');
-  
-  if (audioCacheStatus === 'preparing') {
-    progressContainer.style.display = 'block';
-    progressText.textContent = 'Preparing...';
-    progressBar.style.width = '0%';
-  } else if (audioCacheStatus === 'caching') {
-    progressContainer.style.display = 'block';
-    progressText.textContent = `Caching audio files: ${totalCached}/${totalFiles} (${audioCacheProgress}%)`;
-    progressBar.style.width = `${audioCacheProgress}%`;
-  } else if (audioCacheStatus === 'complete') {
-    progressContainer.style.display = 'block';
-    progressText.textContent = `Audio caching complete! ${totalCached} files cached.`;
-    progressBar.style.width = '100%';
-    
-    // Hide progress after 3 seconds
-    setTimeout(() => {
-      progressContainer.style.display = 'none';
-    }, 3000);
-  } else if (audioCacheStatus === 'error') {
-    progressContainer.style.display = 'block';
-    progressText.textContent = 'Audio caching failed. App will still work online.';
-    progressBar.style.width = '0%';
-    progressBar.style.backgroundColor = '#ff6b6b';
-    
-    // Hide progress after 5 seconds
-    setTimeout(() => {
-      progressContainer.style.display = 'none';
-    }, 5000);
   }
 }
 

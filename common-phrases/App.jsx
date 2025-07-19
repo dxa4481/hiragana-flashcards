@@ -3,16 +3,19 @@
   const { useState, useEffect } = React;
 
   function FlashcardApp() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [phrases, setPhrases] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [showAnswer, setShowAnswer] = useState(false);
-    const [scores, setScores] = useState({});
-    const [studyQueue, setStudyQueue] = useState([]);
+    const {
+      current, grade, stats,
+      phraseTotal, phraseUnlocked, phrasesUnlockedArr,
+      addNewPhrases,
+    } = global.useFlashcards();
+
+    const [isOnline, setIsOnline] = useState(navigator.onLine);
+    const [serviceWorkerReady, setServiceWorkerReady] = useState(false);
     const [audioCacheProgress, setAudioCacheProgress] = useState(0);
     const [audioCacheStatus, setAudioCacheStatus] = useState('preparing');
     const [totalCached, setTotalCached] = useState(0);
     const [totalFiles, setTotalFiles] = useState(0);
+    const [audioCacheComplete, setAudioCacheComplete] = useState(false);
 
     const [showRomaji, setShowRomaji] = useState(false);
     const [showEnglish, setShowEnglish] = useState(false);
@@ -121,6 +124,7 @@
             setTotalCached(event.data.cached);
             setTotalFiles(event.data.total);
             setAudioCacheStatus('complete');
+            setAudioCacheComplete(true);
           } else if (event.data.type === 'AUDIO_CACHE_ERROR') {
             console.error('Audio caching error:', event.data.error);
             setAudioCacheStatus('error');
@@ -139,8 +143,6 @@
           });
         }
       }
-
-      loadPhrases();
     }, []);
 
     const startAudioCaching = () => {
@@ -157,11 +159,10 @@
     // Preload audio when current phrase changes
     useEffect(() => {
       setAudioPreloaded(false);
-      // Delay preloading slightly to allow for card transition
-      const timer = setTimeout(() => {
-        preloadCurrentAudio();
-      }, 100);
-      return () => clearTimeout(timer);
+      if (current) {
+        // Small delay to ensure DOM is ready
+        setTimeout(preloadCurrentAudio, 100);
+      }
     }, [current]);
 
     if (current === undefined) return <p className="p-4">Loading…</p>;

@@ -86,7 +86,7 @@ async function cacheAudioFiles() {
       await Promise.allSettled(
         batch.map(async (item) => {
           try {
-            await cache.add(`./audio/${item.character}.mp3`);
+            await cache.add(`./audio/${item.romaji}.mp3`);
             cached++;
             
             // Send progress update
@@ -94,7 +94,7 @@ async function cacheAudioFiles() {
             sendProgressUpdate(progress, cached, limitedData.length);
             
           } catch (error) {
-            console.warn(`[SW] Failed to cache audio for ${item.character}:`, error);
+            console.warn(`[SW] Failed to cache audio for ${item.romaji}:`, error);
           }
         })
       );
