@@ -46,6 +46,30 @@
 </div>
 
 <script src="app.js"></script>
+<script>
+  // Register service worker for offline functionality
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/hiragana/sw.js')
+        .then((registration) => {
+          console.log('Hiragana Service Worker registered successfully:', registration);
+          
+          // Check for updates
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                console.log('New hiragana service worker available');
+              }
+            });
+          });
+        })
+        .catch((error) => {
+          console.error('Hiragana Service Worker registration failed:', error);
+        });
+    });
+  }
+</script>
 </body>
 </html>
 

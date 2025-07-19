@@ -9,6 +9,9 @@
       addNewPhrases,
     } = global.useFlashcards();
 
+    const [isOnline, setIsOnline] = useState(navigator.onLine);
+    const [serviceWorkerReady, setServiceWorkerReady] = useState(false);
+
     const [showRomaji, setShowRomaji] = useState(false);
     const [showEnglish, setShowEnglish] = useState(false);
     const [showPhraseList, setShowPhraseList] = useState(false);
@@ -28,6 +31,37 @@
       setShowRomaji(false);
       setShowEnglish(false);
     };
+
+    // Set up offline status monitoring
+    useEffect(() => {
+      const handleOnline = () => setIsOnline(true);
+      const handleOffline = () => setIsOnline(false);
+      
+      window.addEventListener('online', handleOnline);
+      window.addEventListener('offline', handleOffline);
+      
+      // Check service worker status
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then((registration) => {
+          setServiceWorkerReady(true);
+          console.log('Common Phrases Service Worker ready:', registration);
+          
+          // Listen for messages from service worker
+          navigator.serviceWorker.addEventListener('message', (event) => {
+            if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+              console.log('Common phrases audio cache completed! Total cached:', event.data.totalCached);
+            }
+          });
+        }).catch((error) => {
+          console.error('Common Phrases Service Worker registration failed:', error);
+        });
+      }
+      
+      return () => {
+        window.removeEventListener('online', handleOnline);
+        window.removeEventListener('offline', handleOffline);
+      };
+    }, []);
 
     if (current === undefined) return <p className="p-4">Loading…</p>;
 
@@ -49,6 +83,17 @@
           <button onClick={() => setShowPhraseList(v => !v)} className="bg-gray-200 px-2 py-0.5 rounded text-xs">
             {showPhraseList ? 'Hide' : 'List'}
           </button>
+        </div>
+
+        {/* Offline status */}
+        <div className="text-sm">
+          {!isOnline ? (
+            <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">🔴 Offline</span>
+          ) : serviceWorkerReady ? (
+            <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">🟢 Cached</span>
+          ) : (
+            <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">🟡 Online</span>
+          )}
         </div>
       </div>
     );

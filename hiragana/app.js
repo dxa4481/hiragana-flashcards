@@ -215,5 +215,88 @@
   /* ─── init ─── */
   rebuild();
   show(nextCard());
+  
+  /* ─── offline status monitoring ─── */
+  let isOnline = navigator.onLine;
+  let serviceWorkerRegistration = null;
+  
+  // Set up offline status monitoring
+  function setupOfflineMonitoring() {
+    // Listen for online/offline events
+    window.addEventListener('online', () => {
+      isOnline = true;
+      updateOfflineStatus();
+    });
+    
+    window.addEventListener('offline', () => {
+      isOnline = false;
+      updateOfflineStatus();
+    });
+    
+    // Check service worker status
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((registration) => {
+        serviceWorkerRegistration = registration;
+        updateOfflineStatus();
+        console.log('Hiragana Service Worker ready:', registration);
+        
+        // Listen for messages from service worker
+        navigator.serviceWorker.addEventListener('message', (event) => {
+          if (event.data.type === 'AUDIO_CACHE_COMPLETE') {
+            console.log('Hiragana audio cache completed! Total cached:', event.data.totalCached);
+            updateOfflineStatus();
+          }
+        });
+      }).catch((error) => {
+        console.error('Hiragana Service Worker registration failed:', error);
+      });
+    }
+    
+    // Initial status update
+    updateOfflineStatus();
+  }
+  
+  // Update offline status display (add to header if needed)
+  function updateOfflineStatus() {
+    // Create status element if it doesn't exist
+    let statusElement = document.getElementById('offline-status');
+    if (!statusElement) {
+      statusElement = document.createElement('div');
+      statusElement.id = 'offline-status';
+      statusElement.className = 'offline-indicator';
+      statusElement.style.cssText = `
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      `;
+      document.body.appendChild(statusElement);
+    }
+    
+    if (!isOnline) {
+      statusElement.textContent = '🔴 Offline Mode';
+      statusElement.style.backgroundColor = '#f8d7da';
+      statusElement.style.color = '#721c24';
+      statusElement.style.border = '1px solid #f5c6cb';
+    } else if (serviceWorkerRegistration) {
+      statusElement.textContent = '🟢 Online with Cache';
+      statusElement.style.backgroundColor = '#d4edda';
+      statusElement.style.color = '#155724';
+      statusElement.style.border = '1px solid #c3e6cb';
+    } else {
+      statusElement.textContent = '🟡 Online';
+      statusElement.style.backgroundColor = '#fff3cd';
+      statusElement.style.color = '#856404';
+      statusElement.style.border = '1px solid #ffeaa7';
+    }
+  }
+  
+  // Start offline monitoring
+  setupOfflineMonitoring();
 })();
 
