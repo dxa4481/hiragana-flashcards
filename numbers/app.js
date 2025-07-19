@@ -36,6 +36,26 @@
   let totalIncorrect = 0;
   let cycle = 0; // Track review cycles for spaced repetition
 
+  // Mobile audio unlock
+  let audioUnlocked = false;
+  
+  function unlockAudio() {
+    if (audioUnlocked) return;
+    
+    // Create a silent audio to unlock the audio context
+    const silentAudio = new Audio();
+    silentAudio.src = 'data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU2LjM2LjEwMAAAAAAAAAAAAAAA//OEAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAEAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV6urq6urq6urq6urq6urq6urq6urq6urq6v////////////////////////////////8AAAAATGF2YzU2LjQxAAAAAAAAAAAAAAAAJAAAAAAAAAAAASDs90hvAAAAAAAAAAAAAAAAAAAA//OEAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAEAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV6urq6urq6urq6urq6urq6urq6urq6urq6v////////////////////////////////8AAAAATGF2YzU2LjQxAAAAAAAAAAAAAAAAJAAAAAAAAAAAASDs90hvAAAAAAAAAAAAAAAAAAAA';
+    
+    silentAudio.play()
+      .then(() => {
+        console.log('Mobile audio context unlocked');
+        audioUnlocked = true;
+      })
+      .catch(err => {
+        console.log('Audio unlock failed:', err);
+      });
+  }
+
   // Japanese number mappings
   const japaneseNumbers = {
     0: { hiragana: "ぜろ", romaji: "zero" },
@@ -179,8 +199,8 @@
     hiragana.textContent = japanese.hiragana;
     romaji.textContent = japanese.romaji;
     
-    // Set up audio
-    player.src = `audio/${num}.mp3`;
+    // Set up audio with better mobile compatibility
+    preloadAudio(num);
     
     // Reset UI
     numberInput.value = "";
@@ -188,6 +208,29 @@
     nextBtn.classList.add("hidden");
     checkBtn.classList.remove("hidden"); // Show check button for new card
     numberInput.focus();
+  }
+
+  function preloadAudio(num) {
+    const audioPath = `audio/${num}.mp3`;
+    
+    // Try to preload using fetch to ensure service worker cache is used
+    fetch(audioPath)
+      .then(response => {
+        if (response.ok) {
+          console.log('Audio preloaded successfully:', audioPath);
+          // Set the player source after successful preload
+          player.src = audioPath;
+        } else {
+          console.warn('Audio preload failed:', audioPath, response.status);
+          // Fallback to direct assignment
+          player.src = audioPath;
+        }
+      })
+      .catch(error => {
+        console.warn('Audio preload error:', audioPath, error);
+        // Fallback to direct assignment
+        player.src = audioPath;
+      });
   }
 
   // Check answer
@@ -267,10 +310,30 @@
   // Play audio for current number
   function playAudio() {
     if (player.src) {
+      // Unlock audio context for mobile browsers
+      unlockAudio();
+      
+      // Reset and play audio with better error handling
       player.currentTime = 0;
-      player.play().catch(() => {
-        console.log("Audio playback failed - user gesture required");
-      });
+      
+      // Handle mobile audio context restrictions
+      player.play()
+        .then(() => {
+          console.log('Audio played successfully');
+        })
+        .catch((error) => {
+          console.warn('Audio play failed:', error);
+          // Try alternative approach for mobile
+          if (error.name === 'NotAllowedError') {
+            console.log('Audio blocked by browser policy, user interaction required');
+          } else {
+            // Try reloading the audio source
+            const currentSrc = player.src;
+            player.src = '';
+            player.src = currentSrc;
+            player.play().catch(() => console.warn('Audio retry failed'));
+          }
+        });
     }
   }
 
@@ -296,6 +359,10 @@
     const nextNum = getNextNumber();
     displayNumber(nextNum);
   });
+
+  // Add click listener to unlock audio on first user interaction
+  document.addEventListener('click', unlockAudio, { once: true });
+  document.addEventListener('touchstart', unlockAudio, { once: true });
 
   // Initialize the app
   function init() {
@@ -349,13 +416,13 @@
     if (!statusElement) return;
     
     if (!isOnline) {
-      statusElement.textContent = '🔴 Offline Mode';
+      statusElement.textContent = serviceWorkerRegistration ? '🔴 Offline (Cached Audio)' : '🔴 Offline Mode';
       statusElement.className = 'offline-indicator offline';
     } else if (serviceWorkerRegistration) {
-      statusElement.textContent = '🟢 Online with Cache';
+      statusElement.textContent = '🟢 Audio Cached';
       statusElement.className = 'offline-indicator online';
     } else {
-      statusElement.textContent = '🟡 Online';
+      statusElement.textContent = '🟡 Caching Audio...';
       statusElement.className = 'offline-indicator online';
     }
   }
