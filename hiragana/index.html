@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hiragana Flashcards</title>
+  <title>Hiragana & Katakana Flashcards</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TF8GGY1N0C"></script>
   <script>
@@ -18,7 +18,13 @@
 <body>
 
 <!-- ===== Site title (fixed, top-left) ===== -->
-<header id="site-title"><h1>Hiragana&nbsp;Flashcards</h1></header>
+<header id="site-title">
+  <h1 id="app-title">Hiragana&nbsp;Flashcards</h1>
+  <div id="mode-switcher">
+    <button id="hiragana-btn" class="mode-btn active">ひらがな</button>
+    <button id="katakana-btn" class="mode-btn">カタカナ</button>
+  </div>
+</header>
 
 <div id="container">
   <!-- ============ Flash-card stage ============ -->
