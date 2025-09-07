@@ -142,6 +142,7 @@ html,body { height: 100%; font-family: system-ui, sans-serif; background: var(--
 }
 
 .kana  { font-size: 1.3rem; display: block; line-height: 1.2; }
+.kana.mixed-kana { font-size: 1.1rem; line-height: 1.1; }
 .roma  { font-size: .8rem; color: #555; }
 
 input.row-toggle { transform: scale(1.1); }
