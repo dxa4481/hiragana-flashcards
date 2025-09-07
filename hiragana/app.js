@@ -11,7 +11,7 @@
   const JITTER_RANGE = 1;          // ±1 review-cycle noise
 
   /* ────────── DATA ────────── */
-  const SECTIONS = [
+  const HIRAGANA_SECTIONS = [
     {
       label: "Basic",
       rows: [
@@ -61,8 +61,117 @@
     }
   ];
 
-  /* attach SM-2 fields */
-  SECTIONS.flatMap(sec => sec.rows.flat())
+  const KATAKANA_SECTIONS = [
+    {
+      label: "Basic",
+      rows: [
+        /* vowels */  [{k:"ア",r:"a"},{k:"イ",r:"i"},{k:"ウ",r:"u"},{k:"エ",r:"e"},{k:"オ",r:"o"}],
+        /* k-line */  [{k:"カ",r:"ka"},{k:"キ",r:"ki"},{k:"ク",r:"ku"},{k:"ケ",r:"ke"},{k:"コ",r:"ko"}],
+        /* s-line */  [{k:"サ",r:"sa"},{k:"シ",r:"shi"},{k:"ス",r:"su"},{k:"セ",r:"se"},{k:"ソ",r:"so"}],
+        /* t-line */  [{k:"タ",r:"ta"},{k:"チ",r:"chi"},{k:"ツ",r:"tsu"},{k:"テ",r:"te"},{k:"ト",r:"to"}],
+        /* n-line */  [{k:"ナ",r:"na"},{k:"ニ",r:"ni"},{k:"ヌ",r:"nu"},{k:"ネ",r:"ne"},{k:"ノ",r:"no"}],
+        /* h-line */  [{k:"ハ",r:"ha"},{k:"ヒ",r:"hi"},{k:"フ",r:"fu"},{k:"ヘ",r:"he"},{k:"ホ",r:"ho"}],
+        /* m-line */  [{k:"マ",r:"ma"},{k:"ミ",r:"mi"},{k:"ム",r:"mu"},{k:"メ",r:"me"},{k:"モ",r:"mo"}],
+        /* y-line */  [{k:"ヤ",r:"ya"},{k:"ユ",r:"yu"},{k:"ヨ",r:"yo"}],
+        /* r-line */  [{k:"ラ",r:"ra"},{k:"リ",r:"ri"},{k:"ル",r:"ru"},{k:"レ",r:"re"},{k:"ロ",r:"ro"}],
+        /* w-line */  [{k:"ワ",r:"wa"},{k:"ヲ",r:"wo"}],
+        /* ン */      [{k:"ン",r:"n"}]
+      ]
+    },
+    {
+      label: "Dakuten / Handakuten",
+      rows: [
+        [{k:"ガ",r:"ga"},{k:"ギ",r:"gi"},{k:"グ",r:"gu"},{k:"ゲ",r:"ge"},{k:"ゴ",r:"go"}],
+        [{k:"ザ",r:"za"},{k:"ジ",r:"ji"},{k:"ズ",r:"zu"},{k:"ゼ",r:"ze"},{k:"ゾ",r:"zo"}],
+        [{k:"ダ",r:"da"},{k:"ヂ",r:"ji"},{k:"ヅ",r:"zu"},{k:"デ",r:"de"},{k:"ド",r:"do"}],
+        [{k:"バ",r:"ba"},{k:"ビ",r:"bi"},{k:"ブ",r:"bu"},{k:"ベ",r:"be"},{k:"ボ",r:"bo"}],
+        [{k:"パ",r:"pa"},{k:"ピ",r:"pi"},{k:"プ",r:"pu"},{k:"ペ",r:"pe"},{k:"ポ",r:"po"}]
+      ]
+    },
+    {
+      label: "Youon",
+      rows: [
+        [{k:"キャ",r:"kya"},{k:"キュ",r:"kyu"},{k:"キョ",r:"kyo"}],
+        [{k:"シャ",r:"sha"},{k:"シュ",r:"shu"},{k:"ショ",r:"sho"}],
+        [{k:"チャ",r:"cha"},{k:"チュ",r:"chu"},{k:"チョ",r:"cho"}],
+        [{k:"ニャ",r:"nya"},{k:"ニュ",r:"nyu"},{k:"ニョ",r:"nyo"}],
+        [{k:"ヒャ",r:"hya"},{k:"ヒュ",r:"hyu"},{k:"ヒョ",r:"hyo"}],
+        [{k:"ミャ",r:"mya"},{k:"ミュ",r:"myu"},{k:"ミョ",r:"myo"}],
+        [{k:"リャ",r:"rya"},{k:"リュ",r:"ryu"},{k:"リョ",r:"ryo"}]
+      ]
+    },
+    {
+      label: "Youon Dakuten",
+      rows: [
+        [{k:"ギャ",r:"gya"},{k:"ギュ",r:"gyu"},{k:"ギョ",r:"gyo"}],
+        [{k:"ジャ",r:"ja"},{k:"ジュ",r:"ju"},{k:"ジョ",r:"jo"}],
+        [{k:"ビャ",r:"bya"},{k:"ビュ",r:"byu"},{k:"ビョ",r:"byo"}],
+        [{k:"ピャ",r:"pya"},{k:"ピュ",r:"pyu"},{k:"ピョ",r:"pyo"}]
+      ]
+    }
+  ];
+
+  // Create mixed sections combining both writing systems
+  const MIXED_SECTIONS = [
+    {
+      label: "Basic (Mixed)",
+      rows: [
+        /* vowels - mixed */  [{k:"あ",r:"a",alt:"ア"},{k:"い",r:"i",alt:"イ"},{k:"う",r:"u",alt:"ウ"},{k:"え",r:"e",alt:"エ"},{k:"お",r:"o",alt:"オ"}],
+        /* k-line - mixed */  [{k:"か",r:"ka",alt:"カ"},{k:"き",r:"ki",alt:"キ"},{k:"く",r:"ku",alt:"ク"},{k:"け",r:"ke",alt:"ケ"},{k:"こ",r:"ko",alt:"コ"}],
+        /* s-line - mixed */  [{k:"さ",r:"sa",alt:"サ"},{k:"し",r:"shi",alt:"シ"},{k:"す",r:"su",alt:"ス"},{k:"せ",r:"se",alt:"セ"},{k:"そ",r:"so",alt:"ソ"}],
+        /* t-line - mixed */  [{k:"た",r:"ta",alt:"タ"},{k:"ち",r:"chi",alt:"チ"},{k:"つ",r:"tsu",alt:"ツ"},{k:"て",r:"te",alt:"テ"},{k:"と",r:"to",alt:"ト"}],
+        /* n-line - mixed */  [{k:"な",r:"na",alt:"ナ"},{k:"に",r:"ni",alt:"ニ"},{k:"ぬ",r:"nu",alt:"ヌ"},{k:"ね",r:"ne",alt:"ネ"},{k:"の",r:"no",alt:"ノ"}],
+        /* h-line - mixed */  [{k:"は",r:"ha",alt:"ハ"},{k:"ひ",r:"hi",alt:"ヒ"},{k:"ふ",r:"fu",alt:"フ"},{k:"へ",r:"he",alt:"ヘ"},{k:"ほ",r:"ho",alt:"ホ"}],
+        /* m-line - mixed */  [{k:"ま",r:"ma",alt:"マ"},{k:"み",r:"mi",alt:"ミ"},{k:"む",r:"mu",alt:"ム"},{k:"め",r:"me",alt:"メ"},{k:"も",r:"mo",alt:"モ"}],
+        /* y-line - mixed */  [{k:"や",r:"ya",alt:"ヤ"},{k:"ゆ",r:"yu",alt:"ユ"},{k:"よ",r:"yo",alt:"ヨ"}],
+        /* r-line - mixed */  [{k:"ら",r:"ra",alt:"ラ"},{k:"り",r:"ri",alt:"リ"},{k:"る",r:"ru",alt:"ル"},{k:"れ",r:"re",alt:"レ"},{k:"ろ",r:"ro",alt:"ロ"}],
+        /* w-line - mixed */  [{k:"わ",r:"wa",alt:"ワ"},{k:"を",r:"wo",alt:"ヲ"}],
+        /* ん/ン - mixed */   [{k:"ん",r:"n",alt:"ン"}]
+      ]
+    },
+    {
+      label: "Dakuten / Handakuten (Mixed)",
+      rows: [
+        [{k:"が",r:"ga",alt:"ガ"},{k:"ぎ",r:"gi",alt:"ギ"},{k:"ぐ",r:"gu",alt:"グ"},{k:"げ",r:"ge",alt:"ゲ"},{k:"ご",r:"go",alt:"ゴ"}],
+        [{k:"ざ",r:"za",alt:"ザ"},{k:"じ",r:"ji",alt:"ジ"},{k:"ず",r:"zu",alt:"ズ"},{k:"ぜ",r:"ze",alt:"ゼ"},{k:"ぞ",r:"zo",alt:"ゾ"}],
+        [{k:"だ",r:"da",alt:"ダ"},{k:"ぢ",r:"ji",alt:"ヂ"},{k:"づ",r:"zu",alt:"ヅ"},{k:"で",r:"de",alt:"デ"},{k:"ど",r:"do",alt:"ド"}],
+        [{k:"ば",r:"ba",alt:"バ"},{k:"び",r:"bi",alt:"ビ"},{k:"ぶ",r:"bu",alt:"ブ"},{k:"べ",r:"be",alt:"ベ"},{k:"ぼ",r:"bo",alt:"ボ"}],
+        [{k:"ぱ",r:"pa",alt:"パ"},{k:"ぴ",r:"pi",alt:"ピ"},{k:"ぷ",r:"pu",alt:"プ"},{k:"ぺ",r:"pe",alt:"ペ"},{k:"ぽ",r:"po",alt:"ポ"}]
+      ]
+    },
+    {
+      label: "Youon (Mixed)",
+      rows: [
+        [{k:"きゃ",r:"kya",alt:"キャ"},{k:"きゅ",r:"kyu",alt:"キュ"},{k:"きょ",r:"kyo",alt:"キョ"}],
+        [{k:"しゃ",r:"sha",alt:"シャ"},{k:"しゅ",r:"shu",alt:"シュ"},{k:"しょ",r:"sho",alt:"ショ"}],
+        [{k:"ちゃ",r:"cha",alt:"チャ"},{k:"ちゅ",r:"chu",alt:"チュ"},{k:"ちょ",r:"cho",alt:"チョ"}],
+        [{k:"にゃ",r:"nya",alt:"ニャ"},{k:"にゅ",r:"nyu",alt:"ニュ"},{k:"にょ",r:"nyo",alt:"ニョ"}],
+        [{k:"ひゃ",r:"hya",alt:"ヒャ"},{k:"ひゅ",r:"hyu",alt:"ヒュ"},{k:"ひょ",r:"hyo",alt:"ヒョ"}],
+        [{k:"みゃ",r:"mya",alt:"ミャ"},{k:"みゅ",r:"myu",alt:"ミュ"},{k:"みょ",r:"myo",alt:"ミョ"}],
+        [{k:"りゃ",r:"rya",alt:"リャ"},{k:"りゅ",r:"ryu",alt:"リュ"},{k:"りょ",r:"ryo",alt:"リョ"}]
+      ]
+    },
+    {
+      label: "Youon Dakuten (Mixed)",
+      rows: [
+        [{k:"ぎゃ",r:"gya",alt:"ギャ"},{k:"ぎゅ",r:"gyu",alt:"ギュ"},{k:"ぎょ",r:"gyo",alt:"ギョ"}],
+        [{k:"じゃ",r:"ja",alt:"ジャ"},{k:"じゅ",r:"ju",alt:"ジュ"},{k:"じょ",r:"jo",alt:"ジョ"}],
+        [{k:"びゃ",r:"bya",alt:"ビャ"},{k:"びゅ",r:"byu",alt:"ビュ"},{k:"びょ",r:"byo",alt:"ビョ"}],
+        [{k:"ぴゃ",r:"pya",alt:"ピャ"},{k:"ぴゅ",r:"pyu",alt:"ピュ"},{k:"ぴょ",r:"pyo",alt:"ピョ"}]
+      ]
+    }
+  ];
+
+  // Current mode and sections
+  let currentMode = 'hiragana';
+  let SECTIONS = HIRAGANA_SECTIONS;
+
+  /* attach SM-2 fields to all datasets */
+  HIRAGANA_SECTIONS.flatMap(sec => sec.rows.flat())
+          .forEach(c => Object.assign(c,{reps:0,interval:0,ef:2.5,due:0}));
+  KATAKANA_SECTIONS.flatMap(sec => sec.rows.flat())
+          .forEach(c => Object.assign(c,{reps:0,interval:0,ef:2.5,due:0}));
+  MIXED_SECTIONS.flatMap(sec => sec.rows.flat())
           .forEach(c => Object.assign(c,{reps:0,interval:0,ef:2.5,due:0}));
 
   /* vowel → column */
@@ -70,24 +179,35 @@
 
   /* ─── legend build ─── */
   const legendBody = document.getElementById("legend-body");
-  let globalIdx = 0;
+  
+  function buildLegend() {
+    legendBody.innerHTML = "";
+    let globalIdx = 0;
 
-  SECTIONS.forEach(sec=>{
-    legendBody.insertAdjacentHTML("beforeend",
-      `<tr class="section"><td colspan="6">${sec.label}</td></tr>`);
-
-    sec.rows.forEach(row=>{
-      const rowId = globalIdx++;
-      const chk = `<td><input type="checkbox" class="row-toggle" data-index="${rowId}"${rowId===0?" checked":""}></td>`;
-      const cells = new Array(5).fill("");
-      row.forEach(item=>{
-        const col = VOWEL_COL[item.r.slice(-1)] ?? 0;
-        cells[col] = `<span class="kana">${item.k}</span><span class="roma">${item.r}</span>`;
-      });
+    SECTIONS.forEach(sec=>{
       legendBody.insertAdjacentHTML("beforeend",
-        `<tr>${chk}${cells.map(td=>`<td>${td}</td>`).join("")}</tr>`);
+        `<tr class="section"><td colspan="6">${sec.label}</td></tr>`);
+
+      sec.rows.forEach(row=>{
+        const rowId = globalIdx++;
+        const chk = `<td><input type="checkbox" class="row-toggle" data-index="${rowId}"${rowId===0?" checked":""}></td>`;
+        const cells = new Array(5).fill("");
+        row.forEach(item=>{
+          const col = VOWEL_COL[item.r.slice(-1)] ?? 0;
+          if (currentMode === 'mixed' && item.alt) {
+            // Show both characters for mixed mode
+            cells[col] = `<span class="kana mixed-kana">${item.k}<br>${item.alt}</span><span class="roma">${item.r}</span>`;
+          } else {
+            cells[col] = `<span class="kana">${item.k}</span><span class="roma">${item.r}</span>`;
+          }
+        });
+        legendBody.insertAdjacentHTML("beforeend",
+          `<tr>${chk}${cells.map(td=>`<td>${td}</td>`).join("")}</tr>`);
+      });
     });
-  });
+  }
+
+  buildLegend();
 
   /* ─── DOM refs ─── */
   const kana     = document.getElementById("kana");
@@ -98,6 +218,10 @@
   const ans      = document.getElementById("answer-buttons");
   const rightBtn = document.getElementById("right-btn");
   const wrongBtn = document.getElementById("wrong-btn");
+  const appTitle = document.getElementById("app-title");
+  const hiraganaBtn = document.getElementById("hiragana-btn");
+  const katakanaBtn = document.getElementById("katakana-btn");
+  const mixedBtn = document.getElementById("mixed-btn");
 
   /* ─── state ─── */
   let pool   = [];
@@ -111,6 +235,52 @@
     for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
     return a;
   };
+
+  /* ─── mode switching ─── */
+  function switchMode(newMode) {
+    if (newMode === currentMode) return;
+    
+    currentMode = newMode;
+    
+    // Select appropriate sections
+    if (currentMode === 'hiragana') {
+      SECTIONS = HIRAGANA_SECTIONS;
+    } else if (currentMode === 'katakana') {
+      SECTIONS = KATAKANA_SECTIONS;
+    } else if (currentMode === 'mixed') {
+      SECTIONS = MIXED_SECTIONS;
+    }
+    
+    // Update UI
+    let titleText;
+    if (currentMode === 'hiragana') {
+      titleText = 'Hiragana Flashcards';
+    } else if (currentMode === 'katakana') {
+      titleText = 'Katakana Flashcards';
+    } else if (currentMode === 'mixed') {
+      titleText = 'Mixed Kana Flashcards';
+    }
+    appTitle.textContent = titleText;
+    
+    // Update button states
+    hiraganaBtn.classList.toggle('active', currentMode === 'hiragana');
+    katakanaBtn.classList.toggle('active', currentMode === 'katakana');
+    mixedBtn.classList.toggle('active', currentMode === 'mixed');
+    
+    // Rebuild legend and reset
+    buildLegend();
+    rebuild();
+    show(nextCard());
+    
+    // Re-attach event listeners to new checkboxes
+    document.querySelectorAll(".row-toggle").forEach(cb=>{
+      cb.addEventListener("change",()=>{
+        const empty=!pool.length;
+        rebuild();
+        if(empty||!pool.includes(card)) show(nextCard());
+      });
+    });
+  }
 
   /* ─── SM-2 grade ─── */
   function grade(c, correct){
@@ -146,7 +316,25 @@
         let idx=+cb.dataset.index;
         outer:for(const sec of SECTIONS)
           for(const row of sec.rows)
-            if(idx--===0){ pool.push(...row); break outer; }
+            if(idx--===0){ 
+              if(currentMode === 'mixed') {
+                // For mixed mode, create both variants for each character
+                const expandedRow = row.flatMap(item => {
+                  if(item.alt) {
+                    return [
+                      {k: item.k, r: item.r, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due},
+                      {k: item.alt, r: item.r, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due}
+                    ];
+                  } else {
+                    return [item];
+                  }
+                });
+                pool.push(...expandedRow);
+              } else {
+                pool.push(...row);
+              }
+              break outer; 
+            }
       }
     });
     if(!pool.length){
@@ -239,6 +427,11 @@
       if(empty||!pool.includes(card)) show(nextCard());
     });
   });
+
+  // Mode switcher events
+  hiraganaBtn.addEventListener("click", () => switchMode('hiragana'));
+  katakanaBtn.addEventListener("click", () => switchMode('katakana'));
+  mixedBtn.addEventListener("click", () => switchMode('mixed'));
 
   nextBtn.addEventListener("click",e=>{
     e.stopPropagation();

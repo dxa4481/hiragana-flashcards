@@ -15,12 +15,44 @@ html,body { height: 100%; font-family: system-ui, sans-serif; background: var(--
   top: 0; left: 0;
   padding: .6rem 1rem;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 #site-title h1 {
   font-size: 1rem;
   font-weight: 700;
   color: #333;
   pointer-events: none;
+}
+
+/* ===== Mode switcher ===== */
+#mode-switcher {
+  display: flex;
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 2px;
+  gap: 2px;
+}
+.mode-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  color: #666;
+  background: transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.mode-btn:hover {
+  color: #333;
+}
+.mode-btn.active {
+  background: #fff;
+  color: var(--accent);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* ===== Two-column layout ===== */
@@ -110,6 +142,7 @@ html,body { height: 100%; font-family: system-ui, sans-serif; background: var(--
 }
 
 .kana  { font-size: 1.3rem; display: block; line-height: 1.2; }
+.kana.mixed-kana { font-size: 1.1rem; line-height: 1.1; }
 .roma  { font-size: .8rem; color: #555; }
 
 input.row-toggle { transform: scale(1.1); }
