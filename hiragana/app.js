@@ -111,14 +111,67 @@
     }
   ];
 
+  // Create mixed sections combining both writing systems
+  const MIXED_SECTIONS = [
+    {
+      label: "Basic (Mixed)",
+      rows: [
+        /* vowels - mixed */  [{k:"あ",r:"a"},{k:"イ",r:"i"},{k:"う",r:"u"},{k:"エ",r:"e"},{k:"お",r:"o"}],
+        /* k-line - mixed */  [{k:"カ",r:"ka"},{k:"き",r:"ki"},{k:"ク",r:"ku"},{k:"け",r:"ke"},{k:"コ",r:"ko"}],
+        /* s-line - mixed */  [{k:"さ",r:"sa"},{k:"シ",r:"shi"},{k:"ス",r:"su"},{k:"せ",r:"se"},{k:"そ",r:"so"}],
+        /* t-line - mixed */  [{k:"タ",r:"ta"},{k:"ち",r:"chi"},{k:"ツ",r:"tsu"},{k:"て",r:"te"},{k:"ト",r:"to"}],
+        /* n-line - mixed */  [{k:"な",r:"na"},{k:"ニ",r:"ni"},{k:"ヌ",r:"nu"},{k:"ね",r:"ne"},{k:"の",r:"no"}],
+        /* h-line - mixed */  [{k:"ハ",r:"ha"},{k:"ひ",r:"hi"},{k:"フ",r:"fu"},{k:"へ",r:"he"},{k:"ホ",r:"ho"}],
+        /* m-line - mixed */  [{k:"ま",r:"ma"},{k:"ミ",r:"mi"},{k:"ム",r:"mu"},{k:"め",r:"me"},{k:"モ",r:"mo"}],
+        /* y-line - mixed */  [{k:"ヤ",r:"ya"},{k:"ゆ",r:"yu"},{k:"ヨ",r:"yo"}],
+        /* r-line - mixed */  [{k:"ら",r:"ra"},{k:"リ",r:"ri"},{k:"ル",r:"ru"},{k:"れ",r:"re"},{k:"ロ",r:"ro"}],
+        /* w-line - mixed */  [{k:"ワ",r:"wa"},{k:"を",r:"wo"}],
+        /* ん/ン - mixed */   [{k:"ん",r:"n"},{k:"ン",r:"n"}]
+      ]
+    },
+    {
+      label: "Dakuten / Handakuten (Mixed)",
+      rows: [
+        [{k:"が",r:"ga"},{k:"ギ",r:"gi"},{k:"グ",r:"gu"},{k:"げ",r:"ge"},{k:"ゴ",r:"go"}],
+        [{k:"ザ",r:"za"},{k:"じ",r:"ji"},{k:"ズ",r:"zu"},{k:"ぜ",r:"ze"},{k:"ゾ",r:"zo"}],
+        [{k:"だ",r:"da"},{k:"ヂ",r:"ji"},{k:"ヅ",r:"zu"},{k:"で",r:"de"},{k:"ド",r:"do"}],
+        [{k:"バ",r:"ba"},{k:"び",r:"bi"},{k:"ブ",r:"bu"},{k:"べ",r:"be"},{k:"ボ",r:"bo"}],
+        [{k:"ぱ",r:"pa"},{k:"ピ",r:"pi"},{k:"プ",r:"pu"},{k:"ぺ",r:"pe"},{k:"ポ",r:"po"}]
+      ]
+    },
+    {
+      label: "Youon (Mixed)",
+      rows: [
+        [{k:"きゃ",r:"kya"},{k:"キュ",r:"kyu"},{k:"キョ",r:"kyo"}],
+        [{k:"シャ",r:"sha"},{k:"しゅ",r:"shu"},{k:"ショ",r:"sho"}],
+        [{k:"ちゃ",r:"cha"},{k:"チュ",r:"chu"},{k:"チョ",r:"cho"}],
+        [{k:"ニャ",r:"nya"},{k:"にゅ",r:"nyu"},{k:"ニョ",r:"nyo"}],
+        [{k:"ひゃ",r:"hya"},{k:"ヒュ",r:"hyu"},{k:"ヒョ",r:"hyo"}],
+        [{k:"ミャ",r:"mya"},{k:"みゅ",r:"myu"},{k:"ミョ",r:"myo"}],
+        [{k:"りゃ",r:"rya"},{k:"リュ",r:"ryu"},{k:"リョ",r:"ryo"}]
+      ]
+    },
+    {
+      label: "Youon Dakuten (Mixed)",
+      rows: [
+        [{k:"ぎゃ",r:"gya"},{k:"ギュ",r:"gyu"},{k:"ギョ",r:"gyo"}],
+        [{k:"ジャ",r:"ja"},{k:"じゅ",r:"ju"},{k:"ジョ",r:"jo"}],
+        [{k:"びゃ",r:"bya"},{k:"ビュ",r:"byu"},{k:"ビョ",r:"byo"}],
+        [{k:"ピャ",r:"pya"},{k:"ぴゅ",r:"pyu"},{k:"ピョ",r:"pyo"}]
+      ]
+    }
+  ];
+
   // Current mode and sections
   let currentMode = 'hiragana';
   let SECTIONS = HIRAGANA_SECTIONS;
 
-  /* attach SM-2 fields to both datasets */
+  /* attach SM-2 fields to all datasets */
   HIRAGANA_SECTIONS.flatMap(sec => sec.rows.flat())
           .forEach(c => Object.assign(c,{reps:0,interval:0,ef:2.5,due:0}));
   KATAKANA_SECTIONS.flatMap(sec => sec.rows.flat())
+          .forEach(c => Object.assign(c,{reps:0,interval:0,ef:2.5,due:0}));
+  MIXED_SECTIONS.flatMap(sec => sec.rows.flat())
           .forEach(c => Object.assign(c,{reps:0,interval:0,ef:2.5,due:0}));
 
   /* vowel → column */
@@ -163,6 +216,7 @@
   const appTitle = document.getElementById("app-title");
   const hiraganaBtn = document.getElementById("hiragana-btn");
   const katakanaBtn = document.getElementById("katakana-btn");
+  const mixedBtn = document.getElementById("mixed-btn");
 
   /* ─── state ─── */
   let pool   = [];
@@ -182,12 +236,31 @@
     if (newMode === currentMode) return;
     
     currentMode = newMode;
-    SECTIONS = currentMode === 'hiragana' ? HIRAGANA_SECTIONS : KATAKANA_SECTIONS;
+    
+    // Select appropriate sections
+    if (currentMode === 'hiragana') {
+      SECTIONS = HIRAGANA_SECTIONS;
+    } else if (currentMode === 'katakana') {
+      SECTIONS = KATAKANA_SECTIONS;
+    } else if (currentMode === 'mixed') {
+      SECTIONS = MIXED_SECTIONS;
+    }
     
     // Update UI
-    appTitle.textContent = currentMode === 'hiragana' ? 'Hiragana Flashcards' : 'Katakana Flashcards';
+    let titleText;
+    if (currentMode === 'hiragana') {
+      titleText = 'Hiragana Flashcards';
+    } else if (currentMode === 'katakana') {
+      titleText = 'Katakana Flashcards';
+    } else if (currentMode === 'mixed') {
+      titleText = 'Mixed Kana Flashcards';
+    }
+    appTitle.textContent = titleText;
+    
+    // Update button states
     hiraganaBtn.classList.toggle('active', currentMode === 'hiragana');
     katakanaBtn.classList.toggle('active', currentMode === 'katakana');
+    mixedBtn.classList.toggle('active', currentMode === 'mixed');
     
     // Rebuild legend and reset
     buildLegend();
@@ -335,6 +408,7 @@
   // Mode switcher events
   hiraganaBtn.addEventListener("click", () => switchMode('hiragana'));
   katakanaBtn.addEventListener("click", () => switchMode('katakana'));
+  mixedBtn.addEventListener("click", () => switchMode('mixed'));
 
   nextBtn.addEventListener("click",e=>{
     e.stopPropagation();
