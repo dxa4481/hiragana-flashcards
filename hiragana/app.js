@@ -363,8 +363,8 @@
                 const expandedRow = row.flatMap(item => {
                   if(item.alt) {
                     return [
-                      {k: item.k, r: item.r, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due},
-                      {k: item.alt, r: item.r, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due}
+                      {k: item.k, r: item.r, alt: item.alt, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due},
+                      {k: item.alt, r: item.r, alt: item.k, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due}
                     ];
                   } else {
                     return [item];
@@ -395,8 +395,9 @@
     romaji.textContent=c.r;
     
     // Set up alternate character display
-    const alternate = getAlternateCharacter(c.k);
-    if(alternate && currentMode !== 'mixed') {
+    // First check if card has alt field (from mixed sections), then use mapping function
+    const alternate = c.alt || getAlternateCharacter(c.k);
+    if(alternate) {
       alternateKana.textContent = `(${alternate})`;
     } else {
       alternateKana.textContent = '';
