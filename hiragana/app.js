@@ -11,6 +11,46 @@
   const JITTER_RANGE = 1;          // ±1 review-cycle noise
 
   /* ────────── DATA ────────── */
+  
+  /* ─── character mapping ─── */
+  const HIRAGANA_TO_KATAKANA = {
+    "あ":"ア","い":"イ","う":"ウ","え":"エ","お":"オ",
+    "か":"カ","き":"キ","く":"ク","け":"ケ","こ":"コ",
+    "さ":"サ","し":"シ","す":"ス","せ":"セ","そ":"ソ",
+    "た":"タ","ち":"チ","つ":"ツ","て":"テ","と":"ト",
+    "な":"ナ","に":"ニ","ぬ":"ヌ","ね":"ネ","の":"ノ",
+    "は":"ハ","ひ":"ヒ","ふ":"フ","へ":"ヘ","ほ":"ホ",
+    "ま":"マ","み":"ミ","む":"ム","め":"メ","も":"モ",
+    "や":"ヤ","ゆ":"ユ","よ":"ヨ",
+    "ら":"ラ","り":"リ","る":"ル","れ":"レ","ろ":"ロ",
+    "わ":"ワ","を":"ヲ","ん":"ン",
+    "が":"ガ","ぎ":"ギ","ぐ":"グ","げ":"ゲ","ご":"ゴ",
+    "ざ":"ザ","じ":"ジ","ず":"ズ","ぜ":"ゼ","ぞ":"ゾ",
+    "だ":"ダ","ぢ":"ヂ","づ":"ヅ","で":"デ","ど":"ド",
+    "ば":"バ","び":"ビ","ぶ":"ブ","べ":"ベ","ぼ":"ボ",
+    "ぱ":"パ","ぴ":"ピ","ぷ":"プ","ぺ":"ペ","ぽ":"ポ",
+    "きゃ":"キャ","きゅ":"キュ","きょ":"キョ",
+    "しゃ":"シャ","しゅ":"シュ","しょ":"ショ",
+    "ちゃ":"チャ","ちゅ":"チュ","ちょ":"チョ",
+    "にゃ":"ニャ","にゅ":"ニュ","にょ":"ニョ",
+    "ひゃ":"ヒャ","ひゅ":"ヒュ","ひょ":"ヒョ",
+    "みゃ":"ミャ","みゅ":"ミュ","みょ":"ミョ",
+    "りゃ":"リャ","りゅ":"リュ","りょ":"リョ",
+    "ぎゃ":"ギャ","ぎゅ":"ギュ","ぎょ":"ギョ",
+    "じゃ":"ジャ","じゅ":"ジュ","じょ":"ジョ",
+    "びゃ":"ビャ","びゅ":"ビュ","びょ":"ビョ",
+    "ぴゃ":"ピャ","ぴゅ":"ピュ","ぴょ":"ピョ"
+  };
+  
+  const KATAKANA_TO_HIRAGANA = Object.fromEntries(
+    Object.entries(HIRAGANA_TO_KATAKANA).map(([h, k]) => [k, h])
+  );
+
+  /* ─── get alternate character ─── */
+  function getAlternateCharacter(kana) {
+    return HIRAGANA_TO_KATAKANA[kana] || KATAKANA_TO_HIRAGANA[kana] || null;
+  }
+
   const HIRAGANA_SECTIONS = [
     {
       label: "Basic",
@@ -212,6 +252,7 @@
   /* ─── DOM refs ─── */
   const kana     = document.getElementById("kana");
   const romaji   = document.getElementById("romaji");
+  const alternateKana = document.getElementById("alternate-kana");
   const player   = document.getElementById("player");
   const nextBtn  = document.getElementById("next-btn");
   const stage    = document.getElementById("stage");
@@ -322,8 +363,8 @@
                 const expandedRow = row.flatMap(item => {
                   if(item.alt) {
                     return [
-                      {k: item.k, r: item.r, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due},
-                      {k: item.alt, r: item.r, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due}
+                      {k: item.k, r: item.r, alt: item.alt, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due},
+                      {k: item.alt, r: item.r, alt: item.k, reps: item.reps, interval: item.interval, ef: item.ef, due: item.due}
                     ];
                   } else {
                     return [item];
@@ -352,7 +393,18 @@
     card=c; shown=false;
     kana.textContent=c.k;
     romaji.textContent=c.r;
+    
+    // Set up alternate character display
+    // First check if card has alt field (from mixed sections), then use mapping function
+    const alternate = c.alt || getAlternateCharacter(c.k);
+    if(alternate) {
+      alternateKana.textContent = `(${alternate})`;
+    } else {
+      alternateKana.textContent = '';
+    }
+    
     romaji.classList.add("hidden");
+    alternateKana.classList.add("hidden");
     ans.classList.add("hidden");
     
     // Preload audio for better mobile performance
@@ -414,6 +466,9 @@
     
     delay=setTimeout(()=>{
       romaji.classList.remove("hidden");
+      if(alternateKana.textContent) {
+        alternateKana.classList.remove("hidden");
+      }
       ans.classList.remove("hidden");
       delay=null;
     },1000);
